@@ -281,10 +281,10 @@
 	
 			</tr>
 			<tr>
-				<td class="no-border" style="height: 30px;">PLACE OF RECEIPT<br>
+				<td class="no-border" style="height: 30px; width: 160px;">PLACE OF RECEIPT<br>
 				<div>{{ old('place_of_receipt',$data->place_of_receipt) }}</div>
 			</td>
-				<td class="no-border-left">PORT LOADING<br>
+				<td class="no-border-left" style="width: 160px;">PORT LOADING<br>
 				<div>{{ old('port_of_loading',$data->port_of_loading) }}</div>
 			</td>
 				
@@ -306,7 +306,7 @@
 				<td class="no-border-left">FINAL DESTINATION<br>
 				<div>{{ old('final_destination',$data->final_destination) }}</div>
 			</td>
-				<td class="no-border-right">FREIGHT PAYABLE AT<br>
+				<td class="no-border-right" width="260px">FREIGHT PAYABLE AT<br>
 				<div>{{ old('freight_payable_at',$data->freight_payable_at) }}</div>
 			</td>
 				<td class="no-border" colspan="2">NUMBER OF ORIGINAL B/L<br>
@@ -324,9 +324,9 @@
 			</tr>
 
             <tr>
-			<div><td class="no-border-lb" rowspan="3"  width="180px" height="100"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
-			<td class="no-border-tb" rowspan="3" width="100px" height="100"><p>{!! old('number_of_packages',$data->number_of_packages) !!}</p></td>
-			<td class="no-border-bottom" rowspan="3" width="260px" height="100"><p>{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</p></td>
+			<div><td class="no-border-lb" rowspan="3"  width="180px"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
+			<td class="no-border-tb" rowspan="3" width="80px"><p>{!! old('number_of_packages',$data->number_of_packages) !!}</p></td>
+			<td class="no-border-bottom" rowspan="3" width="260px"><p>{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</p></td>
 			<td class="no-border-bottom" rowspan="2" width="100px"><p>{{ old('gross_weight',$data->gross_weight) }}</p></td>
 			<td class="no-border-rb" rowspan="2" width="100px"><p>{{ old('measurement',$data->measurement) }}</p></td>				
 			</tr>

@@ -287,7 +287,7 @@
 					
 						<tr>
 						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:159%; height: 100%;"></textarea>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:159%; height: 97%;"></textarea>
 					</td>
 						</tr>
 
