@@ -10,6 +10,15 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+		<!-- Include CKEditor 5 from CDN -->
+		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
+		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
+		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
+		<script src="../../dist/js/addpopup.js"></script>
+
+
+
+
 
         <!-- Styles -->
         <style>
@@ -162,25 +171,79 @@
         cursor: pointer;
     }
 
-	.element {
-	max-width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	}
+	.ck-editor__editable_inline {
+    min-height: 400px;
+	min-width: none;
+}
+
+.element {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Basic styles for popup */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.text-tiny {
+	font-size: 0.7em;
+}
+
+.text-small {
+	font-size: 0.85em;
+}
+
+.text-big {
+	font-size: 1.4em;
+}
+
+.text-huge {
+	font-size: 1.8em;
+}
+			
+
 					
         </style>
     </head>
 	<body>
-
-	<div class="element">
-
+<div class="element">
 	<form action="{{ route('dashboard.update', ['id' => $data->id]) }}" method="POST">
 	@csrf
 	@method('PUT')
 			<table>
 			<tr>
-				<td class="no-border-left" colspan="2" style="height: 100px;">SHIPPER {{ old('id',$data->id) }}<br>
-				<textarea name="shipper" style="width:98%; height: 80%;">{{ old('shipper',$data->shipper) }}</textarea>
+				<td class="no-border-left" colspan="2" style="height: 100px; width: 300px;">SHIPPER<br>
+				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;">{{ old('shipper',$data->shipper) }}</textarea>
 				</td>
 				
 				<td class="no-border-rtb" colspan="2">
@@ -211,12 +274,12 @@
 				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;">{{ old('notify_party',$data->notify_party) }}</textarea>
 			</td>
 
-				<td class="no-border-rb" colspan="3">
+				<td class="no-border-rb" colspan="3" rowspan="3">
 
-					<table style="width: 300px; margin: 0;">
+					<table style="width: 300px; height: 100px; margin: 0;">
 						<tr>
 						<td class="no-border" style="height: 35px;">DATE OF ISSUE<br>
-						<input id="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" type="date" name="date_of_issue" style="width:87%; height: 60%;"/>
+						<input id="date_of_issue" type="date" name="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" style="width:87%; height: 60%;"/>
 					</td>
 						<td class="no-border">B/L NUMBER<br>
 						<textarea id="bl_number" type="text" name="bl_number" style="width:100%;">{{ old('bl_number',$data->bl_number) }}</textarea>
@@ -224,48 +287,49 @@
 						</tr>
 					
 						<tr>
-						<td class="no-border-rbl" colspan="3" rowspan="2">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:98%; height: 100%;">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</textarea>
+						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:159%; height: 97%;">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</textarea>
 					</td>
 						</tr>
 
 					</table>
 
 				</td>
+				
 
 	
 			</tr>
 			<tr>
 				<td class="no-border" style="height: 30px;">PLACE OF RECEIPT<br>
-				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:96%;">{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
+				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;">{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
 			</td>
 				<td class="no-border-left">PORT LOADING<br>
-				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:96%;">{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
+				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;">{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
 			</td>
 				
 
 			</tr>
             <tr>
 				<td class="no-border" style="height: 30px;">OCEAN VESSEL<br>
-				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:96%;">{{ old('ocean_vessel',$data->ocean_vessel) }}</textarea>
+				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;">{{ old('ocean_vessel',$data->ocean_vessel) }}</textarea>
 			</td>
 				<td class="no-border-left">VOYAGE NO.<br>
-				<textarea id="voyage_no" type="text" name="voyage_no" style="width:96%;">{{ old('voyage_no',$data->voyage_no) }}</textarea>
+				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;">{{ old('voyage_no',$data->voyage_no) }}</textarea>
 			</td>
 	
 			</tr>
             <tr>
 				<td class="no-border" style="height: 35px;">PORT OF DISCHARGE<br>
-				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:96%;">{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
+				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;">{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
 			</td>
 				<td class="no-border-left">FINAL DESTINATION<br>
-				<textarea id="final_destination" type="text" name="final_destination" style="width:96%;">{{ old('final_destination',$data->final_destination) }}</textarea>
+				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;">{{ old('final_destination',$data->final_destination) }}</textarea>
 			</td>
 				<td class="no-border-right">FREIGHT PAYABLE AT<br>
-				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:56%;">{{ old('freight_payable_at',$data->freight_payable_at) }}</textarea>
+				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:50%;">{{ old('freight_payable_at',$data->freight_payable_at) }}</textarea>
 			</td>
 				<td class="no-border" colspan="2">NUMBER OF ORIGINAL B/L<br>
-				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:96%;">{{ old('number_of_original_bl',$data->number_of_original_bl) }}</textarea>
+				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:100%;">{{ old('number_of_original_bl',$data->number_of_original_bl) }}</textarea>
 			</td>
 			</tr>
 			</table>
@@ -279,24 +343,79 @@
 			</tr>
 
             <tr>
-			<td class="no-border-lb" rowspan="3">&nbsp;</td>
-			<td class="no-border-tb" rowspan="3">&nbsp;</td>
-			<td class="no-border-bottom">&nbsp;</td>
-			<td class="no-border-bottom" rowspan="2">&nbsp;</td>
-			<td class="no-border-rb" rowspan="2">&nbsp;</td>				
-			</tr>
-
-			<tr>
-
-			<td class="no-border-tb" style="text-align: center;"><b><u>CONTAINER NO. SIZE</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>SEAL NO. MODE</U></b></td>
+			<td class="no-border-lb" rowspan="3" width="180px">
+							<!-- Button to open the popup -->
+							<center><button id="openPopup" type="button">Add</button></center><br>
 						
+							<!-- Popup Modal -->
+							<div id="popup" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup">&times;</span>
+									<h2>MARKS & NUMBER CONTAINER & SEAL NUMBERS</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor"></textarea><br>
+									<button id="saveButton" type="button">Save</button>
+									<button id="closePopupButton" type="button">Close</button>
+								</div>
+							</div>
+							<input class="hidden" id="geteditor" value="{{ old('marks_container_seal_no',$data->marks_container_seal_no) }}" type="text" name="marks_container_seal_no">
+			<!--<textarea readonly id="geteditor" type="text" name="marks_container_seal_no" style="width:96%; height: 87%;"></textarea>-->
+			<!--<div id="displayArea" style="width:96%; height: 87%;"></div>-->
+			
+			<div id="displayArea">{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</div>
+			</td>
+			<td class="no-border-tb" rowspan="3" width="80px">
+							<!-- Button to open the popup -->
+							<center><button id="openPopup1" type="button">Add</button></center><br>
+
+							<!-- Popup Modal -->
+							<div id="popup1" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup1">&times;</span>
+									<h2>MARKS & NUMBER CONTAINER & SEAL NUMBERS</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor1"></textarea><br>
+									<button id="saveButton1" type="button">Save</button>
+									<button id="closePopupButton1" type="button">Close</button>
+								</div>
+							</div>
+							<input class="hidden" id="geteditor1" value="{{ old('number_of_packages',$data->number_of_packages) }}" type="text" name="number_of_packages">
+							<div id="displayArea1">{!! old('number_of_packages',$data->number_of_packages) !!}</div>
+			</td>
+			<td class="no-border-bottom" rowspan="3" width="260px">
+							<!-- Button to open the popup -->
+							<center><button id="openPopup2" type="button">Add</button></center><br>
+
+							<!-- Popup Modal -->
+							<div id="popup2" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup2">&times;</span>
+									<h2>DESCRIPTION OF PACKAGES AND GOODS
+									PARTICULARS FURNISHED BY SHIPPER</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor2"></textarea><br>
+									<button id="saveButton2" type="button">Save</button>
+									<button id="closePopupButton2" type="button">Close</button>
+								</div>
+							</div>
+							<input class="hidden" id="geteditor2" value="{{ old('description_of_packages_and_goods',$data->description_of_packages_and_goods) }}" type="text" name="description_of_packages_and_goods">
+							<div id="displayArea2">{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</div>
+			</td>
+			<td class="no-border-bottom" width="100px">
+			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;">{{ old('gross_weight',$data->gross_weight) }}</textarea>
+			</td>
+			<td class="no-border-rbl" rowspan="2" width="100px">
+			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;">{{ old('measurement',$data->measurement) }}</textarea>
+			</td>		
 			</tr>
+
 
             <tr>
+			</tr>
 			
-				<td class="no-border-tb" style="text-align: center;"><b>FREIGHT COLLECT</b></td>
-				
-                <td class="no-border-rtb" colspan="2" style=" text-align: center;"><u>ON BOARD DATE</u></td>
+			<tr>
+                <td class="no-border-rtb" colspan="2" style=" text-align: center;" style="width:100px; margin-bottom: 500px;"><u>ON BOARD DATE</u>
+				<br>
+				<input id="on_board_date" type="date" name="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" style="width:48%; height: 12%;"/>
+				</td>
+			
 			</tr>
 			</table>
 			<table>
@@ -371,5 +490,19 @@
 				</div>    
 </form>
 </div>
+<!--<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>-->
+	<!--<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>-->
     </body>
 </html>

@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .create(document.querySelector('#editor'))
             .then(ckeditor => {
                 editor = ckeditor;
+                const textareaData = document.getElementById('geteditor').value;
+                editor.setData(textareaData);
             })
             .catch(error => {
                 console.error('There was a problem initializing CKEditor:', error);
@@ -61,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .create(document.querySelector('#editor1'))
             .then(ckeditor => {
                 editor1 = ckeditor;
+                const textareaData = document.getElementById('geteditor1').value;
+                editor1.setData(textareaData);
             })
             .catch(error => {
                 console.error('There was a problem initializing CKEditor:', error);
@@ -108,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .create(document.querySelector('#editor2'))
             .then(ckeditor => {
                 editor2 = ckeditor;
+                const textareaData = document.getElementById('geteditor2').value;
+                editor2.setData(textareaData);
             })
             .catch(error => {
                 console.error('There was a problem initializing CKEditor:', error);

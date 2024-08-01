@@ -325,7 +325,7 @@
 			</tr>
 
             <tr>
-			<div><td class="no-border-lb" rowspan="3"  width="180px"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
+			<div><td class="no-border-lb" rowspan="3"  width="180px" height="420px"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
 			<td class="no-border-tb" rowspan="3" width="80px"><p>{!! old('number_of_packages',$data->number_of_packages) !!}</p></td>
 			<td class="no-border-bottom" rowspan="3" width="260px"><p>{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</p></td>
 			<td class="no-border-bottom" rowspan="2" width="100px"><p>{{ old('gross_weight',$data->gross_weight) }}</p></td>
