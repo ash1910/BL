@@ -251,7 +251,7 @@
 				
 			</tr>
 			<tr>
-				<td class="no-border" colspan="2" style="height: 110px;">NOTIFY PARTY<br>
+				<td class="no-border" colspan="2" style="height: 100px;">NOTIFY PARTY<br>
 				<div>{{ old('notify_party',$data->notify_party) }}</div>
 			</td>
 
@@ -269,7 +269,7 @@
 						</tr>
 					
 						<tr>
-						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
+						<td class="no-border-rbl" colspan="3" rowspan="2" height="130px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
 						<div style="width: 130%">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</div>
 					</td>
 						</tr>
@@ -297,6 +297,7 @@
 				<td class="no-border-left">VOYAGE NO.<br>
 				<div>{{ old('voyage_no',$data->voyage_no) }}</div>
 			</td>
+
 	
 			</tr>
             <tr>
