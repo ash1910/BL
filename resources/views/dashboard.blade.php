@@ -89,6 +89,7 @@
 
 
         <li><a href="/dashboard"><i class="fa fa-circle-o text-aqua"></i> <span>Dashboard</span></a></li>
+        <li><a href="/account"><i class="fa fa-circle-o text-aqua"></i> <span>Account</span></a></li>
         <li><a href="/add"><i class="fa fa-circle-o text-green"></i> <span>Create BL</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

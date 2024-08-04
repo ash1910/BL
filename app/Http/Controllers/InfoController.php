@@ -212,4 +212,19 @@ class InfoController extends Controller
         return redirect()->route('dashboard')->with('status', 'BL Deleted Successfully');
       
     }
+
+    public function signin()
+    {
+        //
+        return view('login');
+    }
+
+    public function accountInfo()
+    {
+        //
+        return view('account');
+    }
+
+
 }
+

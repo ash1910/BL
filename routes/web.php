@@ -11,7 +11,9 @@ Route::get('/test1', function () {
 
 //index
 Route::get('/',[InfoController::class, 'index'])->name('dashboard');
-
+//Login
+Route::get('/login',[InfoController::class, 'signin'])->name('login');
+Route::get('/account',[InfoController::class, 'accountInfo'])->name('account');
 
 
 //CRUD
