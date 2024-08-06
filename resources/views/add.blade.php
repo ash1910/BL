@@ -236,6 +236,19 @@
         </style>
     </head>
 	<body>
+
+            <!-- Way 1: Display All Error Messages -->
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There is empty field!<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
 <div class="element">
 	<form action="{{ route('dashboard.store') }}" method="POST">
 	@csrf
