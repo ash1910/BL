@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SessionController;
 
 
 
@@ -11,9 +13,16 @@ Route::get('/test1', function () {
 
 //index
 Route::get('/',[InfoController::class, 'index'])->name('dashboard');
+//Route::get('/', [SessionController::class, 'create'])->name('login');
+
 //Login
-Route::get('/login',[InfoController::class, 'signin'])->name('login');
-Route::get('/account',[InfoController::class, 'accountInfo'])->name('account');
+//Route::get('/',[SessionController::class, 'index'])->name('dashboard.index');
+Route::get('/login', [SessionController::class, 'create'])->name('login.create');
+Route::post('/login', [SessionController::class, 'store'])->name('dashboard.store');
+//Route::get('/profile', [SessionController::class, 'store'])->middleware('login');
+Route::get('/account',[AuthController::class, 'accountInfo'])->name('account');
+Route::get('/registration',[AuthController::class, 'create'])->name('registration');
+Route::post('/registration',[AuthController::class, 'store'])->name('registration');
 
 
 //CRUD

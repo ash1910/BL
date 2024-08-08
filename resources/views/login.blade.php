@@ -103,12 +103,18 @@ h2 {
                 <!-- Login Form -->
                 <div class="login-form form-active">
                     <h2>Login</h2>
-                    <form action="#">
+                    <form action="{{ route('dashboard') }}" method="POST">
+                        @csrf
+                        @session('status')
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('status') }}
+                        </div>
+                        @endsession
                         <div class="textbox">
-                            <input type="text" placeholder="Email" required>
+                            <input type="text" name="email" placeholder="Email" required>
                         </div>
                         <div class="textbox">
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" name="passoword" placeholder="Password" required>
                         </div>
                         <input type="submit" class="btn" value="Login">
                     </form>

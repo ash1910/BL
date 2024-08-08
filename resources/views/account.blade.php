@@ -121,13 +121,10 @@
             <form action="#" class="info-form">
                 <h3>Account Information</h3>
                 <div class="textbox">
-                    <input type="text" placeholder="First Name" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                    <input type="text" placeholder="Last Name" required>
-                </div>
-                <div class="textbox">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
                 <input type="submit" class="btn" value="Update Information">
             </form>
@@ -136,13 +133,13 @@
             <form action="#" class="password-form">
                 <h3>Change Password</h3>
                 <div class="textbox">
-                    <input type="password" placeholder="Current Password" required>
+                    <input type="password" name="old_password" placeholder="Current Password" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" placeholder="New Password" required>
+                    <input type="password" name="new_password" placeholder="New Password" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" placeholder="Confirm New Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
                 </div>
                 <input type="submit" class="btn" value="Change Password">
             </form>

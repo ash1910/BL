@@ -213,18 +213,5 @@ class InfoController extends Controller
       
     }
 
-    public function signin()
-    {
-        //
-        return view('login');
-    }
-
-    public function accountInfo()
-    {
-        //
-        return view('account');
-    }
-
-
 }
 
