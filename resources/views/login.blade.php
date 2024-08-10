@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
 <style>
 body {
     margin: 0;
@@ -93,7 +94,7 @@ h2 {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Signup Page</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -103,8 +104,15 @@ h2 {
                 <!-- Login Form -->
                 <div class="login-form form-active">
                     <h2>Login</h2>
-                    <form action="{{ route('dashboard') }}" method="POST">
+                    <form action="{{ route('login.post') }}" method="POST">
                         @csrf
+                        @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                        </div>
+                        @endif
                         @session('status')
                         <div class="alert alert-danger" role="alert">
                             {{ session('status') }}
@@ -114,7 +122,7 @@ h2 {
                             <input type="text" name="email" placeholder="Email" required>
                         </div>
                         <div class="textbox">
-                            <input type="password" name="passoword" placeholder="Password" required>
+                            <input type="password" name="password" placeholder="Password" required>
                         </div>
                         <input type="submit" class="btn" value="Login">
                     </form>

@@ -9,6 +9,7 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
+		
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 		<!-- Include CKEditor 5 from CDN -->
 		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
@@ -236,9 +237,9 @@
         </style>
     </head>
 	<body>
-
-            <!-- Way 1: Display All Error Messages -->
-            @if ($errors->any())
+<div class="element">
+	            <!-- Display All Error Messages -->
+				@if ($errors->any())
                 <div class="alert alert-danger">
                     <strong>Whoops!</strong> There is empty field!<br><br>
                     <ul>
@@ -248,8 +249,7 @@
                     </ul>
                 </div>
             @endif
-
-<div class="element">
+			
 	<form action="{{ route('dashboard.store') }}" method="POST">
 	@csrf
 			<table>
