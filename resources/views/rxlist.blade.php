@@ -73,34 +73,6 @@
         </ul>
       </div>
     </nav>
-    @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('registration') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -184,7 +156,7 @@
                 <td>
                 <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
-                    <form action="{{ route('dashboard.destroy', $data->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>

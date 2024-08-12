@@ -17,7 +17,7 @@ class InfoController extends Controller
         //return view('dashboard');
 
         $data = Info::all();
-        return view('dashboard', ['datas' => $data]);
+        return view('list', ['datas' => $data]);
     }
 
     /**
@@ -102,7 +102,7 @@ class InfoController extends Controller
     
        ]);
 
-        return redirect('/dashboard')->with('status','BL Created Successfully');
+        return redirect('/list')->with('status','BL Created Successfully');
     }
 
     /**
@@ -209,8 +209,15 @@ class InfoController extends Controller
     {
         //
         $id->delete();
-        return redirect()->route('dashboard')->with('status', 'BL Deleted Successfully');
+        return redirect()->route('list')->with('status', 'BL Deleted Successfully');
       
+    }
+
+        //
+     public function profileInfo()
+    {
+            //
+        return view('profile');
     }
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Info;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -103,38 +104,25 @@ class AuthController extends Controller
      */
     public function postLogin(Request $request): RedirectResponse
     {   
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
    
-        $credentials = $request->only('email', 'password');
+        /*$credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard')
                         ->withSuccess('You have Successfully loggedin');
+        }*/
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('dashboard');
         }
   
         //return redirect("login")->withError('Oppes! You have entered invalid credentials');
         return redirect()->route('login')->withErrors(['email' => 'Oops! You have entered invalid credentials.',]);
     }
-
-    /*public function postLogin(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'email' => 'required|email', // Added email validation rule
-            'password' => 'required',
-        ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                             ->with('success', 'You have successfully logged in.');
-        }
-  
-        return redirect()->route('login')->withErrors([
-            'email' => 'Oops! You have entered invalid credentials.',
-        ]);
-    }*/
 
     /**
      * Write code on Method
@@ -147,7 +135,26 @@ class AuthController extends Controller
             return view('dashboard');
         }
   
-        return redirect("login")->withStatus('Oops! You do not have the Access!');
+        return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
+    }
+
+    /*public function list()
+    {
+        if(Auth::check()){
+            $data = Info::all(); // Fetch the data you want to pass to the view
+            return view('list', ['datas' => $data]);
+        }
+
+        return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
+    }*/
+
+    public function showLoginForm()
+    {
+        if (Auth::check()) {
+            return redirect('/dashboard'); // Adjust the route as needed
+        }
+
+        return view('login');
     }
       
     /**

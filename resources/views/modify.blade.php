@@ -237,7 +237,7 @@
     </head>
 	<body>
 <div class="element">
-	<form action="{{ route('dashboard.update', ['id' => $data->id]) }}" method="POST">
+	<form action="{{ route('list.update', ['id' => $data->id]) }}" method="POST">
 	@csrf
 	@method('PUT')
 			<table>

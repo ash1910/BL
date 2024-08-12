@@ -250,7 +250,7 @@
                 </div>
             @endif
 			
-	<form action="{{ route('dashboard.store') }}" method="POST">
+	<form action="{{ route('list.store') }}" method="POST">
 	@csrf
 			<table>
 			<tr>

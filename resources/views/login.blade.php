@@ -90,6 +90,14 @@ h2 {
     text-decoration: underline;
 }
 
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+    margin-bottom: 2%;
+}
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -98,6 +106,10 @@ h2 {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div>
+    <img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
+    <div>
     <div class="container">
         <div class="form-box">
             <div class="form-content">
