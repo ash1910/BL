@@ -170,7 +170,8 @@ class InfoController extends Controller
         $info->fill($input)->save();
 
 
-        return redirect()->route('dashboard')->with('status', 'BL Updated Successfully!');
+        //return redirect()->route('list')->with('status', 'BL Updated Successfully!');
+        return redirect('list')->with('status','BL Updated Successfully!');
 
     //     $info->update([
     //         'bl_number' => $request->bl_number,
@@ -209,7 +210,8 @@ class InfoController extends Controller
     {
         //
         $id->delete();
-        return redirect()->route('list')->with('status', 'BL Deleted Successfully');
+        //return redirect()->route('list')->with('status', 'BL Deleted Successfully!');
+        return redirect('list')->with('status','BL Deleted Successfully!');
       
     }
 
