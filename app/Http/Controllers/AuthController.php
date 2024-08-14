@@ -132,7 +132,9 @@ class AuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('dashboard');
+            $user_id = Auth::user()->id;
+            $user_name = Auth::user()->name;
+            return view('dashboard', compact('user_id', 'user_name'));
         }
   
         return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
@@ -177,6 +179,15 @@ class AuthController extends Controller
 
         return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
     }**/
+
+    //
+    public function profileInfo()
+    {
+        //
+        $user_name = Auth::user()->name;
+        $user_email = Auth::user()->email;
+        return view('profile', compact('user_name', 'user_email'));
+     }
     
     /**
      * Write code on Method

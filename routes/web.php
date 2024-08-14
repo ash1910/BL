@@ -43,7 +43,7 @@ Route::get('/add', [InfoController::class, 'create'])->name('add.create')->middl
 Route::post('/list', [InfoController::class, 'store'])->name('list.store')->middleware('auth');
 Route::delete('/list/{id}', [InfoController::class, 'destroy'])->name('list.destroy')->middleware('auth');
 
-Route::get('/profile',[InfoController::class, 'profileInfo'])->name('profile')->middleware('auth');
+Route::get('/profile',[AuthController::class, 'profileInfo'])->name('profile')->middleware('auth');
 
 
 Route::get('/modify/{id}', [InfoController::class, 'edit'])->name('modify.edit')->middleware('auth');

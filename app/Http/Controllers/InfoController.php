@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Info;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class InfoController extends Controller
 {
     /**
@@ -15,9 +17,11 @@ class InfoController extends Controller
         //
         
         //return view('dashboard');
+        $user_id = Auth::user()->id;
+        $user_name = Auth::user()->name;
 
         $data = Info::all();
-        return view('list', ['datas' => $data]);
+        return view('list', ['datas' => $data], compact('user_id', 'user_name'));
     }
 
     /**
@@ -213,13 +217,6 @@ class InfoController extends Controller
         //return redirect()->route('list')->with('status', 'BL Deleted Successfully!');
         return redirect('list')->with('status','BL Deleted Successfully!');
       
-    }
-
-        //
-     public function profileInfo()
-    {
-            //
-        return view('profile');
     }
 
 }

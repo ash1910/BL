@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Bill Of Lading | Create BL</title>
 		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
 		<script src="../../dist/js/addpopup.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 
@@ -231,12 +232,93 @@
 .text-huge {
 	font-size: 1.8em;
 }
-			
+.icon-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
 
+    .icon-button img {
+        width: 20px; /* Adjust size as needed */
+        height: 20px; /* Adjust size as needed */
+    }
+
+    .icon-button:focus {
+        outline: none; /* Remove default focus outline */
+    }
+
+	.icon-button:hover {
+  		transform: translateY(-1px);
+	}
+	.icon-button:active {
+		background-color: #F0F0F1;
+		border-color: rgba(0, 0, 0, 0.15);
+		box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+		color: rgba(0, 0, 0, 0.65);
+		transform: translateY(0);
+	}
+
+	.button-7 {
+		background-color: #0095ff;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+		box-sizing: border-box;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 1.15385;
+		margin: 0;
+		outline: none;
+		padding: 8px .8em;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		vertical-align: baseline;
+		white-space: nowrap;
+	}
+
+	.button-7:hover,
+	.button-7:focus {
+		background-color: #07c;
+	}
+
+	.button-7:focus {
+		box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+	}
+
+	.button-7:active {
+		background-color: #0064bd;
+		box-shadow: none;
+	}
+
+	.back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #0056b3;
+        }
+			
 					
         </style>
     </head>
 	<body>
+	<a href="/dashboard" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
 <div class="element">
 	            <!-- Display All Error Messages -->
 				@if ($errors->any())
@@ -254,11 +336,11 @@
 	@csrf
 			<table>
 			<tr>
-				<td class="no-border-left" colspan="2" style="height: 100px;">SHIPPER<br>
+				<td colspan="2" style="height: 100px;">SHIPPER<br>
 				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;" required></textarea>
 				</td>
 				
-				<td class="no-border-rtb" colspan="2">
+				<td class="no-border-bottom" colspan="3">
 					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
 				</td>
 
@@ -266,15 +348,14 @@
 
 			</tr>
 			<tr>
-				<td class="no-border" colspan="2" style="height: 100px; width: 300px;">CONSIGNEE<br>
+				<td colspan="2" style="height: 100px;">CONSIGNEE<br>
 				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;" required></textarea>
 			</td>
 
-				<td class="no-border-tr" colspan="2">
-						<table style="width: 300px;">
+				<td class="no-border-top" colspan="3">
+						<table style="width: 400px;">
 							<tr>
-								<td class="no-border-all" style="font-size: 14px; padding-top: 60px;"><b>OCEAN BILL OF LANDING</b></td>
-								<td class="no-border-all" colspan="2" style="width: 150px; font-size: 14px; padding-top: 60px;"><b>NON-NEGOTIABLE</b></td>
+								<td colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; padding-top: 70px;"><b>OCEAN BILL OF LANDING</b></td>
 							</tr>
 						</table>
 
@@ -282,25 +363,25 @@
 				
 			</tr>
 			<tr>
-				<td class="no-border" colspan="2" style="height: 110px;">NOTIFY PARTY<br>
+				<td colspan="2" style="height: 110px;">NOTIFY PARTY<br>
 				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;" required></textarea>
 			</td>
 
-				<td class="no-border-rb" colspan="3" rowspan="3">
+				<td colspan="3" rowspan="3">
 
-					<table style="width: 300px; height: 100px; margin: 0;">
+					<table style="width: 400px; height: 100px; margin: 0;">
 						<tr>
-						<td class="no-border" style="height: 35px;">DATE OF ISSUE<br>
+						<td class="no-border-left" style="height: 35px; width: 55%">DATE OF ISSUE<br>
 						<input id="date_of_issue" type="date" name="date_of_issue" style="width:87%; height: 60%;" required/>
 					</td>
-						<td class="no-border">B/L NUMBER<br>
+						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
 						<textarea id="bl_number" type="text" name="bl_number" style="width:100%;" required></textarea>
 					</td>
 						</tr>
 					
 						<tr>
 						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:159%; height: 97%;" required></textarea>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;" required></textarea>
 					</td>
 						</tr>
 
@@ -312,52 +393,57 @@
 	
 			</tr>
 			<tr>
-				<td class="no-border" style="height: 30px;">PLACE OF RECEIPT<br>
+				<td style="height: 30px; width: 203px;">PLACE OF RECEIPT<br>
 				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;" required></textarea>
 			</td>
-				<td class="no-border-left">PORT LOADING<br>
+				<td style="width: 207px;">PORT LOADING<br>
 				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;" required></textarea>
 			</td>
 				
 
 			</tr>
             <tr>
-				<td class="no-border" style="height: 30px;">OCEAN VESSEL<br>
+				<td style="height: 30px;">OCEAN VESSEL<br>
 				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;" required></textarea>
 			</td>
-				<td class="no-border-left">VOYAGE NO.<br>
+				<td>VOYAGE NO.<br>
 				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;" required></textarea>
 			</td>
 	
 			</tr>
             <tr>
-				<td class="no-border" style="height: 35px;">PORT OF DISCHARGE<br>
+				<td style="height: 35px;">PORT OF DISCHARGE<br>
 				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;" required></textarea>
 			</td>
-				<td class="no-border-left">FINAL DESTINATION<br>
+				<td>PLACE OF DELIVERY<br>
+				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;" required></textarea>
+			</td>
+
+			</td>
+				<td>FINAL DESTINATION<br>
 				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;" required></textarea>
 			</td>
-				<td class="no-border-right">FREIGHT PAYABLE AT<br>
-				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:50%;" required></textarea>
+				<td>FREIGHT PAYABLE AT<br>
+				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;" required></textarea>
 			</td>
-				<td class="no-border" colspan="2">NUMBER OF ORIGINAL B/L<br>
-				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:100%;" required></textarea>
+				<td width="150px">NUMBER OF ORIGINAL B/L<br>
+				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;" required></textarea>
 			</td>
 			</tr>
 			</table>
 			<table style="height: 470px;">
             <tr>
-				<td class="no-border-tl" style="height: 35px; text-align: center;">MARKS & NUMBER<br>CONTAINER & SEAL NUMBERS</td>
+				<td class="no-border-top" style="height: 35px; text-align: center;">MARKS & NUMBER<br>CONTAINER & SEAL NUMBERS</td>
 				<td class="no-border-top" style="height: 35px; text-align: center;">NO. OF<br>PACKAGES</td>
 				<td class="no-border-tb" style="height: 35px; text-align: center;">DESCRIPTION OF PACKAGES AND GOODS<br>PARTICULARS FURNISHED BY SHIPPER</td>
 				<td class="no-border-top" style="height: 35px; text-align: center;">GROSS WEIGHT<br>KILOS</td>
-                <td class="no-border-rtb" style="height: 35px; text-align: center;">MESUREMENT<br>CBM</td>
+                <td class="no-border-tb" style="height: 35px; text-align: center;">MESUREMENT<br>CBM</td>
 			</tr>
 
             <tr>
-			<td class="no-border-lb" rowspan="3" width="180px" height="420px">
+			<td class="no-border-bottom" rowspan="3" width="180px" height="420px">
 							<!-- Button to open the popup -->
-							<center><button id="openPopup" type="button">Add</button></center><br>
+							<center><button class="icon-button" id="openPopup" type="button" style="margin-left: 155px;"><img src="/icons/add-list.png" alt="Icon"></button></center>
 						
 							<!-- Popup Modal -->
 							<div id="popup" class="popup">
@@ -365,19 +451,19 @@
 									<span class="close-button" id="closePopup">&times;</span>
 									<h2>MARKS & NUMBER CONTAINER & SEAL NUMBERS</h2>
 									<textarea  class="ck-editor__editable_inline" id="editor"></textarea><br>
-									<button id="saveButton" type="button">Save</button>
-									<button id="closePopupButton" type="button">Close</button>
+									<button class="button-7" id="saveButton" type="button">Save</button>
+									<button class="button-7" id="closePopupButton" type="button">Close</button>
 								</div>
 							</div>
 							<input class="hidden" type="text" id="geteditor" name="marks_container_seal_no">
 			<!--<textarea readonly id="geteditor" type="text" name="marks_container_seal_no" style="width:96%; height: 87%;"></textarea>-->
 			<!--<div id="displayArea" style="width:96%; height: 87%;"></div>-->
 			
-			<div id="displayArea"></div>
+			<div id="displayArea" style="margin-top: -13px;"></div>
 			</td>
-			<td class="no-border-tb" rowspan="3" width="100px">
+			<td class="no-border-tb" rowspan="3" width="80px">
 							<!-- Button to open the popup -->
-							<center><button id="openPopup1" type="button">Add</button></center><br>
+							<center><button class="icon-button" id="openPopup1" type="button" style="margin-left: 75px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
 
 							<!-- Popup Modal -->
 							<div id="popup1" class="popup">
@@ -385,16 +471,16 @@
 									<span class="close-button" id="closePopup1">&times;</span>
 									<h2>MARKS & NUMBER CONTAINER & SEAL NUMBERS</h2>
 									<textarea  class="ck-editor__editable_inline" id="editor1"></textarea><br>
-									<button id="saveButton1" type="button">Save</button>
-									<button id="closePopupButton1" type="button">Close</button>
+									<button class="button-7" id="saveButton1" type="button">Save</button>
+									<button class="button-7" id="closePopupButton1" type="button">Close</button>
 								</div>
 							</div>
 							<input class="hidden" type="text" id="geteditor1" name="number_of_packages">
-							<div id="displayArea1"></div>
+							<div id="displayArea1" style="margin-top: -25px;"></div>
 			</td>
-			<td class="no-border-bottom" rowspan="3" width="260px">
+			<td class="no-border-bottom" rowspan="3" width="300px">
 							<!-- Button to open the popup -->
-							<center><button id="openPopup2" type="button">Add</button></center><br>
+							<center><button class="icon-button" id="openPopup2" type="button" style="margin-left: 235px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
 
 							<!-- Popup Modal -->
 							<div id="popup2" class="popup">
@@ -403,17 +489,17 @@
 									<h2>DESCRIPTION OF PACKAGES AND GOODS
 									PARTICULARS FURNISHED BY SHIPPER</h2>
 									<textarea  class="ck-editor__editable_inline" id="editor2"></textarea><br>
-									<button id="saveButton2" type="button">Save</button>
-									<button id="closePopupButton2" type="button">Close</button>
+									<button class="button-7" id="saveButton2" type="button">Save</button>
+									<button class="button-7" id="closePopupButton2" type="button">Close</button>
 								</div>
 							</div>
 							<input class="hidden" type="text" id="geteditor2" name="description_of_packages_and_goods">
-							<div id="displayArea2"></div>
+							<div id="displayArea2" style="margin-top: -26px;"></div>
 			</td>
-			<td class="no-border-bottom" width="100px">
+			<td class="no-border-bottom" width="80px">
 			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;" required></textarea>
 			</td>
-			<td class="no-border-rbl" rowspan="2" width="100px">
+			<td class="no-border-lb" rowspan="2" width="80px">
 			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;" required></textarea>
 			</td>		
 			</tr>
@@ -422,13 +508,13 @@
             <tr>
 			</tr>
 			
-			<tr>
+			<!--<tr>
                 <td class="no-border-rtb" colspan="2" style=" text-align: center;" style="width:100px; margin-bottom: 500px;"><u>ON BOARD DATE</u>
 				<br>
 				<input id="on_board_date" type="date" name="on_board_date" style="width:48%; height: 12%;" required/>
 				</td>
 			
-			</tr>
+			</tr>-->
 			</table>
 			<table>
 				<tr>
@@ -498,7 +584,7 @@
 								</table><br>
 
 				<div class="container">
-				<button type="submit">Create</button>
+				<button class="button-7" type="submit">Create</button>
 				</div>    
 </form>
 </div>

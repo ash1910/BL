@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Account</title>
+    <title>Bill Of Lading | User Profile</title>
     <link rel="stylesheet" href="account-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -116,15 +116,15 @@
     <a href="/dashboard" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
     <div class="container">
         <div class="account-box">
-            <h2>User Account</h2>
+            <h2>User Profile</h2>
             <!-- User Information Form -->
             <form action="#" class="info-form">
-                <h3>Account Information</h3>
+                <h3>Profile Information</h3>
                 <div class="textbox">
-                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="text" name="name" value="{{ $user_name }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" value="{{ $user_email }}" placeholder="Email" required>
                 </div>
                 <input type="submit" class="btn" value="Update Information">
             </form>
@@ -143,8 +143,10 @@
                 </div>
                 <input type="submit" class="btn" value="Change Password">
             </form>
-
-            <a href="logout.html" class="logout-btn">Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+            <button class="logout-btn">Logout</a>
+            </form>
         </div>
     </div>
 </body>
