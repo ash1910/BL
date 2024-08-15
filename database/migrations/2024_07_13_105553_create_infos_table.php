@@ -25,6 +25,7 @@ return new class extends Migration
             $table->ocean_vessel();
             $table->voyage_no();
             $table->port_of_discharge();
+            $table->place_of_delivery();
             $table->final_destionation();
             $table->freight_payable_at();
             $table->number_of_original_bl();
@@ -33,7 +34,11 @@ return new class extends Migration
             $table->description_of_packages_and_goods();
             $table->gross_weight();
             $table->measurement();
+            $table->shipped_on_board_the_vessel();
             $table->on_board_date();
+            $table->freight_and_charges();
+            $table->prepaid();
+            $table->collect();
         });
     }
 

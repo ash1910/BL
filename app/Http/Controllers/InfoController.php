@@ -70,6 +70,7 @@ class InfoController extends Controller
             'ocean_vessel' => 'required',
             'voyage_no' => 'required',
             'port_of_discharge' => 'required',
+            'place_of_delivery' => 'required',
             'final_destination' => 'required',
             'freight_payable_at' => 'required',
             'number_of_original_bl' => 'required',
@@ -78,7 +79,11 @@ class InfoController extends Controller
             'description_of_packages_and_goods' => 'required',
             'gross_weight' => 'required',
             'measurement' => 'required',
+            'shipped_on_board_the_vessel' => 'required',
             'on_board_date' => 'required',
+            'freight_and_charges' => 'required',
+            'prepaid' => 'required',
+            'collect' => 'required',
 
         ]);
 
@@ -102,7 +107,11 @@ class InfoController extends Controller
             'description_of_packages_and_goods' => $request->description_of_packages_and_goods,
             'gross_weight' => $request->gross_weight,
             'measurement' => $request->measurement,
+            'shipped_on_board_the_vessel' => $request->shipped_on_board_the_vessel,
             'on_board_date' => $request->on_board_date,
+            'freight_and_charges' => $request->freight_and_charges,
+            'prepaid' => $request->prepaid,
+            'collect' => $request->collect,
     
        ]);
 
@@ -145,7 +154,6 @@ class InfoController extends Controller
         
 
         $request->validate([
-
             'bl_number' => 'required',
             'shipper' => 'required',
             'consignee' => 'required',
@@ -157,6 +165,7 @@ class InfoController extends Controller
             'ocean_vessel' => 'required',
             'voyage_no' => 'required',
             'port_of_discharge' => 'required',
+            'place_of_delivery' => 'required',
             'final_destination' => 'required',
             'freight_payable_at' => 'required',
             'number_of_original_bl' => 'required',
@@ -165,7 +174,11 @@ class InfoController extends Controller
             'description_of_packages_and_goods' => 'required',
             'gross_weight' => 'required',
             'measurement' => 'required',
-            'on_board_date' => 'required'
+            'shipped_on_board_the_vessel' => 'required',
+            'on_board_date' => 'required',
+            'freight_and_charges' => 'required',
+            'prepaid' => 'required',
+            'collect' => 'required',
         ]);
     
 

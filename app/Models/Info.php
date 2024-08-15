@@ -21,6 +21,7 @@ class Info extends Model
         'ocean_vessel',
         'voyage_no',
         'port_of_discharge',
+        'place_of_delivery',
         'final_destination',
         'freight_payable_at',
         'number_of_original_bl',
@@ -29,6 +30,10 @@ class Info extends Model
         'description_of_packages_and_goods',
         'gross_weight',
         'measurement',
+        'shipped_on_board_the_vessel',
         'on_board_date',
+        'freight_and_charges',
+        'prepaid',
+        'collect',
     ];
 }

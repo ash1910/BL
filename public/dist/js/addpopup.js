@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('popup').style.display = 'none';
     });
 
+        // Close popup
+	document.getElementById('closePopup').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+      });
+  
+
 	//Save content from CKEditor to textarea
 	saveButton = document.getElementById('saveButton').addEventListener('click', async () => {
     try {
@@ -78,6 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('popup1').style.display = 'none';
     });
 
+    // Close popup
+	document.getElementById('closePopup1').addEventListener('click', function() {
+        document.getElementById('popup1').style.display = 'none';
+    });
+
 	//Save content from CKEditor to textarea
 	document.getElementById('saveButton1').addEventListener('click', async () => {
     try {
@@ -125,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close popup
 	document.getElementById('closePopupButton2').addEventListener('click', function() {
       document.getElementById('popup2').style.display = 'none';
+    });
+
+    // Close popup
+	document.getElementById('closePopup2').addEventListener('click', function() {
+        document.getElementById('popup2').style.display = 'none';
     });
 
 	//Save content from CKEditor to textarea

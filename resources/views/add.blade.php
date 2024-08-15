@@ -340,8 +340,9 @@
 				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;" required></textarea>
 				</td>
 				
-				<td class="no-border-bottom" colspan="3">
+				<td class="no-border-bottom" colspan="3" rowspan="2">
 					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
+					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LANDING</b></div>
 				</td>
 
 				
@@ -351,15 +352,6 @@
 				<td colspan="2" style="height: 100px;">CONSIGNEE<br>
 				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;" required></textarea>
 			</td>
-
-				<td class="no-border-top" colspan="3">
-						<table style="width: 400px;">
-							<tr>
-								<td colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; padding-top: 70px;"><b>OCEAN BILL OF LANDING</b></td>
-							</tr>
-						</table>
-
-				</td>
 				
 			</tr>
 			<tr>
@@ -480,7 +472,7 @@
 			</td>
 			<td class="no-border-bottom" rowspan="3" width="300px">
 							<!-- Button to open the popup -->
-							<center><button class="icon-button" id="openPopup2" type="button" style="margin-left: 235px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
+							<center><button class="icon-button" id="openPopup2" type="button" style="margin-left: 280px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
 
 							<!-- Popup Modal -->
 							<div id="popup2" class="popup">
@@ -518,37 +510,45 @@
 			</table>
 			<table>
 				<tr>
-					<td class="no-border-lb" style="width: 366px; font-size: 7px; text-align: justify;"><b>LAW AND JURIDICTION CLAUSE<br>THE CONTRACT EVIDENCED BY OR CONTAINED IN THIS BILL OF LADING SHALL BE GOVERNED BY THE LAW OF SINGAPORE AND NAY CLAIM OR DISPUTE ARISING HEREUNDER OR IN CONNECTION HEREWITH SHALL (WITHOUT PREJUDICE TO THE CARRIER RIGHT TO COMMENCE PROCEEDINGS IN ANY OTHER JURISDICTION) BE SUBJECT TO THE JURISDICTION OF THE COURTS OF SINGAPORE <br>NOTE:<br>THE MERCHANTS ATTENTION IS CALLED TO THE FACT THAT ACCORDING TO CLAUSES 10, 11 AND 12 OF THIS BILL OF LADING, THE LIABILITY OF THE CARRIER IS, IN MOST CASES, LIMITED IN RESPECT OF LOSS OF OR DAMAGE TO THE GOODS AND DELAY.<br>"APPLICABLE ONLY WHEN DOCUMENT USED AS A THROUGH B/L</b></td>
+					<td>SHIPPED ON BOARD THE VESSEL<br>
+					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;" required></textarea></div>
+					<hr style="border-top: dotted 1px;"/>
+					<p>DATED <input id="on_board_date" type="date" name="on_board_date" style="width:25%; height: 8%;"/></p>
+				
+				</td>
 						
-										<td class="no-border-right" rowspan="3">
-										<table style="width: 423px; margin: 0;">
+									<td rowspan="3">
+										<table style="width: 345px; margin: 0;">
+												<tr>
+													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b><br>
+													<div style="margin-top: 95px;">
+														<hr style="border-top: dotted 1px;"/>
+													<div style="text-align: center; font-size: 12px;"><b>For HNS Internaional</b></div>
+												
+												</td>
+												</tr>														
+										</table>
 
-														<tr>
-														<td class="no-border" style="text-align: center; font-size: 14px;"><b>HNS INTERNATIONAL</b></td>
-														</tr> 
-
-														<tr>
-														<td class="no-border-right" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b></td>
-														</tr>
-														
-
-													</table>
-
-										</td>
-							
-
+									</td>
 				</tr>
 
 						<tr>
-							<td class="no-border-left" style="margin: 0;">
-							<table style="width: 354.2px;">
-							<tr>
-									<td class="no-border-left" style="width: 50px; text-align: center;">FREIGHT AND<br>DISBURSEMENTS</td>
-									<td style="width: 70px; text-align: center;">RATE AT<br>1 CBM </td>
-									<td style="width: 60px; text-align: center;">PREPAID</td>
-									<td class="no-border-right" style="width: 60px; text-align: center;">COLLECT</td>
-							</tr>
-							</table>
+							<td style="margin: 0;">
+								<table style="width: 430px;">
+								<tr>
+										<td class="no-border-left" style="width: 80px; text-align: center;">FREIGHT AND CHARGES</td>
+										<td style="width: 60px; text-align: center;">PREPAID</td>
+										<td class="no-border-right" style="width: 60px; text-align: center;">COLLECT</td>
+								</tr>
+
+								<tr>
+								
+									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;" required></textarea></td>
+									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;" required></textarea></td>
+									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;" required></textarea></td>
+							
+								</tr>
+								</table>
 							</td>
 						</tr>
 
@@ -556,32 +556,7 @@
 
  
 				
-			</table>
-
-
-
-								<table class="no-border-rtl" style="width: 800px; height: 30px;">
-
-									<tr>
-									<td class="no-border-tl" style="width: 77px; height: 50px">&nbsp;</td>
-									<td class="no-border-top" style="width: 70px;">&nbsp;</td>
-									<td class="no-border-top" style="width: 60px;">&nbsp;</td>
-									<td class="no-border-top" style="width: 60px;">&nbsp;</td>
-									<td class="no-border-rtb" style="text-align: center; width: 354.2px; font-size: 12px"><b>HNS INTERNATIONAL</b></td>
-									
-									</tr>
-
-									<tr>
-									<td class="no-border-left" style="text-align: center;">TOTAL:</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td>&nbsp;</td>
-									<td class="no-border-tr" style="text-align: center;">AS AGENT FOR CARRIER HNS INTERNATIONAL</td>
-									</tr>
-												
-									
-									
-								</table><br>
+			</table><br>
 
 				<div class="container">
 				<button class="button-7" type="submit">Create</button>

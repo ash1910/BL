@@ -214,6 +214,26 @@
 	.text-huge {
 		font-size: 1.8em;
 	}
+
+	.column {
+	float: left;
+	width: 33.33%;
+	padding-top: 20px;
+	padding-left: 15px;
+	}
+	.column1 {
+	float: left;
+	width: 53.33%;
+	padding: 10px;
+	padding-left: 20px;
+	}
+
+	/* Clearfix (clear floats) */
+	.row::after {
+	content: "";
+	clear: both;
+	display: table;
+	}
 					
         </style>
     </head>
@@ -227,8 +247,21 @@
 				<td colspan="2" style="height: 90px; width: 100px;" >SHIPPER<br>
 				<div>{{ old('shipper',$data->shipper) }}</div>
 				
-				<td class="no-border-bottom" colspan="3">
-					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
+				<td class="no-border-bottom" colspan="3" rowspan="2">
+					<p class="row">
+						<div class="column">
+							<img src="/images/HNS-Internaional-Logo.png" style="height: 50px; width: 140px;"></img>
+						</div>
+						<p class="column1">
+						<b style="font-size: 16px;">HNS INTERNATIONAL</b><br>
+						<b>Corporate Office:</b> Police Plaza Concord
+						Level #07, Plot #02, Road #144, Gulshan C/A, <br>Dhaka - 1212.
+						Tel: +880 2 55045148-9.<br>
+						Email: info@hns-international.com.<br>Web: www.hns-international.com
+
+						</p>
+					</p>
+					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>OCEAN BILL OF LANDING</b></div>
 				</td>
 
 				
@@ -239,14 +272,14 @@
 				<div>{{ old('consignee',$data->consignee) }}</div>
 			</td>
 
-				<td class="no-border-top" colspan="3">
+				<!--<td class="no-border-top" colspan="3">
 						<table style="width: 400px;">
 							<tr>
 								<td class="no-border-all" style="text-align: center; font-size: 14px; padding-top: 60px;"><b>OCEAN BILL OF LANDING</b></td>
 							</tr>
 						</table>
 
-				</td>
+				</td>-->
 				
 			</tr>
 			<tr>
@@ -350,16 +383,22 @@
 			</table>
 			<table>
 				<tr>
-					<td>SHIPPED ON BOARD THE VESSEL
-					<hr style="border-top: dotted 1px;" />
+					<td>SHIPPED ON BOARD THE VESSEL<br>
+					<div>{{ old('shipped_on_board_the_vessel',$data->shipped_on_board_the_vessel) }}</div>
+					<hr style="border-top: dotted 1px;"/>
 					<p>DATED <input readonly id="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" type="date" name="on_board_date" style="width:87%; height: 5%;"/></p>
 				
 				</td>
 						
 									<td rowspan="3">
-										<table style="width: 340px; margin: 0;">
+										<table style="width: 345px; margin: 0;">
 												<tr>
-													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b></td>
+													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b><br>
+													<div style="margin-top: 95px;">
+														<hr style="border-top: dotted 1px;"/>
+													<div style="text-align: center; font-size: 12px;"><b>For HNS Internaional</b></div>
+												
+												</td>
 												</tr>														
 										</table>
 
@@ -377,9 +416,9 @@
 
 								<tr>
 								
-									<td class="no-border-tl" style="width: 50px; height: 100px">&nbsp;</td>
-									<td class="no-border-top" style="width: 60px;">&nbsp;</td>
-									<td class="no-border-tr" style="width: 60px;">&nbsp;</td>
+									<td class="no-border-tl" style="width: 50px; height: 120px"><p>{{ old('freight_and_charges',$data->freight_and_charges) }}</p></td>
+									<td class="no-border-top" style="width: 60px;"><p>{{ old('prepaid',$data->prepaid) }}</p></td>
+									<td class="no-border-tr" style="width: 60px;"><p>{{ old('collect',$data->collect) }}</p></td>
 							
 								</tr>
 								</table>
