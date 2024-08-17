@@ -316,7 +316,7 @@
 				<td style="height: 30px; width:210px;">PLACE OF RECEIPT<br>
 				<div>{{ old('place_of_receipt',$data->place_of_receipt) }}</div>
 			</td>
-				<td style="width: 203px;">PORT LOADING<br>
+				<td style="width: 180.3px;">PORT LOADING<br>
 				<div>{{ old('port_of_loading',$data->port_of_loading) }}</div>
 			</td>
 				
@@ -326,7 +326,7 @@
 				<td style="height: 30px;">OCEAN VESSEL<br>
 				<div>{{ old('ocean_vessel',$data->ocean_vessel) }}</div>
 			</td>
-				<td>VOYAGE NO.<br>
+				<td style="width: 180.3x;">VOYAGE NO.<br>
 				<div>{{ old('voyage_no',$data->voyage_no) }}</div>
 			</td>
 
@@ -337,7 +337,7 @@
 				<div>{{ old('port_of_discharge',$data->port_of_discharge) }}</div>
 			</td>
 				<td>PLACE OF DELIVERY<br>
-				<div>{{ old('place_of_delivery',$data->place_of_delivery) }}</div>
+				<div style="width: 180.3px;">{{ old('place_of_delivery',$data->place_of_delivery) }}</div>
 			</td>
 				<td>FINAL DESTINATION<br>
 				<div>{{ old('final_destination',$data->final_destination) }}</div>
@@ -345,7 +345,7 @@
 				<td>FREIGHT PAYABLE AT<br>
 				<div>{{ old('freight_payable_at',$data->freight_payable_at) }}</div>
 			</td>
-				<td width="150px">NUMBER OF ORIGINAL B/L<br>
+				<td width="140px">NUMBER OF ORIGINAL B/L<br>
 				<div>{{ old('number_of_original_bl',$data->number_of_original_bl) }}</div>
 			</td>
 			</tr>

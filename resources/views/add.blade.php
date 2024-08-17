@@ -418,7 +418,7 @@
 				<td>FREIGHT PAYABLE AT<br>
 				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;" required></textarea>
 			</td>
-				<td width="150px">NUMBER OF ORIGINAL B/L<br>
+				<td width="140px">NUMBER OF ORIGINAL B/L<br>
 				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;" required></textarea>
 			</td>
 			</tr>
@@ -559,7 +559,7 @@
 			</table><br>
 
 				<div class="container">
-				<button class="button-7" type="submit">Create</button>
+				<button class="button-7" type="submit">Save</button>
 				</div>    
 </form>
 </div>
