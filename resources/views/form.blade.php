@@ -293,7 +293,6 @@
 						<tr>
 						<td class="no-border-left" style="height: 35px; width: 100px;">DATE OF ISSUE<br>
 						<input readonly id="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" type="date" name="date_of_issue" style="width:87%; height: 30%;"/>
-                        <!--<p>{{ old('date_of_issue',$data->date_of_issue) }}</p>-->
 					</td>
 						<td class="no-border" style="width: 100px;">B/L NUMBER<br>
 						<div>{{ old('bl_number',$data->bl_number) }}</div>
