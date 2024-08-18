@@ -31,6 +31,9 @@
             display: inline-block;
         }
 </style>
+<!-- Bootstrap Icons CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -290,7 +293,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
       <li><a href="/dashboard"><i class="fa fa-circle-o text-aqua"></i><span> Dashboard</span></a></li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>BL Management</span>
             <span class="pull-right-container">
@@ -298,12 +301,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/list"><i class="fa fa-circle-o"></i> BL List</a></li>
+            <li><a href="/list"><i class="fa fa-circle-o"></i> BL List</a></li>
             <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>User Management</span>
             <span class="pull-right-container">
@@ -311,7 +314,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/users"><i class="fa fa-circle-o"></i> Users</a></li>
+            <li class="active"><a href="/users"><i class="fa fa-circle-o"></i> Users</a></li>
             <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
           </ul>
         </li>
@@ -325,11 +328,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Bill Of Lading
+        User List
       </h1>
       <ol class="breadcrumb">
         <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Bl List</li>
+        <li class="active">User List</li>
       </ol>
     </section>
 
@@ -344,35 +347,39 @@
         @endsession
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">BL Reports</h3>
+              <h3 class="box-title">Users</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>BL Number</th>
-                  <!--<th>Shipper</th>-->
-                  <th>Issue Date</th>
-                  <th>On Board Date</th>
-                  <th>Port Of Discharge</th>
-                  <th>Final Destination</th>
-                  <th>Freight Payable At</th>
-                  <th>Number Of Original BL</th>
-                  <th></th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Creation Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($datas as $data)
                 <tr>
-                <td>{{ $data->bl_number }}</td>
-                <!--<td>{{ $data->shipper }}</td>-->
-                <td>{{ $data->date_of_issue }}</td>
-                <td>{{ $data->on_board_date }}</td>
-                <td>{{ $data->port_of_discharge }}</td>
-                <td>{{ $data->final_destination }}</td>
-                <td>{{ $data->freight_payable_at }}</td>
-                <td>{{ $data->number_of_original_bl }}</td>
+                <td>{{ $data->id }}</td>
+                <td>{{ $data->name }}</td>
+                <td>{{ $data->email }}</td>
+                <td>{{ $data->created_at }}</td>
+                <td>
+                    <center>
+                    @if ($data->status === 1)
+                        <i class="bi bi-check-circle-fill fa-lg text-success status-icon" title="Active"></i>
+                    @elseif ($data->status === 0)
+                        <i class="bi bi-x-circle-fill fa-lg text-warning status-icon" title="Inactive"></i>
+                    @else
+                        <span class="text-muted">Unknown</span>
+                    @endif
+                    </center>
+                </td>
                 <td>
                 <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
@@ -381,7 +388,6 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
-                    <a href="{{ route('form.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-info btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>
                 @endforeach
@@ -615,24 +621,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script>
-        function printPage(event) {
-            // Prevent the default link behavior
-            event.preventDefault();
-            
-            // URL of the page to print
-            var printUrl = event.currentTarget.href;
-            
-            // Open a new window with the URL
-            var printWindow = window.open(printUrl, '_blank');
-            
-            // Wait for the new window to fully load
-            printWindow.onload = function() {
-                // Trigger the print dialog
-                printWindow.print();
-            };
-        }
-    </script>
 <!-- page script -->
 <script>
   $(function () {

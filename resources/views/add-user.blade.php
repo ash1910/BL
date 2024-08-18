@@ -38,7 +38,6 @@
             flex-direction: column;
         }
 
-
         h2 {
             margin-bottom: 20px;
             color: #333;
@@ -71,6 +70,14 @@
         .btn:hover {
             background-color: #0056b3;
         }
+
+        .status-group {
+            margin-bottom: 15px;
+        }
+
+        .status-group label {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -80,14 +87,15 @@
                 <!-- Signup Form -->
                 <div class="signup-form">
                     <h2>Add User</h2>
-                    <form action="{{ route('registration') }}" method="POST">
-                    @csrf
+                    <form action="{{ route('add-user') }}" method="POST">
+                        @csrf
 
-                    @session('status')
-                        <div class="alert alert-success" role="alert"> 
-                        {{ session('status') }}
-                        </div>
-                    @endsession <br>
+                        @session('status')
+                            <div class="alert alert-success" role="alert"> 
+                                {{ session('status') }}
+                            </div>
+                        @endsession <br>
+
                         <div class="textbox">
                             <input type="text" name="name" placeholder="Full Name" required>
                         </div>
@@ -98,8 +106,22 @@
                             <input type="password" name="password" placeholder="Password" required>
                         </div>
                         <div class="textbox">
-                            <input type="password" name="password_confirmation" type="password_confirmation" placeholder="Confirm Password" required>
+                            <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
                         </div>
+
+                        <!-- Status Selection -->
+                        <div class="status-group">
+                            <label>Status:</label>
+                            <div>
+                                <label>
+                                    <input type="radio" name="status" value="1" required> Active
+                                </label>
+                                <label>
+                                    <input type="radio" name="status" value="0" required> Inactive
+                                </label>
+                            </div>
+                        </div>
+
                         <input type="submit" class="btn" value="Add User">
                     </form>
                 </div>

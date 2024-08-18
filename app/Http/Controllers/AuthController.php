@@ -13,6 +13,21 @@ use Illuminate\Http\RedirectResponse;
 
 class AuthController extends Controller
 {
+
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function showUsers()
+    {
+        //
+        
+        //return view('dashboard');
+        $user_name = Auth::user()->name;
+
+        $data = User::all();
+        return view('users', ['datas' => $data], compact('user_name'));
+    }
     //
     public function accountInfo()
     {
@@ -25,9 +40,9 @@ class AuthController extends Controller
      *
      * @return response()
      */
-    public function registration(): view
+    public function addUser(): view
     {
-        return view('registration');
+        return view('add-user');
     }
       
 
@@ -60,6 +75,7 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'status' => 'required',
         ]);
            
         $udata = $request->all();
@@ -80,7 +96,8 @@ class AuthController extends Controller
       return User::create([
         'name' => $udata['name'],
         'email' => $udata['email'],
-        'password' => Hash::make($udata['password'])
+        'password' => Hash::make($udata['password']),
+        'status' => $udata['status'],
       ]);
       
     }
@@ -134,7 +151,13 @@ class AuthController extends Controller
         if(Auth::check()){
             $user_id = Auth::user()->id;
             $user_name = Auth::user()->name;
-            return view('dashboard', compact('user_id', 'user_name'));
+
+            // Get the total number of rows
+            $totalBL = Info::count();
+            $totalUser = User::count();
+        
+
+            return view('dashboard', compact('user_id', 'user_name', 'totalBL', 'totalUser'));
         }
   
         return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');

@@ -33,8 +33,9 @@ Route::get('login', function () {
 
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard');
-Route::get('/registration',[AuthController::class, 'registration'])->name('registration');
-Route::post('/registration',[AuthController::class, 'postRegistration'])->name('registration.post');
+Route::get('/add-user',[AuthController::class, 'addUser'])->name('add-user');
+Route::post('/add-user',[AuthController::class, 'postRegistration'])->name('add-user.post');
+Route::get('/users',[AuthController::class, 'showUsers'])->name('users');
 
 
 //CRUD

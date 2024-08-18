@@ -124,7 +124,7 @@
                     <input type="text" name="name" value="{{ $user_name }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                    <input type="email" name="email" value="{{ $user_email }}" placeholder="Email" required>
+                    <input readonly type="email" name="email" value="{{ $user_email }}" placeholder="Email">
                 </div>
                 <input type="submit" class="btn" value="Update Information">
             </form>
