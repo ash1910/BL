@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -18,16 +19,25 @@ class AuthController extends Controller
     /**
      * Display a listing of the resource.
      */
+    // public function showUsers()
+    // {
+    //     //
+        
+    //     //return view('dashboard');
+    //     $user_name = Auth::user()->name;
+
+    //     $data = User::all();
+    //     return view('users', ['datas' => $data], compact('user_name'));
+    // }
     public function showUsers()
     {
-        //
-        
-        //return view('dashboard');
-        $user_name = Auth::user()->name;
-
-        $data = User::all();
-        return view('users', ['datas' => $data], compact('user_name'));
+    $user = Auth::user();
+    $data = User::all();
+    
+    // Return the view with the user's data
+    return view('users', ['datas' => $data, 'user' => $user]);
     }
+
     //
     public function accountInfo()
     {
@@ -74,7 +84,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
             'status' => 'required',
         ]);
            
@@ -204,13 +214,64 @@ class AuthController extends Controller
     }**/
 
     //
-    public function profileInfo()
+    public function profileEdit()
     {
         //
-        $user_name = Auth::user()->name;
-        $user_email = Auth::user()->email;
-        return view('profile', compact('user_name', 'user_email'));
+    // Retrieve the authenticated user's information
+    $user = Auth::user();
+    
+    // Return the view with the user's data
+    return view('profile', ['user' => $user]);
      }
+
+     public function userEdit(User $id)
+     {
+         //
+         return view('user-profile', ['data' => $id]); 
+      }
+
+
+      public function userUpdate(Request $request, $id)
+      {
+        // Find the user or fail if not found
+        $user = User::findOrFail($id);
+
+        // Validate the request
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'status' => 'required',
+        ]);
+
+        // Update user details
+        $user->update($request->only(['name', 'email', 'status']));
+
+        // Redirect with success message
+        return Redirect::route('user-profile.update', $id)->with('success', 'User Updated Successfully.');
+
+      }
+
+      public function profileUpdate(Request $request, $id)
+      {
+
+       
+        // Find the user or fail if not found
+        $user = Auth::user();
+
+        // Validate the request
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+        ]);
+
+        // Update user details
+        $user->update($request->only(['name', 'email']));
+
+        // Redirect with success message
+        return Redirect::route('profile.update', $id)->with('success', 'Profile Updated Successfully.');
+    
+
+      }
     
     /**
      * Write code on Method

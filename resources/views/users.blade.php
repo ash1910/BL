@@ -253,14 +253,14 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">{{ $user_name }}</span>
+              <span class="hidden-xs">{{ old('name',$user->name) }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header" style="height: 85px;">
 
                 <p>
-                {{ $user_name }}
+                {{ old('name',$user->name) }}
                 </p>
               </li>
               <!-- Menu Body -->
@@ -381,8 +381,7 @@
                     </center>
                 </td>
                 <td>
-                <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
+                <a href="{{ route('user-profile.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                     <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
                                             @csrf
                                             @method('DELETE')

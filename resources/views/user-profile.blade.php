@@ -118,32 +118,41 @@
     <a href="/dashboard" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
     <div class="container">
         <div class="account-box">
-            <h2>Profile</h2>
+            <h2>User Profile</h2>
             @session('success')
                 <div class="alert alert-success" role="alert">
                     {{ session('success') }}
                 </div>
-            @endsession  
+            @endsession   
             <!-- User Information Form -->
             <form action="{{ route('profile.update', ['id' => $user->id]) }}" method="POST" class="info-form">
-                @csrf
-                @method('PUT')
+            @csrf
+            @method('PUT') 
                 <h3>Profile Information</h3>
                 <div class="textbox">
-                <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$user->name) }}" placeholder="Full Name" required>
+                <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$data->name) }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                <label>Email:</label><input readonly type="email" name="email" value="{{ old('name',$user->email) }}" placeholder="Email">
+                <label>Email:</label><input type="email" name="email" value="{{ old('email',$data->email) }}" placeholder="Email">
                 </div>
+                <!-- Status Selection -->
+                <div class="status-group">
+                <label>Status:</label>
+                <div>
+                    <label>
+                        <input type="radio" name="status" value="1" {{ old('status', $data->status) == '1' ? 'checked' : '' }} required> Active
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="0" {{ old('status', $data->status) == '0' ? 'checked' : '' }} required> Inactive
+                    </label>
+                </div>
+                </div><br>
                 <input type="submit" class="btn" value="Update Information">
             </form>
 
             <!-- Change Password Form -->
             <form action="#" class="password-form">
                 <h3>Change Password</h3>
-                <div class="textbox">
-                    <input type="password" name="old_password" placeholder="Current Password" required>
-                </div>
                 <div class="textbox">
                     <input type="password" name="new_password" placeholder="New Password" required>
                 </div>

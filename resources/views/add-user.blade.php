@@ -17,13 +17,6 @@
             height: 100vh;
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
         .form-box {
             width: 360px;
             padding: 20px;
@@ -41,6 +34,7 @@
         h2 {
             margin-bottom: 20px;
             color: #333;
+            text-align: center;
         }
 
         .textbox {
@@ -81,51 +75,47 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <div class="form-content">               
-                <!-- Signup Form -->
-                <div class="signup-form">
-                    <h2>Add User</h2>
-                    <form action="{{ route('add-user') }}" method="POST">
-                        @csrf
+    <div class="form-box">
+        <div class="form-content">               
+            <!-- Signup Form -->
+            <h2>Add User</h2>
+            <form action="{{ route('add-user') }}" method="POST">
+                @csrf
 
-                        @session('status')
-                            <div class="alert alert-success" role="alert"> 
-                                {{ session('status') }}
-                            </div>
-                        @endsession <br>
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert"> 
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-                        <div class="textbox">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="textbox">
-                            <input type="email" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="textbox">
-                            <input type="password" name="password" placeholder="Password" required>
-                        </div>
-                        <div class="textbox">
-                            <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
-                        </div>
-
-                        <!-- Status Selection -->
-                        <div class="status-group">
-                            <label>Status:</label>
-                            <div>
-                                <label>
-                                    <input type="radio" name="status" value="1" required> Active
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="0" required> Inactive
-                                </label>
-                            </div>
-                        </div>
-
-                        <input type="submit" class="btn" value="Add User">
-                    </form>
+                <div class="textbox">
+                    <input type="text" name="name" placeholder="Full Name" required>
                 </div>
-            </div>
+                <div class="textbox">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+                </div>
+
+                <!-- Status Selection -->
+                <div class="status-group">
+                    <label>Status:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="status" value="1" required> Active
+                        </label>
+                        <label>
+                            <input type="radio" name="status" value="0" required> Inactive
+                        </label>
+                    </div>
+                </div>
+
+                <input type="submit" class="btn" value="Add User">
+            </form>
         </div>
     </div>
 </body>
