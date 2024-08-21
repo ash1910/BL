@@ -124,26 +124,33 @@
                     {{ session('success') }}
                 </div>
             @endsession   
+            @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </div>
+            @endif
             <!-- User Information Form -->
-            <form action="{{ route('profile.update', ['id' => $user->id]) }}" method="POST" class="info-form">
+            <form action="{{ route('user-profile.update', ['id' => $user->id]) }}" method="POST" class="info-form">
             @csrf
             @method('PUT') 
                 <h3>Profile Information</h3>
                 <div class="textbox">
-                <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$data->name) }}" placeholder="Full Name" required>
+                <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$user->name) }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                <label>Email:</label><input type="email" name="email" value="{{ old('email',$data->email) }}" placeholder="Email">
+                <label>Email:</label><input type="email" name="email" value="{{ old('email',$user->email) }}" placeholder="Email">
                 </div>
                 <!-- Status Selection -->
                 <div class="status-group">
                 <label>Status:</label>
                 <div>
                     <label>
-                        <input type="radio" name="status" value="1" {{ old('status', $data->status) == '1' ? 'checked' : '' }} required> Active
+                        <input type="radio" name="status" value="1" {{ old('status', $user->status) == '1' ? 'checked' : '' }} required> Active
                     </label>
                     <label>
-                        <input type="radio" name="status" value="0" {{ old('status', $data->status) == '0' ? 'checked' : '' }} required> Inactive
+                        <input type="radio" name="status" value="0" {{ old('status', $user->status) == '0' ? 'checked' : '' }} required> Inactive
                     </label>
                 </div>
                 </div><br>
@@ -151,13 +158,15 @@
             </form>
 
             <!-- Change Password Form -->
-            <form action="#" class="password-form">
+            <form action="{{ route('user-profile.update.password', ['id' => $user->id]) }}" method="POST" class="password-form">
+                @csrf
+                @method('PUT')
                 <h3>Change Password</h3>
                 <div class="textbox">
-                    <input type="password" name="new_password" placeholder="New Password" required>
+                    <input type="password" name="password" placeholder="New Password" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+                    <input type="password" name="password_confirmation" placeholder="Confirm New Password" required>
                 </div>
                 <input type="submit" class="btn" value="Change Password">
             </form>

@@ -123,7 +123,14 @@
                 <div class="alert alert-success" role="alert">
                     {{ session('success') }}
                 </div>
-            @endsession  
+            @endsession 
+            @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </div>
+            @endif
             <!-- User Information Form -->
             <form action="{{ route('profile.update', ['id' => $user->id]) }}" method="POST" class="info-form">
                 @csrf
@@ -139,16 +146,18 @@
             </form>
 
             <!-- Change Password Form -->
-            <form action="#" class="password-form">
+            <form action="{{ route('profile.update.password', ['id' => $user->id]) }}" method="POST" class="password-form">
+                @csrf
+                @method("PUT")
                 <h3>Change Password</h3>
                 <div class="textbox">
-                    <input type="password" name="old_password" placeholder="Current Password" required>
+                    <input type="password" name="current_password" placeholder="Current Password" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" name="new_password" placeholder="New Password" required>
+                    <input type="password" name="password" placeholder="New Password" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+                    <input type="password" name="password_confirmation" placeholder="Confirm New Password" required>
                 </div>
                 <input type="submit" class="btn" value="Change Password">
             </form>

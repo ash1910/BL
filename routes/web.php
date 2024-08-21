@@ -36,11 +36,16 @@ Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard')
 Route::get('/add-user',[AuthController::class, 'addUser'])->name('add-user');
 Route::post('/add-user',[AuthController::class, 'postRegistration'])->name('add-user.post');
 Route::get('/users',[AuthController::class, 'showUsers'])->name('users.index');
-Route::get('/user-profile/{id}',[AuthController::class, 'userEdit'])->name('user-profile.edit');
-Route::put('/user-profile/{id}',[AuthController::class, 'userUpdate'])->name('user-profile.update');
 
+//User Edit
+Route::get('/user-profile/{id}',[AuthController::class, 'userEdit'])->name('user-profile.edit');
+Route::put('/user-profile/user-update/{id}',[AuthController::class, 'userUpdate'])->name('user-profile.update');
+Route::put('/user-profile/user-password-update/{id}',[AuthController::class, 'userpassUpdate'])->name('user-profile.update.password');
+
+//Profile Edit
 Route::get('/profile',[AuthController::class, 'profileEdit'])->name('profile.edit')->middleware('auth');
-Route::put('/profile/{id}',[AuthController::class, 'profileUpdate'])->name('profile.update')->middleware('auth');
+Route::put('/profile/profile-update/{id}',[AuthController::class, 'profileUpdate'])->name('profile.update')->middleware('auth');
+Route::put('/profile/profile-password-update/{id}',[AuthController::class, 'profilepassUpdate'])->name('profile.update.password')->middleware('auth');
 
 
 //CRUD
@@ -54,6 +59,7 @@ Route::delete('/list/{id}', [InfoController::class, 'destroy'])->name('list.dest
 Route::get('/modify/{id}', [InfoController::class, 'edit'])->name('modify.edit')->middleware('auth');
 Route::put('/list/{id}', [InfoController::class, 'update'])->name('list.update')->middleware('auth');
 Route::get('/form/{id}', [InfoController::class, 'show'])->name('form.show')->middleware('auth');
+Route::get('/print/{id}', [InfoController::class, 'show'])->name('print.show')->middleware('auth');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 

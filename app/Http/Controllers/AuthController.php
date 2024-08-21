@@ -38,21 +38,19 @@ class AuthController extends Controller
     return view('users', ['datas' => $data, 'user' => $user]);
     }
 
-    //
-    public function accountInfo()
-    {
-        //
-        return view('account');
-    }
 
     /**
      * Write code on Method
      *
      * @return response()
      */
-    public function addUser(): view
+    public function addUser(): RedirectResponse|view
     {
+        //if(Auth::check()){
         return view('add-user');
+        //}
+  
+    //return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
     }
       
 
@@ -91,9 +89,9 @@ class AuthController extends Controller
         $udata = $request->all();
         $user = $this->create($udata);
             
-        Auth::login($user); 
+        //Auth::login($user); 
 
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("add-user")->withSuccess('Great! You have Successfully Added an User.');
     }
 
         /**
@@ -120,16 +118,14 @@ class AuthController extends Controller
     public function index(): View
     {
         return view('login');
-    }  
-      
-
-      
+    } 
+    
     /**
      * Write code on Method
      *
      * @return response()
      */
-    public function postLogin(Request $request): RedirectResponse
+    /*public function postLogin(Request $request): RedirectResponse
     {   
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -141,7 +137,7 @@ class AuthController extends Controller
             return redirect()->intended('dashboard')
                         ->withSuccess('You have Successfully loggedin');
         }*/
-        if (Auth::attempt($credentials)) {
+        /*if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
             return redirect()->intended('dashboard');
@@ -149,6 +145,50 @@ class AuthController extends Controller
   
         //return redirect("login")->withError('Oppes! You have entered invalid credentials');
         return redirect()->route('login')->withErrors(['email' => 'Oops! You have entered invalid credentials.',]);
+    }*/
+      
+
+      
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function postLogin(Request $request): RedirectResponse
+    {
+        // Validate the incoming request data
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+    
+        // Attempt to authenticate the user
+        if (Auth::attempt($credentials)) {
+            // Retrieve the authenticated user
+            $user = Auth::user();
+    
+            // Check the user's account status
+            if ($user->status == 1) {
+                // Regenerate the session to prevent session fixation attacks
+                $request->session()->regenerate();
+    
+                // Redirect to the intended page
+                return redirect()->intended('dashboard');
+            } else {
+                // Log out the user if their account is disabled
+                Auth::logout();
+    
+                // Redirect to the login page with an error message
+                return redirect()->route('login')->withErrors([
+                    'email' => 'Your account is disabled. Please contact Administrator.',
+                ]);
+            }
+        }
+    
+        // Redirect to the login page with an error message if authentication fails
+        return redirect()->route('login')->withErrors([
+            'email' => 'Oops! You have entered invalid credentials.',
+        ]);
     }
 
     /**
@@ -159,15 +199,14 @@ class AuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            $user_id = Auth::user()->id;
-            $user_name = Auth::user()->name;
+            $user = Auth::user();
 
             // Get the total number of rows
             $totalBL = Info::count();
             $totalUser = User::count();
         
 
-            return view('dashboard', compact('user_id', 'user_name', 'totalBL', 'totalUser'));
+            return view('dashboard', compact('user', 'totalBL', 'totalUser'));
         }
   
         return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
@@ -227,7 +266,7 @@ class AuthController extends Controller
      public function userEdit(User $id)
      {
          //
-         return view('user-profile', ['data' => $id]); 
+         return view('user-profile', ['user' => $id]); 
       }
 
 
@@ -247,8 +286,49 @@ class AuthController extends Controller
         $user->update($request->only(['name', 'email', 'status']));
 
         // Redirect with success message
-        return Redirect::route('user-profile.update', $id)->with('success', 'User Updated Successfully.');
+        return Redirect::route('user-profile.edit', $id)->with('success', 'User Updated Successfully.');
 
+      }
+
+      public function userpassUpdate(Request $request, $id)
+      {
+          // Find the user or fail if not found
+          $user = User::findOrFail($id);
+      
+          // Validate the request
+          $request->validate([
+              'password' => 'required|string|min:6|confirmed',
+          ]);
+      
+          if ($request->filled('password')) {
+              // Hash and update the user's password
+              $user->password = Hash::make($request->input('password'));
+              $user->save();
+          }
+      
+          // Redirect with success message
+          return Redirect::route('user-profile.edit', $id)->with('success', 'Password Updated Successfully.');
+      }
+
+      public function profilepassUpdate(Request $request, $id)
+      {
+          // Find the user or fail if not found
+          $user = User::findOrFail($id);
+      
+          // Validate the request
+          $request->validate([
+              'current_password' => 'required|current_password',
+              'password' => 'required|string|min:6|confirmed',
+          ]);
+      
+          if ($request->filled('password')) {
+              // Hash and update the user's password
+              $user->password = Hash::make($request->input('password'));
+              $user->save();
+          }
+      
+          // Redirect with success message
+          return Redirect::route('profile.edit', $id)->with('success', 'Password Updated Successfully.');
       }
 
       public function profileUpdate(Request $request, $id)
@@ -268,7 +348,7 @@ class AuthController extends Controller
         $user->update($request->only(['name', 'email']));
 
         // Redirect with success message
-        return Redirect::route('profile.update', $id)->with('success', 'Profile Updated Successfully.');
+        return Redirect::route('profile.edit')->with('success', 'Profile Updated Successfully.');
     
 
       }

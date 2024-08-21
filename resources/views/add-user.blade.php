@@ -82,12 +82,18 @@
             <form action="{{ route('add-user') }}" method="POST">
                 @csrf
 
-                @if (session('status'))
+                @if (session('success'))
                     <div class="alert alert-success" role="alert"> 
-                        {{ session('status') }}
+                        {{ session('success') }}
                     </div>
                 @endif
-
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                    @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                    @endforeach
+                    </div>
+                 @endif
                 <div class="textbox">
                     <input type="text" name="name" placeholder="Full Name" required>
                 </div>

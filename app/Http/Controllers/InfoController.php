@@ -17,11 +17,10 @@ class InfoController extends Controller
         //
         
         //return view('dashboard');
-        $user_id = Auth::user()->id;
-        $user_name = Auth::user()->name;
+        $user = Auth::user();
 
         $data = Info::all();
-        return view('list', ['datas' => $data], compact('user_id', 'user_name'));
+        return view('list', ['datas' => $data], compact('user'));
     }
 
     /**

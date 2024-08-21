@@ -250,14 +250,14 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">{{ $user_name }}</span>
+              <span class="hidden-xs">{{ old('name',$user->name) }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header" style="height: 85px;">
 
                 <p>
-                {{ $user_name }}
+                {{ old('name',$user->name) }}
                 </p>
               </li>
               <!-- Menu Body -->
@@ -381,7 +381,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
-                    <a href="{{ route('form.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-info btn-sm" onclick="printPage(event)">Print</a>
+                    <a href="{{ route('print.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>
                 @endforeach

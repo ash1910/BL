@@ -247,7 +247,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               
-              <span class="hidden-xs">{{ $user_name }}</span>
+              <span class="hidden-xs">{{ old('name',$user->name) }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -256,7 +256,7 @@
                
 
                 <p>
-                {{ $user_name }}
+                {{ old('name',$user->name) }}
                 </p>
               </li>
               <!-- Menu Footer-->
