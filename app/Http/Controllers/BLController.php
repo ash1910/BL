@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Info;
+use App\Models\Bl;
 use Illuminate\Http\Request;
 
 use Auth;
 
-class InfoController extends Controller
+class BLController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class InfoController extends Controller
         //return view('dashboard');
         $user = Auth::user();
 
-        $data = Info::all();
+        $data = Bl::all();
         return view('list', ['datas' => $data], compact('user'));
     }
 
@@ -86,7 +86,7 @@ class InfoController extends Controller
 
         ]);
 
-        Info::create([
+        Bl::create([
             'bl_number' => $request->bl_number,
             'shipper' => $request->shipper,
             'consignee' => $request->consignee,
@@ -98,6 +98,7 @@ class InfoController extends Controller
             'ocean_vessel' => $request->ocean_vessel,
             'voyage_no' => $request->voyage_no,
             'port_of_discharge' => $request->port_of_discharge,
+            'place_of_delivery' => $request->place_of_delivery,
             'final_destination' => $request->final_destination,
             'freight_payable_at' => $request->freight_payable_at,
             'number_of_original_bl' => $request->number_of_original_bl,
@@ -120,7 +121,7 @@ class InfoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Info $id)
+    public function show(Bl $id)
     {
         //
         return view('form', ['data' => $id ]); 
@@ -129,7 +130,7 @@ class InfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Info $id)
+    public function edit(Bl $id)
     {
         //print_r($id);exit;
         //
@@ -149,7 +150,7 @@ class InfoController extends Controller
         //echo "<pre>";print_r($id);exit;
         //
 
-        $info = Info::findOrFail($id);
+        $info = Bl::findOrFail($id);
         
 
         $request->validate([
@@ -222,7 +223,7 @@ class InfoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Info $id)
+    public function destroy(Bl $id)
     {
         //
         $id->delete();

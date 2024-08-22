@@ -268,7 +268,7 @@
 
 						</p>
 					</p>
-					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>OCEAN BILL OF LANDING</b></div>
+					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>OCEAN BILL OF LADING</b></div>
 				</td>
 
 				

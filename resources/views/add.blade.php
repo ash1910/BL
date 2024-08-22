@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
 		<script src="../../dist/js/addpopup.js"></script>
+		<script src="../../dist/js/generatecode.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -342,7 +343,7 @@
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
 					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
-					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LANDING</b></div>
+					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LADING</b></div>
 				</td>
 
 				
@@ -367,7 +368,7 @@
 						<input id="date_of_issue" type="date" name="date_of_issue" style="width:87%; height: 60%;" required/>
 					</td>
 						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
-						<textarea id="bl_number" type="text" name="bl_number" style="width:100%;" required></textarea>
+						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;" required></textarea>
 					</td>
 						</tr>
 					
@@ -561,21 +562,7 @@
 				<div class="container">
 				<button class="button-7" type="submit">Save</button>
 				</div>    
-</form>
-</div>
-<!--<script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>-->
-	<!--<script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>-->
+	</form>
+	</div>
     </body>
 </html>

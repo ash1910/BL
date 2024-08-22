@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Info;
+use App\Models\Bl;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -202,7 +202,7 @@ class AuthController extends Controller
             $user = Auth::user();
 
             // Get the total number of rows
-            $totalBL = Info::count();
+            $totalBL = Bl::count();
             $totalUser = User::count();
         
 

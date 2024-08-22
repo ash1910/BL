@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InfoController;
+use App\Http\Controllers\BLController;
 use App\Http\Controllers\AuthController;
 
 
@@ -49,18 +49,16 @@ Route::put('/profile/profile-password-update/{id}',[AuthController::class, 'prof
 
 
 //CRUD
-Route::get('/list', [InfoController::class, 'index'])->name('list.index')->middleware('auth');
-Route::get('/add', [InfoController::class, 'create'])->name('add.create')->middleware('auth');
-Route::post('/list', [InfoController::class, 'store'])->name('list.store')->middleware('auth');
-Route::delete('/list/{id}', [InfoController::class, 'destroy'])->name('list.destroy')->middleware('auth');
+Route::get('/list', [BLController::class, 'index'])->name('list.index')->middleware('auth');
+Route::get('/add', [BLController::class, 'create'])->name('add.create')->middleware('auth');
+Route::post('/list', [BLController::class, 'store'])->name('list.store')->middleware('auth');
+Route::delete('/list/{id}', [BLController::class, 'destroy'])->name('list.destroy')->middleware('auth');
 
 
 
-Route::get('/modify/{id}', [InfoController::class, 'edit'])->name('modify.edit')->middleware('auth');
-Route::put('/list/{id}', [InfoController::class, 'update'])->name('list.update')->middleware('auth');
-Route::get('/form/{id}', [InfoController::class, 'show'])->name('form.show')->middleware('auth');
-Route::get('/print/{id}', [InfoController::class, 'show'])->name('print.show')->middleware('auth');
+Route::get('/modify/{id}', [BLController::class, 'edit'])->name('modify.edit')->middleware('auth');
+Route::put('/list/{id}', [BLController::class, 'update'])->name('list.update')->middleware('auth');
+Route::get('/form/{id}', [BLController::class, 'show'])->name('form.show')->middleware('auth');
+Route::get('/print/{id}', [BLController::class, 'show'])->name('print.show')->middleware('auth');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-
-
 

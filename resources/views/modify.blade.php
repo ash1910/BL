@@ -343,7 +343,7 @@
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
 					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
-					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LANDING</b></div>
+					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LADING</b></div>
 				</td>
 
 				
@@ -368,7 +368,7 @@
 						<input id="date_of_issue" type="date" name="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" style="width:87%; height: 60%;" required/>
 					</td>
 						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
-						<textarea id="bl_number" type="text" name="bl_number" style="width:100%;" required>{{ old('bl_number',$data->bl_number) }}</textarea>
+						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;" required>{{ old('bl_number',$data->bl_number) }}</textarea>
 					</td>
 						</tr>
 					
