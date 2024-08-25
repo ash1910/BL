@@ -6,10 +6,13 @@ use App\Http\Controllers\AuthController;
 
 
 
-Route::get('/test1', function () {
-    return view('test1');
+Route::get('/order', function () {
+    return view('order');
 });
 
+Route::get('/show-order', function () {
+    return view('show-order');
+});
 //index
 Route::get('/', [AuthController::class, 'index'])->name('login');
 

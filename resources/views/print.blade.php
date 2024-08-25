@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +12,14 @@
 
         <!-- Styles -->
         <style>
+
+		@page {
+			size: A4;
+			margin: 30px;
+			margin-bottom: 10px;
+			  
+			}
+
             hr.new {
                     border-top: 1px solid black;
                     }
@@ -233,15 +240,7 @@
 	content: "";
 	clear: both;
 	display: table;
-	}
-
-    @page {
-    size: A4;
-    margin: 30px;
-    margin-bottom: 10px;
-      
-    }
-					
+	}					
         </style>
     </head>
 	<body>

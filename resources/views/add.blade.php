@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +13,6 @@
 		<!-- Include CKEditor 5 from CDN -->
 		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
-		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
 		<script src="../../dist/js/addpopup.js"></script>
 		<script src="../../dist/js/generatecode.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
