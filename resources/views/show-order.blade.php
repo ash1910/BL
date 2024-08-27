@@ -86,7 +86,7 @@
 </tr>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Consignee</b></td>
-<td rowspan="2" style="padding-top: 180px;"><b>Carrier</b></td>
+<td rowspan="2" style="height: 180px;"><b>Carrier</b></td>
 </tr>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Notify Address</b></td>
@@ -120,11 +120,11 @@
     <td class="no-border"><center><b>Gross Weight</b></center></td>
     <td class="no-border"><center><b>Measurement</b></center></td>
   </tr>
-  <tr style="height: 400px;">
-    <td class="no-border">&nbsp;</td>
-    <td class="no-border">&nbsp;</td>
-    <td class="no-border">&nbsp;</td>
-    <td class="no-border">&nbsp;</td>
+  <tr>
+    <td class="no-border" style="height: 400px; width: 250px;">&nbsp;</td>
+    <td class="no-border" style="height: 400px; width: 300px;">&nbsp;</td>
+    <td class="no-border" style="width: 100px; height: 400px;">&nbsp;</td>
+    <td class="no-border" style="width: 100px; height: 400px;">&nbsp;</td>
   </tr>
   <tr style="height: 90px;">
     <td class="no-border" colspan="4"><b>Comments / Special Instructions:</b></td>

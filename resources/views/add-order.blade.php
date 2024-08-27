@@ -17,7 +17,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
-		<script src="../../dist/js/addpopup.js"></script>
+		<script src="../../dist/js/addpopuporder.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -273,6 +273,8 @@
         </div>
     </div>
     <h5 style="margin-left: 180px;">SHIPPING ORDER. CARTERS NOTE AND SHIPPERS INSTRUCTION</h5>
+    <form action="{{ route('order-list.store') }}" method="POST">
+      @csrf
 <table>
 <tbody>
 <tr>
@@ -285,19 +287,19 @@
 <td style="height: 90px; width: 420px;"><b>Consignee</b>
 <textarea name="consignee" style="width:98%; height: 80%;"></textarea>
 </td>
-<td rowspan="2" style="padding-top: 180px;"><b>Carrier</b></td>
+<td rowspan="2" style="height: 180px;"><b>Carrier</b>
+<textarea name="carrier" style="width:98%; height: 91%;"></textarea>
+</td>
 </tr>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Notify Address</b>
-<textarea name="notify_addressr" style="width:98%; height: 80%;"></textarea>
+<textarea name="notify_address" style="width:98%; height: 80%;"></textarea>
 </td>
 </tr>
 </tbody>
 </table>
 
 <p style="margin-left: 50px;">This is a confirmation of our Nomination please contact the Shipper and update us the status of the shipment.</p>
-    <form action="" method="">
-
       <table>
         <tr>
           <td style="height: 30px;"><b>Vessel Details</b>
@@ -342,8 +344,8 @@
           <td class="no-border"><center><b>Gross Weight</b></center></td>
           <td class="no-border"><center><b>Measurement</b></center></td>
         </tr>
-        <tr style="height: 380px;">
-          <td width="250px">
+        <tr>
+          <td style="height: 380px; width: 250px;">
                           <!-- Button to open the popup -->
                           <center><button class="icon-button" id="openPopup" type="button" style="margin-left: 220px;"><img src="/icons/add-list.png" alt="Icon"></button></center>
                   
@@ -362,28 +364,28 @@
           
           <div id="displayArea" style="margin-top: -13px;"></div>
           </td>
-          <td>
+          <td style="height: 400px; width: 300px;">
                     <!-- Button to open the popup -->
-                    <center><button class="icon-button" id="openPopup2" type="button" style="margin-left: 280px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
+                    <center><button class="icon-button" id="openPopup1" type="button" style="margin-left: 280px;"><img src="/icons/add-list.png" alt="Icon"></button></center><br>
 
                     <!-- Popup Modal -->
-                    <div id="popup2" class="popup">
+                    <div id="popup1" class="popup">
                       <div class="popup-content">
-                        <span class="close-button" id="closePopup2">&times;</span>
+                        <span class="close-button" id="closePopup1">&times;</span>
                         <h2>Number of packages, kind of packages, general
                         description of goods, (Said to contain)</h2>
-                        <textarea  class="ck-editor__editable_inline" id="editor2"></textarea><br>
-                        <button class="button-7" id="saveButton2" type="button">Save</button>
-                        <button class="button-7" id="closePopupButton2" type="button">Close</button>
+                        <textarea  class="ck-editor__editable_inline" id="editor1"></textarea><br>
+                        <button class="button-7" id="saveButton1" type="button">Save</button>
+                        <button class="button-7" id="closePopupButton1" type="button">Close</button>
                       </div>
                     </div>
-                    <input class="hidden" type="text" id="geteditor2" name="general_description_of_goods">
-                    <div id="displayArea2" style="margin-top: -26px;"></div>
+                    <input class="hidden" type="text" id="geteditor1" name="general_description_of_goods">
+                    <div id="displayArea1" style="margin-top: -26px;"></div>
           </td>
-          <td style="width: 100px; height: 100px;">
+          <td style="width: 100px; height: 400px;">
           <textarea name="gross_weight" style="width:95%; height: 98%;"></textarea>
           </td>
-          <td style="width: 100px; height: 100px;">
+          <td style="width: 100px; height: 400px;">
           <textarea name="measurement" style="width:95%; height: 98%;"></textarea>
           </td>
         </tr>
