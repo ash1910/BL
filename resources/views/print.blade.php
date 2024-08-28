@@ -318,7 +318,7 @@
 	
 			</tr>
 			<tr>
-				<td style="height: 30px; width:210px;">PLACE OF RECEIPT<br>
+				<td style="height: 30px; width:218px;">PLACE OF RECEIPT<br>
 				<div>{{ old('place_of_receipt',$data->place_of_receipt) }}</div>
 			</td>
 				<td style="width: 180.3px;">PORT LOADING<br>
@@ -331,7 +331,7 @@
 				<td style="height: 30px;">OCEAN VESSEL<br>
 				<div>{{ old('ocean_vessel',$data->ocean_vessel) }}</div>
 			</td>
-				<td style="width: 180.3x;">VOYAGE NO.<br>
+				<td style="width: 150px;">VOYAGE NO.<br>
 				<div>{{ old('voyage_no',$data->voyage_no) }}</div>
 			</td>
 
@@ -342,7 +342,7 @@
 				<div>{{ old('port_of_discharge',$data->port_of_discharge) }}</div>
 			</td>
 				<td>PLACE OF DELIVERY<br>
-				<div style="width: 180.3px;">{{ old('place_of_delivery',$data->place_of_delivery) }}</div>
+				<div style="width: 150px;">{{ old('place_of_delivery',$data->place_of_delivery) }}</div>
 			</td>
 				<td>FINAL DESTINATION<br>
 				<div>{{ old('final_destination',$data->final_destination) }}</div>

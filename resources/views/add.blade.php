@@ -336,7 +336,7 @@
 			<table>
 			<tr>
 				<td colspan="2" style="height: 100px;">SHIPPER<br>
-				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;" required></textarea>
+				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;"></textarea>
 				</td>
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
@@ -349,13 +349,13 @@
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 100px;">CONSIGNEE<br>
-				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;" required></textarea>
+				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;"></textarea>
 			</td>
 				
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 110px;">NOTIFY PARTY<br>
-				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;" required></textarea>
+				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;"></textarea>
 			</td>
 
 				<td colspan="3" rowspan="3">
@@ -366,13 +366,13 @@
 						<input id="date_of_issue" type="date" name="date_of_issue" style="width:87%; height: 60%;" required/>
 					</td>
 						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
-						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;" required></textarea>
+						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;"></textarea>
 					</td>
 						</tr>
 					
 						<tr>
 						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;" required></textarea>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;"></textarea>
 					</td>
 						</tr>
 
@@ -385,40 +385,40 @@
 			</tr>
 			<tr>
 				<td style="height: 30px; width: 203px;">PLACE OF RECEIPT<br>
-				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;" required></textarea>
+				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;"></textarea>
 			</td>
 				<td style="width: 207px;">PORT LOADING<br>
-				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;" required></textarea>
+				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;"></textarea>
 			</td>
 				
 
 			</tr>
             <tr>
 				<td style="height: 30px;">OCEAN VESSEL<br>
-				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;" required></textarea>
+				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;"></textarea>
 			</td>
 				<td>VOYAGE NO.<br>
-				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;" required></textarea>
+				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;"></textarea>
 			</td>
 	
 			</tr>
             <tr>
 				<td style="height: 35px;">PORT OF DISCHARGE<br>
-				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;" required></textarea>
+				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;"></textarea>
 			</td>
 				<td>PLACE OF DELIVERY<br>
-				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;" required></textarea>
+				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;"></textarea>
 			</td>
 
 			</td>
 				<td>FINAL DESTINATION<br>
-				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;" required></textarea>
+				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;"></textarea>
 			</td>
 				<td>FREIGHT PAYABLE AT<br>
-				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;" required></textarea>
+				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;"></textarea>
 			</td>
 				<td width="140px">NUMBER OF ORIGINAL B/L<br>
-				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;" required></textarea>
+				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;"></textarea>
 			</td>
 			</tr>
 			</table>
@@ -488,10 +488,10 @@
 							<div id="displayArea2" style="margin-top: -26px;"></div>
 			</td>
 			<td class="no-border-bottom" width="80px">
-			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;" required></textarea>
+			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;"></textarea>
 			</td>
 			<td class="no-border-lb" rowspan="2" width="80px">
-			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;" required></textarea>
+			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;"></textarea>
 			</td>		
 			</tr>
 
@@ -510,9 +510,9 @@
 			<table>
 				<tr>
 					<td>SHIPPED ON BOARD THE VESSEL<br>
-					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;" required></textarea></div>
+					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;"></textarea></div>
 					<hr style="border-top: dotted 1px;"/>
-					<p>DATED <input id="on_board_date" type="date" name="on_board_date" style="width:25%; height: 8%;"/></p>
+					<p>DATED <input id="on_board_date" type="date" name="on_board_date" style="width:25%; height: 8%;" required/></p>
 				
 				</td>
 						
@@ -542,9 +542,9 @@
 
 								<tr>
 								
-									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;" required></textarea></td>
-									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;" required></textarea></td>
-									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;" required></textarea></td>
+									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;"></textarea></td>
+									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;"></textarea></td>
+									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;"></textarea></td>
 							
 								</tr>
 								</table>

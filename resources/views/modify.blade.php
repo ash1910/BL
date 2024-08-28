@@ -337,7 +337,7 @@
 			<table>
 			<tr>
 				<td colspan="2" style="height: 100px;">SHIPPER<br>
-				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;" required>{{ old('shipper',$data->shipper) }}</textarea>
+				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;">{{ old('shipper',$data->shipper) }}</textarea>
 				</td>
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
@@ -350,13 +350,13 @@
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 100px;">CONSIGNEE<br>
-				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;" required>{{ old('consignee',$data->consignee) }}</textarea>
+				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;">{{ old('consignee',$data->consignee) }}</textarea>
 			</td>
 				
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 110px;">NOTIFY PARTY<br>
-				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;" required>{{ old('notify_party',$data->notify_party) }}</textarea>
+				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;">{{ old('notify_party',$data->notify_party) }}</textarea>
 			</td>
 
 				<td colspan="3" rowspan="3">
@@ -373,7 +373,7 @@
 					
 						<tr>
 						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;" required>{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</textarea>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</textarea>
 					</td>
 						</tr>
 
@@ -386,40 +386,40 @@
 			</tr>
 			<tr>
 				<td style="height: 30px; width: 203px;">PLACE OF RECEIPT<br>
-				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;" required>{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
+				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;">{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
 			</td>
 				<td style="width: 207px;">PORT LOADING<br>
-				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;" required>{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
+				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;">{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
 			</td>
 				
 
 			</tr>
             <tr>
 				<td style="height: 30px;">OCEAN VESSEL<br>
-				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;" required>{{ old('ocean_vessel',$data->ocean_vessel) }}</textarea>
+				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;">{{ old('ocean_vessel',$data->ocean_vessel) }}</textarea>
 			</td>
 				<td>VOYAGE NO.<br>
-				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;" required>{{ old('voyage_no',$data->voyage_no) }}</textarea>
+				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;">{{ old('voyage_no',$data->voyage_no) }}</textarea>
 			</td>
 	
 			</tr>
             <tr>
 				<td style="height: 35px;">PORT OF DISCHARGE<br>
-				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;" required>{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
+				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;">{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
 			</td>
 				<td>PLACE OF DELIVERY<br>
-				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;" required>{{ old('place_of_delivery',$data->place_of_delivery) }}</textarea>
+				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;">{{ old('place_of_delivery',$data->place_of_delivery) }}</textarea>
 			</td>
 
 			</td>
 				<td>FINAL DESTINATION<br>
-				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;" required>{{ old('final_destination',$data->final_destination) }}</textarea>
+				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;">{{ old('final_destination',$data->final_destination) }}</textarea>
 			</td>
 				<td>FREIGHT PAYABLE AT<br>
-				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;" required>{{ old('freight_payable_at',$data->freight_payable_at) }}</textarea>
+				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;">{{ old('freight_payable_at',$data->freight_payable_at) }}</textarea>
 			</td>
 				<td width="140px">NUMBER OF ORIGINAL B/L<br>
-				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;" required>{{ old('number_of_original_bl',$data->number_of_original_bl) }}</textarea>
+				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;">{{ old('number_of_original_bl',$data->number_of_original_bl) }}</textarea>
 			</td>
 			</tr>
 			</table>
@@ -489,10 +489,10 @@
 							<div id="displayArea2" style="margin-top: -26px;">{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</div>
 			</td>
 			<td class="no-border-bottom" width="80px">
-			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;" required>{{ old('gross_weight',$data->gross_weight) }}</textarea>
+			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;">{{ old('gross_weight',$data->gross_weight) }}</textarea>
 			</td>
 			<td class="no-border-lb" rowspan="2" width="80px">
-			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;" required>{{ old('measurement',$data->measurement) }}</textarea>
+			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;">{{ old('measurement',$data->measurement) }}</textarea>
 			</td>		
 			</tr>
 
@@ -511,9 +511,9 @@
 			<table>
 				<tr>
 					<td>SHIPPED ON BOARD THE VESSEL<br>
-					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;" required>{{ old('shipped_on_board_the_vessel',$data->shipped_on_board_the_vessel) }}</textarea></div>
+					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;">{{ old('shipped_on_board_the_vessel',$data->shipped_on_board_the_vessel) }}</textarea></div>
 					<hr style="border-top: dotted 1px;"/>
-					<p>DATED <input id="on_board_date" type="date" name="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" style="width:25%; height: 8%;"/></p>
+					<p>DATED <input id="on_board_date" type="date" name="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" style="width:25%; height: 8%;" required/></p>
 				
 				</td>
 						
@@ -543,9 +543,9 @@
 
 								<tr>
 								
-									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;" required>{{ old('freight_and_charges',$data->freight_and_charges) }}</textarea></td>
-									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;" required>{{ old('prepaid',$data->prepaid) }}</textarea></td>
-									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;" required>{{ old('collect',$data->collect) }}</textarea></td>
+									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;">{{ old('freight_and_charges',$data->freight_and_charges) }}</textarea></td>
+									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;">{{ old('prepaid',$data->prepaid) }}</textarea></td>
+									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;">{{ old('collect',$data->collect) }}</textarea></td>
 							
 								</tr>
 								</table>
