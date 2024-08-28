@@ -325,11 +325,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Bill Of Lading
+        Shipping Order
       </h1>
       <ol class="breadcrumb">
         <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Bl List</li>
+        <li class="active">Order List</li>
       </ol>
     </section>
 
@@ -362,14 +362,14 @@
                 <td>{{ $data->shipper }}</td>
                 <td>{{ $data->notify_address }}</td>
                 <td>
-                <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
-                    <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
+                <a href="{{ route('modify-order.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
+                <a href="{{ route('show-order.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
+                    <form action="{{ route('order-list.destroy', $data->id) }}" method="POST" class="button-container">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
-                    <a href="{{ route('print.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
+                    <a href="{{ route('print-order.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>
                 @endforeach

@@ -279,21 +279,21 @@
 <tbody>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Shipper</b>
-<textarea name="shipper" style="width:98%; height: 80%;"></textarea>
+<textarea name="shipper" style="width:98%; height: 80%;">{{ old('shipper',$data->shipper) }}</textarea>
 </td>
 <td>&nbsp;</td>
 </tr>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Consignee</b>
-<textarea name="consignee" style="width:98%; height: 80%;"></textarea>
+<textarea name="consignee" style="width:98%; height: 80%;">{{ old('consignee',$data->consignee) }}</textarea>
 </td>
 <td rowspan="2" style="height: 180px;"><b>Carrier</b>
-<textarea name="carrier" style="width:98%; height: 91%;"></textarea>
+<textarea name="carrier" style="width:98%; height: 91%;">{{ old('carrier',$data->carrier) }}</textarea>
 </td>
 </tr>
 <tr>
 <td style="height: 90px; width: 420px;"><b>Notify Address</b>
-<textarea name="notify_address" style="width:98%; height: 80%;"></textarea>
+<textarea name="notify_address" style="width:98%; height: 80%;">{{ old('notify_address',$data->notify_address) }}</textarea>
 </td>
 </tr>
 </tbody>
@@ -303,36 +303,36 @@
       <table>
         <tr>
           <td style="height: 30px;"><b>Vessel Details</b>
-          <textarea name="vessel_details" style="width:98%; height: 60%;"></textarea>
+          <textarea name="vessel_details" style="width:98%; height: 60%;">{{ old('vessel_details',$data->vessel_details) }}</textarea>
         </td>
           <td style="height: 30px;"><b>Voyage</b>
-          <textarea name="voyage" style="width:98%; height: 60%;"></textarea>
+          <textarea name="voyage" style="width:98%; height: 60%;">{{ old('voyage',$data->voyage) }}</textarea>
         </td>
           <td style="height: 30px;"><b>Receiving Unit</b>
-          <textarea name="receiving_unit" style="width:98%; height: 60%;"></textarea>
+          <textarea name="receiving_unit" style="width:98%; height: 60%;">{{ old('receiving_unit',$data->receiving_unit) }}</textarea>
         </td>
           <td style="height: 30px;"><b>Type of Service</b>
-          <textarea name="type_of_service" style="width:98%; height: 60%;"></textarea>
+          <textarea name="type_of_service" style="width:98%; height: 60%;">{{ old('type_of_service',$data->type_of_service) }}</textarea>
         </td>
           <td style="height: 30px;"><b>Job Order Number</b>
-          <textarea name="job_order_number" style="width:98%; height: 60%;"></textarea>
+          <textarea name="job_order_number" style="width:98%; height: 60%;">{{ old('job_order_number',$data->job_order_number) }}</textarea>
         </td>
         </tr>
         <tr>
           <td style="height: 30px;"><b>Place of Receipt</b>
-          <textarea name="place_of_receipt" style="width:98%; height: 60%;"></textarea>
+          <textarea name="place_of_receipt" style="width:98%; height: 60%;">{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
         </td>
           <td><b>Port of Loading</b>
-          <textarea name="port_of_loading" style="width:98%; height: 60%;"></textarea>
+          <textarea name="port_of_loading" style="width:98%; height: 60%;">{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
         </td>
           <td><b>Port of Discharge</b>
-          <textarea name="port_of_discharge" style="width:98%; height: 60%;"></textarea>
+          <textarea name="port_of_discharge" style="width:98%; height: 60%;">{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
         </td>
           <td><b>Final P.D</b>
-          <textarea name="final_pd" style="width:98%; height: 60%;"></textarea>
+          <textarea name="final_pd" style="width:98%; height: 60%;">{{ old('final_pd',$data->final_pd) }}</textarea>
         </td>
           <td><b>Job Order Date</b>
-          <input id="job_order_date" type="date" name="job_order_date" style="width:87%; height: 60%;" required/>
+          <input id="job_order_date" type="date" name="job_order_date" value="{{ old('job_order_date',$data->job_order_date) }}" style="width:87%; height: 60%;" required/>
         </td>
         </tr>
       </table>
@@ -359,10 +359,10 @@
                       <button class="button-7" id="closePopupButton" type="button">Close</button>
                     </div>
                   </div>
-                  <input class="hidden" type="text" id="geteditor" name="marks_and_no">
+                  <input class="hidden" type="text" id="geteditor" name="marks_and_no" value="{!! old('marks_and_no',$data->marks_and_no) !!}">
 
           
-          <div id="displayArea" style="margin-top: -13px;"></div>
+          <div id="displayArea" style="margin-top: -13px;">{!! old('marks_and_no',$data->marks_and_no) !!}</div>
           </td>
           <td style="height: 400px; width: 300px;">
                     <!-- Button to open the popup -->
@@ -379,19 +379,19 @@
                         <button class="button-7" id="closePopupButton1" type="button">Close</button>
                       </div>
                     </div>
-                    <input class="hidden" type="text" id="geteditor1" name="general_description_of_goods">
-                    <div id="displayArea1" style="margin-top: -26px;"></div>
+                    <input class="hidden" type="text" id="geteditor1" name="general_description_of_goods" value="{!! old('general_description_of_goods',$data->general_description_of_goods) !!}">
+                    <div id="displayArea1" style="margin-top: -26px;">{!! old('general_description_of_goods',$data->general_description_of_goods) !!}</div>
           </td>
           <td style="width: 100px; height: 400px;">
-          <textarea name="gross_weight" style="width:95%; height: 98%;"></textarea>
+          <textarea name="gross_weight" style="width:95%; height: 98%;">{{ old('gross_weight',$data->gross_weight) }}</textarea>
           </td>
           <td style="width: 100px; height: 400px;">
-          <textarea name="measurement" style="width:95%; height: 98%;"></textarea>
+          <textarea name="measurement" style="width:95%; height: 98%;">{{ old('measurement',$data->measurement) }}</textarea>
           </td>
         </tr>
         <tr>
           <td style="height: 80px; width: 100px;" colspan="5"><b>Comments / Special Instructions:</b>
-          <textarea name="comments" style="width: 99%; height: 75%;"></textarea>
+          <textarea name="comments" style="width: 99%; height: 75%;">{{ old('comments',$data->comments) }}</textarea>
         </td>
         </tr>
       </table><br>

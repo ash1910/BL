@@ -52,6 +52,8 @@ class OrderController extends Controller
             'job_order_date' => $request->job_order_date,
             'marks_and_no' => $request->marks_and_no,
             'general_description_of_goods' => $request->general_description_of_goods,
+            'gross_weight' => $request->gross_weight,
+            'measurement' => $request->measurement,
             'comments' => $request->comments,
         ]);
 
@@ -70,9 +72,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function edit(Order $id)
     {
         //
+        return view('modify-order', ['data' => $id]); 
     }
 
     /**
@@ -86,8 +89,11 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy(Order $id)
     {
         //
+        $id->delete();
+        //return redirect()->route('list')->with('status', 'BL Deleted Successfully!');
+        return redirect('order-list')->with('status','ORder Deleted Successfully!');
     }
 }

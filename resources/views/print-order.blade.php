@@ -2,6 +2,12 @@
     <head>
 </head>
 <style>
+        @page {
+    size: A4;
+    margin: 30px;
+    margin-bottom: 10px;
+      
+    }
                 
         table {
             border: 1px solid #000000;

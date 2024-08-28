@@ -128,6 +128,15 @@ class BLController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function print(Bl $id)
+    {
+        //
+        return view('print', ['data' => $id ]); 
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Bl $id)

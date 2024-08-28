@@ -26,6 +26,8 @@ class Order extends Model
         'job_order_date',
         'marks_and_no',
         'general_description_of_goods',
+        'gross_weight',
+        'measurement',
         'comments',      
     ];
 }

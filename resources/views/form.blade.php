@@ -12,6 +12,14 @@
 
         <!-- Styles -->
         <style>
+
+		@page {
+			size: A4;
+			margin: 30px;
+			margin-bottom: 10px;
+			  
+			}
+
             hr.new {
                     border-top: 1px solid black;
                     }
@@ -24,7 +32,7 @@
             border: 1px solid #000000;
             border-collapse: collapse;
             padding: 5px;
-			width: 800px;
+			width: 790px;
 			border: 0;
         }
         
@@ -232,8 +240,7 @@
 	content: "";
 	clear: both;
 	display: table;
-	}
-					
+	}					
         </style>
     </head>
 	<body>
@@ -348,7 +355,7 @@
 			</td>
 			</tr>
 			</table>
-			<table style="height: 470px;">
+			<table>
             <tr>
 				<td class="no-border-top" style="height: 25px; text-align: center;">MARKS & NUMBER<br>CONTAINER & SEAL NUMBERS</td>
 				<td class="no-border-top" style="height: 25px; text-align: center;">NO. OF<br>PACKAGES</td>
@@ -358,7 +365,7 @@
 			</tr>
 
             <tr>
-			<div><td class="no-border-bottom" rowspan="3"  width="180px" height="420px"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
+			<div><td class="no-border-bottom" rowspan="3"  style="width: 180px; height: 400px;"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
 			<td class="no-border-tb" rowspan="3" width="80px"><p>{!! old('number_of_packages',$data->number_of_packages) !!}</p></td>
 			<td class="no-border-bottom" rowspan="3" width="300px"><p>{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</p></td>
 			<td class="no-border-bottom" rowspan="2" width="80px"><p>{{ old('gross_weight',$data->gross_weight) }}</p></td>
@@ -389,7 +396,7 @@
 				</td>
 						
 									<td rowspan="3">
-										<table style="width: 345px; margin: 0;">
+										<table style="width: 335px; margin: 0;">
 												<tr>
 													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b><br>
 													<div style="margin-top: 95px;">

@@ -29,6 +29,8 @@ return new class extends Migration
             $table->date('job_order_date');
             $table->text('marks_and_no');
             $table->text('general_description_of_goods');
+            $table->text('gross_weight');
+            $table->text('measurement');
             $table->text('comments');
             $table->timestamps();
 
