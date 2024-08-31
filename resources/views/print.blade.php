@@ -260,7 +260,7 @@
 						</div>
 						<p class="column1">
 						<b style="font-size: 16px;">HNS INTERNATIONAL</b><br>
-						<b>Corporate Office:</b> Police Plaza Concord
+						<b>Corporate Office:</b> Police Plaza Concord<br>
 						Level #07, Plot #02, Road #144, Gulshan C/A, <br>Dhaka - 1212.
 						Tel: +880 2 55045148-9.<br>
 						Email: info@hns-international.com.<br>Web: www.hns-international.com

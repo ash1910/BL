@@ -69,6 +69,15 @@ class OrderController extends Controller
         return view('show-order', ['data' => $id ]); 
     }
 
+        /**
+     * Display the specified resource.
+     */
+    public function show1()
+    {
+        //
+        return view('show-order1'); 
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

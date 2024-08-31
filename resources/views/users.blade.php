@@ -371,9 +371,9 @@
                 <td>{{ $data->created_at }}</td>
                 <td>
                     <center>
-                    @if ($data->status === 1)
+                    @if ($data->status == 1)
                         <i class="bi bi-check-circle-fill fa-lg text-success status-icon" title="Active"></i>
-                    @elseif ($data->status === 0)
+                    @elseif ($data->status == 0)
                         <i class="bi bi-x-circle-fill fa-lg text-warning status-icon" title="Inactive"></i>
                     @else
                         <span class="text-muted">Unknown</span>
