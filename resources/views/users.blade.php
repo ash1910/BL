@@ -64,7 +64,7 @@
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-             
+
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
@@ -264,7 +264,7 @@
                 </p>
               </li>
               <!-- Menu Body -->
-       
+
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
