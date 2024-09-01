@@ -256,7 +256,7 @@
 				<td class="no-border-bottom" colspan="3" rowspan="2">
 					<p class="row">
 						<div class="column">
-							<img src="/images/HNS-Internaional-Logo.png" style="height: 50px; width: 140px;"></img>
+							<img src="/images/HNS-International-Logo.png" style="height: 50px; width: 140px;"></img>
 						</div>
 						<p class="column1">
 						<b style="font-size: 16px;">HNS INTERNATIONAL</b><br>

@@ -260,7 +260,7 @@
 <div class="element">
 <div class="container-heading">
         <div class="image">
-            <img src="/images/HNS-Internaional-Logo.png" alt="HNS International Logo">
+            <img src="/images/HNS-International-Logo.png" alt="HNS International Logo">
         </div>
         <div class="text">
             <b style="font-size: 16px;">HNS INTERNATIONAL</b><br>

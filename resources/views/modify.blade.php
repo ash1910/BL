@@ -341,7 +341,7 @@
 				</td>
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
-					<img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
+					<img class="center" src="/images/HNS-International-Logo.png" style="height: 80px; width: 220px;"></img>
 					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LADING</b></div>
 				</td>
 

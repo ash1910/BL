@@ -108,7 +108,7 @@ h2 {
 <body>
 
 <div>
-    <img class="center" src="/images/HNS-Internaional-Logo.png" style="height: 80px; width: 220px;"></img>
+    <img class="center" src="/images/HNS-International-Logo1.png" style="height: 80px; width: 220px;"></img>
     <div>
     <div class="container">
         <div class="form-box">
