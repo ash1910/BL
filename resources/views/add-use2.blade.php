@@ -65,27 +65,19 @@
             background-color: #0056b3;
         }
 
-        .status-group, .role-group {
+        .status-group {
             margin-bottom: 15px;
         }
 
-        .status-group label, .role-group label {
+        .status-group label {
             margin-right: 10px;
-        }
-
-        .role-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <div class="form-box">
         <div class="form-content">               
-            <!-- Add User Form -->
+            <!-- Signup Form -->
             <h2>Add User</h2>
             <form action="{{ route('add-user') }}" method="POST">
                 @csrf
@@ -97,12 +89,11 @@
                 @endif
                 @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
-                        @foreach ($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
-                        @endforeach
+                    @endforeach
                     </div>
-                @endif
-                
+                 @endif
                 <div class="textbox">
                     <input type="text" name="name" placeholder="Full Name" required>
                 </div>
@@ -114,18 +105,6 @@
                 </div>
                 <div class="textbox">
                     <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
-                </div>
-
-                <!-- Role Selection -->
-                <div class="role-group">
-                    <label for="role">Role:</label>
-                    <select id="role" name="role" required>
-                        <option value="">Select Role</option>
-                        <option value="SuperAdmin">SuperAdmin</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Accounts">Accounts</option>
-                        <option value="Member">Member</option>
-                    </select>
                 </div>
 
                 <!-- Status Selection -->

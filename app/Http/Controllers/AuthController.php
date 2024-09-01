@@ -44,13 +44,16 @@ class AuthController extends Controller
      *
      * @return response()
      */
-    public function addUser(): RedirectResponse|view
+    public function registration(): RedirectResponse|view
     {
         //if(Auth::check()){
-        return view('add-user');
+            if (Auth::check() && Auth::user()->role == "SuperAdmin") {
+                return view('add-user');
+            }
+        
         //}
   
-    //return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
+    return Redirect::route("dashboard")->withStatus('Oops! You do not have the Access.');
     }
       
 
@@ -83,6 +86,7 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed',
+            'role' => 'required',
             'status' => 'required',
         ]);
            
@@ -105,6 +109,7 @@ class AuthController extends Controller
         'name' => $udata['name'],
         'email' => $udata['email'],
         'password' => Hash::make($udata['password']),
+        'role' => $udata['role'],
         'status' => $udata['status'],
       ]);
       
@@ -279,11 +284,12 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
+            'role' => 'required',
             'status' => 'required',
         ]);
 
         // Update user details
-        $user->update($request->only(['name', 'email', 'status']));
+        $user->update($request->only(['name', 'email', 'role', 'status']));
 
         // Redirect with success message
         return Redirect::route('user-profile.edit', $id)->with('success', 'User Updated Successfully.');
@@ -341,7 +347,6 @@ class AuthController extends Controller
         // Validate the request
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
         ]);
 
         // Update user details

@@ -258,6 +258,7 @@
 
                 <p>
                 {{ old('name',$user->name) }}
+                <small>{{ old('role',$user->role) }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -302,7 +303,7 @@
             <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
           </ul>
         </li>
-
+        @if(Auth::user()->role == "SuperAdmin")
         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>User Management</span>
@@ -315,6 +316,7 @@
             <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
           </ul>
         </li>
+        @endif
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -376,11 +378,14 @@
                 <td>
                 <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
-                    <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
-                    </form>
+                <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
+                @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")
+                <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
+                </form>
+                @endif
                     <a href="{{ route('print.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>

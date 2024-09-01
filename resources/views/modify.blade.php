@@ -317,7 +317,7 @@
         </style>
     </head>
 	<body>
-	<a href="/dashboard" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+	<a href="/list" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
 <div class="element">
 	            <!-- Display All Error Messages -->
 				@if ($errors->any())

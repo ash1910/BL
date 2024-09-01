@@ -257,6 +257,7 @@
 
                 <p>
                 {{ old('name',$user->name) }}
+                <small>{{ old('role',$user->role) }}</small>
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -300,7 +301,7 @@
             <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
           </ul>
         </li>
-
+        @if(Auth::user()->role == "SuperAdmin")
         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>User Management</span>
@@ -313,6 +314,7 @@
             <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
           </ul>
         </li>
+        @endif
   </ul>
     </section>
     <!-- /.sidebar -->

@@ -13,8 +13,8 @@
 		<!-- Include CKEditor 5 from CDN -->
 		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
+		<script src="https://cdn.ckeditor.com/ckeditor5/ckeditor.js"></script>
 		<script src="../../dist/js/addpopup.js"></script>
-		<script src="../../dist/js/generatecode.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -336,7 +336,7 @@
 			<table>
 			<tr>
 				<td colspan="2" style="height: 100px;">SHIPPER<br>
-				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;"></textarea>
+				<textarea id="shipper" name="shipper" style="width:98%; height: 80%;">{{ old('shipper',$data->shipper) }}</textarea>
 				</td>
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
@@ -349,13 +349,13 @@
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 100px;">CONSIGNEE<br>
-				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;"></textarea>
+				<textarea id="consignee" name="consignee" style="width:98%; height: 80%;">{{ old('consignee',$data->consignee) }}</textarea>
 			</td>
 				
 			</tr>
 			<tr>
 				<td colspan="2" style="height: 110px;">NOTIFY PARTY<br>
-				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;"></textarea>
+				<textarea id="notify_party" name="notify_party" style="width:98%; height: 80%;">{{ old('notify_party',$data->notify_party) }}</textarea>
 			</td>
 
 				<td colspan="3" rowspan="3">
@@ -363,16 +363,16 @@
 					<table style="width: 400px; height: 100px; margin: 0;">
 						<tr>
 						<td class="no-border-left" style="height: 35px; width: 55%">DATE OF ISSUE<br>
-						<input id="date_of_issue" type="date" name="date_of_issue" style="width:87%; height: 60%;" required/>
+						<input id="date_of_issue" type="date" name="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" style="width:87%; height: 60%;" required/>
 					</td>
 						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
-						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;">{{ $bl_number }}</textarea>
+						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;" required>{{ $bl_number }}</textarea>
 					</td>
 						</tr>
 					
 						<tr>
 						<td class="no-border-rbl" colspan="3" rowspan="2" height="140px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
-						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;"></textarea>
+						<textarea rows="10" cols="50" id="for_delivery_apply_to" name="for_delivery_apply_to" style="width:100%; height: 97%;">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</textarea>
 					</td>
 						</tr>
 
@@ -385,40 +385,40 @@
 			</tr>
 			<tr>
 				<td style="height: 30px; width: 203px;">PLACE OF RECEIPT<br>
-				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;"></textarea>
+				<textarea id="place_of_receipt" type="text" name="place_of_receipt" style="width:90%;">{{ old('place_of_receipt',$data->place_of_receipt) }}</textarea>
 			</td>
 				<td style="width: 207px;">PORT LOADING<br>
-				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;"></textarea>
+				<textarea id="port_of_loading" type="text" name="port_of_loading" style="width:90%;">{{ old('port_of_loading',$data->port_of_loading) }}</textarea>
 			</td>
 				
 
 			</tr>
             <tr>
 				<td style="height: 30px;">OCEAN VESSEL<br>
-				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;"></textarea>
+				<textarea id="ocean_vessel" type="text" name="ocean_vessel" style="width:90%;">{{ old('ocean_vessel',$data->ocean_vessel) }}</textarea>
 			</td>
 				<td>VOYAGE NO.<br>
-				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;"></textarea>
+				<textarea id="voyage_no" type="text" name="voyage_no" style="width:90%;">{{ old('voyage_no',$data->voyage_no) }}</textarea>
 			</td>
 	
 			</tr>
             <tr>
 				<td style="height: 35px;">PORT OF DISCHARGE<br>
-				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;"></textarea>
+				<textarea id="port_of_discharge" type="text" name="port_of_discharge" style="width:90%;">{{ old('port_of_discharge',$data->port_of_discharge) }}</textarea>
 			</td>
 				<td>PLACE OF DELIVERY<br>
-				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;"></textarea>
+				<textarea id="place_of_delivery" type="text" name="place_of_delivery" style="width:90%;">{{ old('place_of_delivery',$data->place_of_delivery) }}</textarea>
 			</td>
 
 			</td>
 				<td>FINAL DESTINATION<br>
-				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;"></textarea>
+				<textarea id="final_destination" type="text" name="final_destination" style="width:90%;">{{ old('final_destination',$data->final_destination) }}</textarea>
 			</td>
 				<td>FREIGHT PAYABLE AT<br>
-				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;"></textarea>
+				<textarea id="freight_payable_at" type="text" name="freight_payable_at" style="width:90%;">{{ old('freight_payable_at',$data->freight_payable_at) }}</textarea>
 			</td>
 				<td width="140px">NUMBER OF ORIGINAL B/L<br>
-				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;"></textarea>
+				<textarea id="number_of_original_bl" type="text" name="number_of_original_bl" style="width:90%;">{{ old('number_of_original_bl',$data->number_of_original_bl) }}</textarea>
 			</td>
 			</tr>
 			</table>
@@ -446,11 +446,11 @@
 									<button class="button-7" id="closePopupButton" type="button">Close</button>
 								</div>
 							</div>
-							<input class="hidden" type="text" id="geteditor" name="marks_container_seal_no">
+							<input class="hidden" type="text" id="geteditor" name="marks_container_seal_no" value="{{ old('marks_container_seal_no',$data->marks_container_seal_no) }}">
 			<!--<textarea readonly id="geteditor" type="text" name="marks_container_seal_no" style="width:96%; height: 87%;"></textarea>-->
 			<!--<div id="displayArea" style="width:96%; height: 87%;"></div>-->
 			
-			<div id="displayArea" style="margin-top: -13px;"></div>
+			<div id="displayArea" style="margin-top: -13px;">{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</div>
 			</td>
 			<td class="no-border-tb" rowspan="3" width="80px">
 							<!-- Button to open the popup -->
@@ -466,8 +466,8 @@
 									<button class="button-7" id="closePopupButton1" type="button">Close</button>
 								</div>
 							</div>
-							<input class="hidden" type="text" id="geteditor1" name="number_of_packages">
-							<div id="displayArea1" style="margin-top: -25px;"></div>
+							<input class="hidden" type="text" id="geteditor1" name="number_of_packages" value="{{ old('number_of_packages',$data->number_of_packages) }}">
+							<div id="displayArea1" style="margin-top: -25px;">{!! old('number_of_packages',$data->number_of_packages) !!}</div>
 			</td>
 			<td class="no-border-bottom" rowspan="3" width="300px">
 							<!-- Button to open the popup -->
@@ -484,14 +484,14 @@
 									<button class="button-7" id="closePopupButton2" type="button">Close</button>
 								</div>
 							</div>
-							<input class="hidden" type="text" id="geteditor2" name="description_of_packages_and_goods">
-							<div id="displayArea2" style="margin-top: -26px;"></div>
+							<input class="hidden" type="text" id="geteditor2" name="description_of_packages_and_goods" value="{{ old('description_of_packages_and_goods',$data->description_of_packages_and_goods) }}">
+							<div id="displayArea2" style="margin-top: -26px;">{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</div>
 			</td>
 			<td class="no-border-bottom" width="80px">
-			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;"></textarea>
+			<textarea id="gross_weight" type="text" name="gross_weight" style="width:95%; height: 99%;">{{ old('gross_weight',$data->gross_weight) }}</textarea>
 			</td>
 			<td class="no-border-lb" rowspan="2" width="80px">
-			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;"></textarea>
+			<textarea id="measurement" type="text" name="measurement" style="width:95%; height: 99%;">{{ old('measurement',$data->measurement) }}</textarea>
 			</td>		
 			</tr>
 
@@ -510,9 +510,9 @@
 			<table>
 				<tr>
 					<td>SHIPPED ON BOARD THE VESSEL<br>
-					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;"></textarea></div>
+					<div><textarea id="bl_number" type="text" name="shipped_on_board_the_vessel" style="width: 96%;">{{ old('shipped_on_board_the_vessel',$data->shipped_on_board_the_vessel) }}</textarea></div>
 					<hr style="border-top: dotted 1px;"/>
-					<p>DATED <input id="on_board_date" type="date" name="on_board_date" style="width:25%; height: 8%;" required/></p>
+					<p>DATED <input id="on_board_date" type="date" name="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" style="width:25%; height: 8%;" required/></p>
 				
 				</td>
 						
@@ -542,9 +542,9 @@
 
 								<tr>
 								
-									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;"></textarea></td>
-									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;"></textarea></td>
-									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;"></textarea></td>
+									<td class="no-border-tl" style="width: 50px; height: 120px;"><textarea id="freight_and_charges" name="freight_and_charges" style="width:96%; height: 96%;">{{ old('freight_and_charges',$data->freight_and_charges) }}</textarea></td>
+									<td class="no-border-top" style="width: 60px; height: 120px;"><textarea id="prepaid" name="prepaid" style="width:96%; height: 96%;">{{ old('prepaid',$data->prepaid) }}</textarea></td>
+									<td class="no-border-tr" style="width: 60px; height: 120px;"><textarea id="collect" name="collect" style="width:96%; height: 96%;">{{ old('collect',$data->collect) }}</textarea></td>
 							
 								</tr>
 								</table>
@@ -560,7 +560,21 @@
 				<div class="container">
 				<button class="button-7" type="submit">Save</button>
 				</div>    
-	</form>
-	</div>
+</form>
+</div>
+<!--<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>-->
+	<!--<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>-->
     </body>
 </html>

@@ -261,6 +261,7 @@
 
                 <p>
                 {{ old('name',$user->name) }}
+                <small>{{ old('role',$user->role) }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -358,6 +359,7 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Creation Date</th>
+                  <th>Role</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -369,6 +371,7 @@
                 <td>{{ $data->name }}</td>
                 <td>{{ $data->email }}</td>
                 <td>{{ $data->created_at }}</td>
+                <td>{{ $data->role }}</td>
                 <td>
                     <center>
                     @if ($data->status == 1)
@@ -382,11 +385,11 @@
                 </td>
                 <td>
                 <a href="{{ route('user-profile.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                    <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
+                    <!--<form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
-                    </form>
+                    </form>-->
                 </td>
                 </tr>
                 @endforeach

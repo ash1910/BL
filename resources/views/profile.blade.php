@@ -140,7 +140,10 @@
                 <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$user->name) }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                <label>Email:</label><input readonly type="email" name="email" value="{{ old('name',$user->email) }}" placeholder="Email">
+                <label>Email:</label><input readonly type="email" value="{{ old('name',$user->email) }}" placeholder="Email">
+                </div>
+                <div class="textbox">
+                <label>Role:</label><input readonly type="text" value="{{ old('role',$user->role) }}" placeholder="Email">
                 </div>
                 <input type="submit" class="btn" value="Update Information">
             </form>

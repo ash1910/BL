@@ -112,10 +112,18 @@
         .back-btn:hover {
             color: #0056b3;
         }
+
+        .role-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
-    <a href="/dashboard" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+    <a href="/users" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
     <div class="container">
         <div class="account-box">
             <h2>User Profile</h2>
@@ -137,22 +145,32 @@
             @method('PUT') 
                 <h3>Profile Information</h3>
                 <div class="textbox">
-                <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$user->name) }}" placeholder="Full Name" required>
+                    <label>Full Name:</label><input type="text" name="name" value="{{ old('name',$user->name) }}" placeholder="Full Name" required>
                 </div>
                 <div class="textbox">
-                <label>Email:</label><input type="email" name="email" value="{{ old('email',$user->email) }}" placeholder="Email">
+                    <label>Email:</label><input type="email" name="email" value="{{ old('email',$user->email) }}" placeholder="Email">
                 </div>
+                <!-- Role Selection -->
+                <div class="role-group">
+                    <label>Role:</label>
+                    <select name="role" class="textbox" required>
+                        <option value="SuperAdmin" {{ old('role', $user->role) == 'SuperAdmin' ? 'selected' : '' }}>SuperAdmin</option>
+                        <option value="Administrator" {{ old('role', $user->role) == 'Administrator' ? 'selected' : '' }}>Administrator</option>
+                        <option value="Accounts" {{ old('role', $user->role) == 'Accounts' ? 'selected' : '' }}>Accounts</option>
+                        <option value="Member" {{ old('role', $user->role) == 'Member' ? 'selected' : '' }}>Member</option>
+                    </select>
+                </div><br>
                 <!-- Status Selection -->
                 <div class="status-group">
-                <label>Status:</label>
-                <div>
-                    <label>
-                        <input type="radio" name="status" value="1" {{ old('status', $user->status) == '1' ? 'checked' : '' }} required> Active
-                    </label>
-                    <label>
-                        <input type="radio" name="status" value="0" {{ old('status', $user->status) == '0' ? 'checked' : '' }} required> Inactive
-                    </label>
-                </div>
+                    <label>Status:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="status" value="1" {{ old('status', $user->status) == '1' ? 'checked' : '' }} required> Active
+                        </label>
+                        <label>
+                            <input type="radio" name="status" value="0" {{ old('status', $user->status) == '0' ? 'checked' : '' }} required> Inactive
+                        </label>
+                    </div>
                 </div><br>
                 <input type="submit" class="btn" value="Update Information">
             </form>

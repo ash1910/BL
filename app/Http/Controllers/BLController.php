@@ -28,8 +28,27 @@ class BLController extends Controller
      */
     public function create()
     {
-        //
-        return view('add');
+        // The fixed prefix
+        $prefix = "HNS-SE";
+
+        // Get the current year and month
+        $now = new \DateTime();
+        $year = $now->format('y'); // Last two digits of the current year
+        $month = $now->format('m'); // Current month (01-12)
+
+        // Get the last code from the database using Eloquent
+        $lastCode = Bl::where('bl_number', 'like', $prefix . $year . $month . '%')
+            ->orderBy('bl_number', 'desc')
+            ->value('bl_number');
+
+        // Extract the last 4-digit number and increment it
+        $lastNumber = $lastCode ? intval(substr($lastCode, -4)) : 0;
+        $newNumber = str_pad($lastNumber + 1, 4, '1000', STR_PAD_LEFT);
+
+        // Create the new code
+        $bl_number = $prefix . $year . $month . $newNumber;
+
+        return view('add', ['bl_number' => $bl_number]);
     }
 
     /**
@@ -229,6 +248,36 @@ class BLController extends Controller
     
     }
 
+        /**
+     * Clone the specified resource in storage.
+     */
+    public function clone(Bl $id)
+    {
+         // The fixed prefix
+         $prefix = "HNS-SE";
+
+         // Get the current year and month
+         $now = new \DateTime();
+         $year = $now->format('y'); // Last two digits of the current year
+         $month = $now->format('m'); // Current month (01-12)
+ 
+         // Get the last code from the database using Eloquent
+         $lastCode = Bl::where('bl_number', 'like', $prefix . $year . $month . '%')
+             ->orderBy('bl_number', 'desc')
+             ->value('bl_number');
+ 
+         // Extract the last 4-digit number and increment it
+         $lastNumber = $lastCode ? intval(substr($lastCode, -4)) : 0;
+         $newNumber = str_pad($lastNumber + 1, 4, '1000', STR_PAD_LEFT);
+ 
+         // Create the new code
+         $bl_number = $prefix . $year . $month . $newNumber;
+ 
+         //return view('add', ['bl_number' => $bl_number]);
+
+        return view('clone-bl', ['data' => $id, 'bl_number' => $bl_number]);
+    }
+    
     /**
      * Remove the specified resource from storage.
      */
