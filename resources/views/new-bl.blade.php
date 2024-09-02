@@ -14,7 +14,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
 		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
 		<script src="../../dist/js/addpopup.js"></script>
-		<script src="../../dist/js/generatecode.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -314,15 +313,22 @@
         }
 
 		.stamp-group {
-        margin-bottom: 15px;
-		}
+            margin-bottom: 15px;
+        }
 
-		.stamp-group label {
-			display: block; /* Ensures each label (and thus each radio button) is on its own line */
-			margin-bottom: 5px; /* Adds some space between each radio button for better readability */
+        .stamp-group label {
+            margin-right: 10px;
 			font-weight: bold;
-		}
-			
+        }
+
+        .stamp-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
 					
         </style>
     </head>
@@ -343,6 +349,18 @@
 			
 	<form action="{{ route('bl-list.store') }}" method="POST">
 	@csrf
+
+	            <!-- Role Selection -->
+				<div class="stamp-group">
+                    <label for="stamp">Stamp:</label>
+                    <select id="stamp" name="stamp" required>
+                        <option value="">Select Stamp</option>
+                        <option value="FIRST ORIGINAL">FIRST ORIGINAL</option>
+                        <option value="SECOND ORIGINAL">SECOND ORIGINAL</option>
+                        <option value="THIRD ORIGINAL">THIRD ORIGINAL</option>
+                    </select>
+                </div>
+
 			<table>
 			<tr>
 				<td colspan="2" style="height: 100px;">SHIPPER<br>
@@ -566,22 +584,6 @@
  
 				
 			</table><br>
-
-			                <!-- Stamp Selection -->
-							<div class="stamp-group">
-				<label>Choose Stamp:</label>
-                    <div>
-                        <label>
-                            <input type="radio" name="stamp" value="First Original" required> First Original
-                        </label>
-                        <label>
-                            <input type="radio" name="stamp" value="Second Original" required> Second Original
-                        </label>
-						<label>
-                            <input type="radio" name="stamp" value="Third Original" required> Third Original
-                        </label>
-                    </div>
-				</div>
 
 				<div class="container">
 				<button class="button-7" type="submit">Save</button>

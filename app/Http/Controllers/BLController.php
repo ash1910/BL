@@ -102,6 +102,7 @@ class BLController extends Controller
             'freight_and_charges' => 'nullable',
             'prepaid' => 'nullable',
             'collect' => 'nullable',
+            'stamp' => 'required',
 
         ]);
 
@@ -131,6 +132,7 @@ class BLController extends Controller
             'freight_and_charges' => $request->freight_and_charges,
             'prepaid' => $request->prepaid,
             'collect' => $request->collect,
+            'stamp' => $request->stamp,
     
        ]);
 

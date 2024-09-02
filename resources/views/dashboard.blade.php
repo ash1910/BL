@@ -351,7 +351,7 @@
             <div class="icon">
               <i class="ion ion-document"></i>
             </div>
-            <a href="/list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/bl-list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

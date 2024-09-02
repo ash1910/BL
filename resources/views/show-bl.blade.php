@@ -264,10 +264,10 @@
 						Level #07, Plot #02, Road #144, Gulshan C/A, <br>Dhaka - 1212.
 						Tel: +880 2 55045148-9.<br>
 						Email: info@hns-international.com.<br>Web: www.hns-international.com
-
 						</p>
+						<div style="text-align: center; font-size: 15px;">{{ old('stamp',$data->stamp) }}</div>
 					</p>
-					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>OCEAN BILL OF LADING</b></div>
+					<div class="no-border-all" style="text-align: center; font-size: 14px;"><b>OCEAN BILL OF LADING</b></div>
 				</td>
 
 				

@@ -35,5 +35,6 @@ class Bl extends Model
         'freight_and_charges',
         'prepaid',
         'collect',
+        'stamp',
     ];
 }
