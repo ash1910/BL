@@ -312,6 +312,16 @@
         .back-btn:hover {
             color: #0056b3;
         }
+
+		.stamp-group {
+        margin-bottom: 15px;
+		}
+
+		.stamp-group label {
+			display: block; /* Ensures each label (and thus each radio button) is on its own line */
+			margin-bottom: 5px; /* Adds some space between each radio button for better readability */
+			font-weight: bold;
+		}
 			
 					
         </style>
@@ -556,6 +566,22 @@
  
 				
 			</table><br>
+
+			                <!-- Stamp Selection -->
+							<div class="stamp-group">
+				<label>Choose Stamp:</label>
+                    <div>
+                        <label>
+                            <input type="radio" name="stamp" value="First Original" required> First Original
+                        </label>
+                        <label>
+                            <input type="radio" name="stamp" value="Second Original" required> Second Original
+                        </label>
+						<label>
+                            <input type="radio" name="stamp" value="Third Original" required> Third Original
+                        </label>
+                    </div>
+				</div>
 
 				<div class="container">
 				<button class="button-7" type="submit">Save</button>
