@@ -20,7 +20,7 @@ class BLController extends Controller
         $user = Auth::user();
 
         $data = Bl::all();
-        return view('list', ['datas' => $data], compact('user'));
+        return view('bl-list', ['datas' => $data], compact('user'));
     }
 
     /**
@@ -48,7 +48,7 @@ class BLController extends Controller
         // Create the new code
         $bl_number = $prefix . $year . $month . $newNumber;
 
-        return view('add', ['bl_number' => $bl_number]);
+        return view('new-bl', ['bl_number' => $bl_number]);
     }
 
     /**
@@ -134,7 +134,7 @@ class BLController extends Controller
     
        ]);
 
-        return redirect('/list')->with('status','BL Created Successfully');
+        return redirect('/bl-list')->with('status','BL Created Successfully');
     }
 
     /**
@@ -143,7 +143,7 @@ class BLController extends Controller
     public function show(Bl $id)
     {
         //
-        return view('form', ['data' => $id ]); 
+        return view('show-bl', ['data' => $id ]); 
     }
 
     /**
@@ -152,7 +152,7 @@ class BLController extends Controller
     public function print(Bl $id)
     {
         //
-        return view('print', ['data' => $id ]); 
+        return view('print-bl', ['data' => $id ]); 
     }
 
     /**
@@ -216,7 +216,7 @@ class BLController extends Controller
 
 
         //return redirect()->route('list')->with('status', 'BL Updated Successfully!');
-        return redirect('list')->with('status','BL Updated Successfully!');
+        return redirect('bl-list')->with('status','BL Updated Successfully!');
 
     //     $info->update([
     //         'bl_number' => $request->bl_number,
@@ -286,7 +286,7 @@ class BLController extends Controller
         //
         $id->delete();
         //return redirect()->route('list')->with('status', 'BL Deleted Successfully!');
-        return redirect('list')->with('status','BL Deleted Successfully!');
+        return redirect('bl-list')->with('status','BL Deleted Successfully!');
       
     }
 

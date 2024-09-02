@@ -334,7 +334,7 @@ class AuthController extends Controller
           }
       
           // Redirect with success message
-          return Redirect::route('profile.edit', $id)->with('success', 'Password Updated Successfully.');
+          return Redirect::route('profile.edit')->with('success', 'Password Updated Successfully.');
       }
 
       public function profileUpdate(Request $request, $id)

@@ -258,7 +258,9 @@
 
                 <p>
                 {{ old('name',$user->name) }}
-                <small>{{ old('role',$user->role) }}</small>
+                <small>{{ old('role',$user->role) }}@if(Auth::user()->role == "SuperAdmin")
+                - I AM GROOT🌲
+                @endif</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -299,8 +301,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/list"><i class="fa fa-circle-o"></i> BL List</a></li>
-            <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
+            <li class="active"><a href="/bl-list"><i class="fa fa-circle-o"></i> BL List</a></li>
+            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
           </ul>
         </li>
         @if(Auth::user()->role == "SuperAdmin")
@@ -313,7 +315,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/users"><i class="fa fa-circle-o"></i> Users</a></li>
-            <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
+            <li><a href="/add-user"><i class="fa fa-circle-o"></i> New User</a></li>
           </ul>
         </li>
         @endif
@@ -354,13 +356,13 @@
                 <thead>
                 <tr>
                   <th>BL Number</th>
-                  <!--<th>Shipper</th>-->
+                  <th>Shipper</th>
                   <th>Issue Date</th>
-                  <th>On Board Date</th>
-                  <th>Port Of Discharge</th>
-                  <th>Final Destination</th>
-                  <th>Freight Payable At</th>
-                  <th>Number Of Original BL</th>
+                  <!--<th>On Board Date</th>-->
+                  <!--<th>Port Of Discharge</th>-->
+                  <!--<th>Final Destination</th>-->
+                  <!--<th>Freight Payable At</th>-->
+                  <!--<th>Number Of Original BL</th>-->
                   <th></th>
                 </tr>
                 </thead>
@@ -368,25 +370,25 @@
                 @foreach ($datas as $data)
                 <tr>
                 <td>{{ $data->bl_number }}</td>
-                <!--<td>{{ $data->shipper }}</td>-->
+                <td>{{ $data->shipper }}</td>
                 <td>{{ $data->date_of_issue }}</td>
-                <td>{{ $data->on_board_date }}</td>
-                <td>{{ $data->port_of_discharge }}</td>
-                <td>{{ $data->final_destination }}</td>
-                <td>{{ $data->freight_payable_at }}</td>
-                <td>{{ $data->number_of_original_bl }}</td>
+                <!--<td>{{ $data->on_board_date }}</td>-->
+                <!--<td>{{ $data->port_of_discharge }}</td>-->
+                <!--<td>{{ $data->final_destination }}</td>-->
+                <!--<td>{{ $data->freight_payable_at }}</td>-->
+                <!--<td>{{ $data->number_of_original_bl }}</td>-->
                 <td>
                 <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                <a href="{{ route('form.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
+                <a href="{{ route('show-bl.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
                 <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
                 @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")
-                <form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
+                <form action="{{ route('bl-list.destroy', $data->id) }}" method="POST" class="button-container">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                 </form>
                 @endif
-                    <a href="{{ route('print.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
+                    <a href="{{ route('print-bl.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>
                 @endforeach

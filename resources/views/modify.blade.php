@@ -317,7 +317,7 @@
         </style>
     </head>
 	<body>
-	<a href="/list" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+	<a href="/bl-list" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
 <div class="element">
 	            <!-- Display All Error Messages -->
 				@if ($errors->any())
@@ -331,7 +331,7 @@
                 </div>
             @endif
 			
-	<form action="{{ route('list.update', ['id' => $data->id]) }}" method="POST">
+	<form action="{{ route('bl-list.update', ['id' => $data->id]) }}" method="POST">
 	@csrf
 	@method('PUT')
 			<table>

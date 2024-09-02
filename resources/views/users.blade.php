@@ -261,7 +261,9 @@
 
                 <p>
                 {{ old('name',$user->name) }}
-                <small>{{ old('role',$user->role) }}</small>
+                <small>{{ old('role',$user->role) }}@if(Auth::user()->role == "SuperAdmin")
+                - I AM GROOT🌲
+                @endif</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -302,8 +304,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/list"><i class="fa fa-circle-o"></i> BL List</a></li>
-            <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
+            <li><a href="/bl-list"><i class="fa fa-circle-o"></i> BL List</a></li>
+            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
           </ul>
         </li>
 
@@ -316,7 +318,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="/users"><i class="fa fa-circle-o"></i> Users</a></li>
-            <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
+            <li><a href="/add-user"><i class="fa fa-circle-o"></i> New User</a></li>
           </ul>
         </li>
       </ul>
@@ -385,7 +387,7 @@
                 </td>
                 <td>
                 <a href="{{ route('user-profile.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                    <!--<form action="{{ route('list.destroy', $data->id) }}" method="POST" class="button-container">
+                    <!--<form action="" method="POST" class="button-container">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>

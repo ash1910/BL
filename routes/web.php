@@ -52,18 +52,18 @@ Route::put('/profile/profile-update/{id}',[AuthController::class, 'profileUpdate
 Route::put('/profile/profile-password-update/{id}',[AuthController::class, 'profilepassUpdate'])->name('profile.update.password')->middleware('auth');
 
 //CRUD BL
-Route::get('/list', [BLController::class, 'index'])->name('list.index')->middleware('auth');
-Route::get('/add', [BLController::class, 'create'])->name('add.create')->middleware('auth');
-Route::post('/list', [BLController::class, 'store'])->name('list.store')->middleware('auth');
-Route::delete('/list/{id}', [BLController::class, 'destroy'])->name('list.destroy')->middleware('auth');
+Route::get('/bl-list', [BLController::class, 'index'])->name('bl-list.index')->middleware('auth');
+Route::get('/new-bl', [BLController::class, 'create'])->name('new-bl.create')->middleware('auth');
+Route::post('/bl-list', [BLController::class, 'store'])->name('bl-list.store')->middleware('auth');
+Route::delete('/bl-list/{id}', [BLController::class, 'destroy'])->name('bl-list.destroy')->middleware('auth');
 Route::get('/modify/{id}', [BLController::class, 'edit'])->name('modify.edit')->middleware('auth');
-Route::put('/list/{id}', [BLController::class, 'update'])->name('list.update')->middleware('auth');
-Route::get('/form/{id}', [BLController::class, 'show'])->name('form.show')->middleware('auth');
+Route::put('/bl-list/{id}', [BLController::class, 'update'])->name('bl-list.update')->middleware('auth');
+Route::get('/show-bl/{id}', [BLController::class, 'show'])->name('show-bl.show')->middleware('auth');
 //Clone
 Route::get('/clone-bl/{id}', [BLController::class, 'clone'])->name('clone-bl.clone')->middleware('auth');
 
 
-Route::get('/print/{id}', [BLController::class, 'print'])->name('print.show')->middleware('auth');
+Route::get('/print-bl/{id}', [BLController::class, 'print'])->name('print-bl.show')->middleware('auth');
 
 
 //CRUD ORDER

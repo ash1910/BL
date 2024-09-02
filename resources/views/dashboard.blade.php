@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="/dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>BL</span>
       <!-- logo for regular state and mobile devices -->
@@ -257,7 +257,9 @@
 
                 <p>
                 {{ old('name',$user->name) }}
-                <small>{{ old('role',$user->role) }}</small>
+                <small>{{ old('role',$user->role) }}@if(Auth::user()->role == "SuperAdmin")
+                - I AM GROOT🌲
+                @endif</small>
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -297,8 +299,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/list"><i class="fa fa-circle-o"></i> BL List</a></li>
-            <li><a href="/add"><i class="fa fa-circle-o"></i> Add New BL</a></li>
+            <li><a href="/bl-list"><i class="fa fa-circle-o"></i> BL List</a></li>
+            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
           </ul>
         </li>
         @if(Auth::user()->role == "SuperAdmin")
@@ -311,7 +313,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/users"><i class="fa fa-circle-o"></i> Users</a></li>
-            <li><a href="/add-user"><i class="fa fa-circle-o"></i> Add New User</a></li>
+            <li><a href="/add-user"><i class="fa fa-circle-o"></i> New User</a></li>
           </ul>
         </li>
         @endif
@@ -368,6 +370,7 @@
           </div>-->
         <!--</div>-->
         <!-- ./col -->
+        @if(Auth::user()->role == "SuperAdmin")
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
@@ -382,6 +385,7 @@
             <a href="/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        @endif
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
