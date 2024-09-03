@@ -240,40 +240,11 @@
 	content: "";
 	clear: both;
 	display: table;
-	}
-    .watermark-container {
-    position: relative;
-	}
-
-	.watermark {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		font-size: 40px;
-		transform: translate(-50%, 190%);
-		opacity: 0.1
-		/* Adjust opacity, font-size, color, etc. as needed rotate(-45deg) */
 	}					
         </style>
     </head>
 	<body>
-        <?php
-    // Capture the 'stamp' parameter from the URL
-    $stamp = isset($_GET['stamp']) ? $_GET['stamp'] : '';
 
-    // Determine the watermark image based on the 'stamp' value
-    if ($stamp == "NO STAMP") {
-        $img ="";
-    } else if ($stamp == "ORIGINAL COPY") {
-        $img = "/images/watermark-original-copy.png";
-        
-    } else if ($stamp == "DRAFT COPY") {
-        $img = "/images/watermark-draft-copy.png";
-    } else {
-        $img ="";
-    }
-    ?>
-    <div class="watermark watermark-container"><img src="<?php echo $img; ?>" style="height: 100px; width: 540px;"></div>
 
 	@csrf
 	@method('PUT')
@@ -465,16 +436,7 @@
 				
 			</table>
 
-            <script>
-        window.onload = function() {
-            // Check if the 'print' query parameter is present
-            const params = new URLSearchParams(window.location.search);
-            if (params.has('print')) {
-                // Trigger print dialog
-                window.print();
-            }
-        };
-    </script>
+
 
 
     </body>

@@ -388,8 +388,7 @@
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                 </form>
                 @endif
-                <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-default" data-id="{{ $data->id }}" onclick="setPrintId(this)">Print</a>
-                    
+                    <a href="{{ route('print-bl.show', ['id' => $data->id]) }}" target="_blank" class="btn btn-primary btn-sm" onclick="printPage(event)">Print</a>
                 </td>
                 </tr>
                 @endforeach
@@ -608,78 +607,6 @@
 </div>
 <!-- ./wrapper -->
 
-                    <!--Modal-->
-                    <style>
-                        	.stamp-group {
-                                margin-bottom: 15px;
-                            }
-
-                            .stamp-group label {
-                                margin-right: 10px;
-                                font-weight: bold;
-                            }
-
-                            .stamp-group select {
-                                width: 100%;
-                                padding: 10px;
-                                border: 1px solid #ddd;
-                                border-radius: 5px;
-                                box-sizing: border-box;
-                            }
-                    </style>
-                    <form action="">
-                    <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Print Option</h4>
-            </div>
-            <div class="modal-body">
-                <!-- Stamp Selection -->
-                <div class="stamp-group">
-                    <label for="stamp">Stamp Type:</label>
-                    <select id="stamp" name="stamp" required>
-                        <option value="">Select Stamp</option>
-                        <option value="NO STAMP">NO STAMP</option>
-                        <option value="DRAFT COPY">DRAFT COPY</option>
-                        <option value="ORIGINAL COPY">ORIGINAL COPY</option>
-                    </select>
-                </div>
-                <input type="hidden" id="print-id" name="print-id" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="printPage(event)">Print</button>
-            </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-                        </form>
-
-        <script>
-        function setPrintId(element) {
-            var id = $(element).data('id');
-            $('#print-id').val(id);
-        }
-
-        function printPage() {
-            var id = $('#print-id').val();
-            var stamp = $('#stamp').val();
-                        // Prevent the default link behavior
-                        event.preventDefault();
-            if (id && stamp) {
-                var url = "{{ route('print-bl.show', ['id' => '__ID__']) }}".replace('__ID__', id) + "?stamp=" + stamp + "&print=true";
-                window.open(url, '_blank');
-            } else {
-                alert('Please select a stamp type.');
-            }
-        }
-        </script>
-
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -696,7 +623,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <script>
-       /* function printPage(event) {
+        function printPage(event) {
             // Prevent the default link behavior
             event.preventDefault();
             
@@ -711,7 +638,7 @@
                 // Trigger the print dialog
                 printWindow.print();
             };
-        }*/
+        }
     </script>
 <!-- page script -->
 <script>

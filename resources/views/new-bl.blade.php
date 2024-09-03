@@ -311,24 +311,6 @@
         .back-btn:hover {
             color: #0056b3;
         }
-
-		.stamp-group {
-            margin-bottom: 15px;
-        }
-
-        .stamp-group label {
-            margin-right: 10px;
-			font-weight: bold;
-        }
-
-        .stamp-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
 					
         </style>
     </head>
@@ -349,17 +331,6 @@
 			
 	<form action="{{ route('bl-list.store') }}" method="POST">
 	@csrf
-
-	            <!-- Role Selection -->
-				<div class="stamp-group">
-                    <label for="stamp">Stamp:</label>
-                    <select id="stamp" name="stamp" required>
-                        <option value="">Select Stamp</option>
-                        <option value="FIRST ORIGINAL">FIRST ORIGINAL</option>
-                        <option value="SECOND ORIGINAL">SECOND ORIGINAL</option>
-                        <option value="THIRD ORIGINAL">THIRD ORIGINAL</option>
-                    </select>
-                </div>
 
 			<table>
 			<tr>
