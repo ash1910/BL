@@ -75,7 +75,8 @@ class OrderController extends Controller
     public function show1()
     {
         //
-        return view('show-order1'); 
+        //return view('show-order1');
+        return view('shipping-order'); 
     }
 
     /**

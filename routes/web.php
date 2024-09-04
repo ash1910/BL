@@ -35,20 +35,20 @@ Route::get('login', function () {
 
 // User Authentication
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
-Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard');
-Route::get('/add-user',[AuthController::class, 'registration'])->name('add-user');
-Route::post('/add-user',[AuthController::class, 'postRegistration'])->name('add-user.post');
-Route::get('/users',[AuthController::class, 'showUsers'])->name('users.index');
+Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/add-user',[AuthController::class, 'registration'])->name('add-user')->middleware('auth');
+Route::post('/add-user',[AuthController::class, 'postRegistration'])->name('add-user.post')->middleware('auth');
+Route::get('/users',[AuthController::class, 'showUsers'])->name('users.index')->middleware('auth');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 //User Edit
-Route::get('/user-profile/{id}',[AuthController::class, 'userEdit'])->name('user-profile.edit');
-Route::put('/user-profile/user-update/{id}',[AuthController::class, 'userUpdate'])->name('user-profile.update');
-Route::put('/user-profile/user-password-update/{id}',[AuthController::class, 'userpassUpdate'])->name('user-profile.update.password');
+Route::get('/user-profile/{id}',[AuthController::class, 'userEdit'])->name('user-profile.edit')->middleware('auth');
+Route::put('/user-profile/user-update/{id}',[AuthController::class, 'userUpdate'])->name('user-profile.update')->middleware('auth');
+Route::put('/user-profile/user-password-update/{id}',[AuthController::class, 'userpassUpdate'])->name('user-profile.update.password')->middleware('auth');
 
 //Profile Edit
-Route::get('/profile',[AuthController::class, 'profileEdit'])->name('profile.edit')->middleware('auth');
-Route::put('/profile/profile-update/{id}',[AuthController::class, 'profileUpdate'])->name('profile.update')->middleware('auth');
+Route::get('/profile',[AuthController::class, 'profileEdit'])->name('profile.edit')->middleware('auth')->middleware('auth');
+Route::put('/profile/profile-update/{id}',[AuthController::class, 'profileUpdate'])->name('profile.update')->middleware('auth')->middleware('auth');
 Route::put('/profile/profile-password-update/{id}',[AuthController::class, 'profilepassUpdate'])->name('profile.update.password')->middleware('auth');
 
 //CRUD BL
@@ -75,3 +75,5 @@ Route::get('/modify-order/{id}', [OrderController::class, 'edit'])->name('modify
 Route::put('/order-list/{id}', [OrderController::class, 'update'])->name('order-list.update')->middleware('auth');
 Route::get('/show-order/{id}', [OrderController::class, 'show'])->name('show-order.show')->middleware('auth');
 Route::get('/print-order/{id}', [OrderController::class, 'show'])->name('print-order.show')->middleware('auth');
+
+Route::get('/shipping-order', [OrderController::class, 'show1'])->name('shipping-order.show')->middleware('auth');

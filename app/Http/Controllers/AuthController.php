@@ -31,11 +31,14 @@ class AuthController extends Controller
     // }
     public function showUsers()
     {
-    $user = Auth::user();
-    $data = User::all();
-    
-    // Return the view with the user's data
-    return view('users', ['datas' => $data, 'user' => $user]);
+        if (Auth::check() && Auth::user()->role == "SuperAdmin") {
+            $user = Auth::user();
+            $data = User::all();
+            // Return the view with the user's data
+            return view('users', ['datas' => $data, 'user' => $user]);
+        }
+        
+    return Redirect::route("dashboard")->withStatus('Oops! You do not have the Access.');
     }
 
 

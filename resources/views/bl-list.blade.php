@@ -389,7 +389,6 @@
                 </form>
                 @endif
                 <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-default" data-id="{{ $data->id }}" onclick="setPrintId(this)">Print</a>
-                    
                 </td>
                 </tr>
                 @endforeach
@@ -608,8 +607,8 @@
 </div>
 <!-- ./wrapper -->
 
-                    <!--Modal-->
-                    <style>
+<!--Modal-->
+<style>
                         	.stamp-group {
                                 margin-bottom: 15px;
                             }
@@ -627,40 +626,39 @@
                                 box-sizing: border-box;
                             }
                     </style>
-                    <form action="">
-                    <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Print Option</h4>
-            </div>
-            <div class="modal-body">
-                <!-- Stamp Selection -->
-                <div class="stamp-group">
-                    <label for="stamp">Stamp Type:</label>
-                    <select id="stamp" name="stamp" required>
-                        <option value="">Select Stamp</option>
-                        <option value="NO STAMP">NO STAMP</option>
-                        <option value="DRAFT COPY">DRAFT COPY</option>
-                        <option value="ORIGINAL COPY">ORIGINAL COPY</option>
-                    </select>
-                </div>
-                <input type="hidden" id="print-id" name="print-id" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="printPage(event)">Print</button>
-            </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-                        </form>
 
-        <script>
+                  <div class="modal fade" id="modal-default">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Print Option</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Stamp Selection -->
+                            <div class="stamp-group">
+                                <label for="stamp">Stamp Type:</label>
+                                <select id="stamp" name="stamp" required>
+                                    <option value="">Select Stamp</option>
+                                    <option value="NO STAMP">NO STAMP</option>
+                                    <option value="DRAFT COPY">DRAFT COPY</option>
+                                    <option value="ORIGINAL COPY">ORIGINAL COPY</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="print-id" name="print-id" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="printPage(event)">Print</button>
+                        </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+<script>
         function setPrintId(element) {
             var id = $(element).data('id');
             $('#print-id').val(id);
@@ -678,7 +676,7 @@
                 alert('Please select a stamp type.');
             }
         }
-        </script>
+</script>
 
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
@@ -695,24 +693,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script>
-       /* function printPage(event) {
-            // Prevent the default link behavior
-            event.preventDefault();
-            
-            // URL of the page to print
-            var printUrl = event.currentTarget.href;
-            
-            // Open a new window with the URL
-            var printWindow = window.open(printUrl, '_blank');
-            
-            // Wait for the new window to fully load
-            printWindow.onload = function() {
-                // Trigger the print dialog
-                printWindow.print();
-            };
-        }*/
-    </script>
 <!-- page script -->
 <script>
   $(function () {

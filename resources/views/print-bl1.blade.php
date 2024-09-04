@@ -241,7 +241,6 @@
 	clear: both;
 	display: table;
 	}
-    
     .watermark-container {
     position: relative;
 	}
@@ -254,11 +253,10 @@
 		transform: translate(-50%, 190%);
 		opacity: 0.1
 		/* Adjust opacity, font-size, color, etc. as needed rotate(-45deg) */
-	}	
+	}					
         </style>
     </head>
 	<body>
-
     <?php
     // Capture the 'stamp' parameter from the URL
     $stamp = isset($_GET['stamp']) ? $_GET['stamp'] : '';
@@ -276,7 +274,6 @@
     }
     ?>
     <div class="watermark watermark-container"><img src="<?php echo $img; ?>" style="height: 100px; width: 540px;"></div>
-
 
 	@csrf
 	@method('PUT')
@@ -468,7 +465,7 @@
 				
 			</table>
 
-<script>
+            <script>
         window.onload = function() {
             // Check if the 'print' query parameter is present
             const params = new URLSearchParams(window.location.search);
@@ -477,7 +474,7 @@
                 window.print();
             }
         };
-</script>
+    </script>
 
 
     </body>
