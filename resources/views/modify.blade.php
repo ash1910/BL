@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Bill Of Lading | Create BL</title>
+        <title>Bill Of Lading | Edit BL</title>
 		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
@@ -342,7 +342,7 @@
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
 					<img class="center" src="/images/HNS-International-Logo.png" style="height: 80px; width: 220px;"></img>
-					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>OCEAN BILL OF LADING</b></div>
+					<div colspan="3" class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 100px;"><b>COMBINED TRANSPORT BILL OF LADING</b></div>
 				</td>
 
 				
@@ -523,7 +523,7 @@
 													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b><br>
 													<div style="margin-top: 95px;">
 														<hr style="border-top: dotted 1px;"/>
-													<div style="text-align: center; font-size: 12px;"><b>For HNS Internaional</b></div>
+													<div style="text-align: center; font-size: 12px;"><b>Singed as agents & on behalf of the Carrier</b></div>
 												
 												</td>
 												</tr>														
