@@ -217,7 +217,7 @@ class AuthController extends Controller
             return view('dashboard', compact('user', 'totalBL', 'totalUser'));
         }
   
-        return redirect("login")->withStatus('Oops! You do not have the Access. Please Login.');
+        return Redirect::route("login");
     }
 
     /*public function list()
@@ -371,7 +371,7 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
   
-        return Redirect('login')->withSuccess('You have Successfully Logged Out!');
+        return Redirect::route('login')->withSuccess('You have Successfully Logged Out!');
     }
     
 }
