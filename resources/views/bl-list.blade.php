@@ -643,7 +643,7 @@
                                     <option value="">Select Stamp</option>
                                     <option value="NO STAMP">NO STAMP</option>
                                     <option value="DRAFT COPY">DRAFT COPY</option>
-                                    <option value="ORIGINAL COPY">ORIGINAL COPY</option>
+                                    <option value="ORIGINAL">ORIGINAL</option>
                                 </select>
                             </div>
                             <input type="hidden" id="print-id" name="print-id" />

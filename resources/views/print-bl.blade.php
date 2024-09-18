@@ -265,8 +265,8 @@
     // Determine the watermark image based on the 'stamp' value
     if ($stamp == "NO STAMP") {
         $img ="";
-    } else if ($stamp == "ORIGINAL COPY") {
-        $img = "/images/watermark-original-copy.png";
+    } else if ($stamp == "ORIGINAL") {
+        $img = "/images/watermark-original.png";
         
     } else if ($stamp == "DRAFT COPY") {
         $img = "/images/watermark-draft-copy.png";
