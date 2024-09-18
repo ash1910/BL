@@ -16,8 +16,8 @@
 		@page {
 			size: A4;
 			margin: 30px;
-			margin-bottom: 10px;
-			  
+			margin-bottom: 10px;
+			  
 			}
 
             hr.new {
@@ -203,7 +203,6 @@
 
 	.myDiv {
     	white-space: pre-wrap; /* Preserves whitespace and line breaks */
-		font-weight: bold;
 	}
 
 
@@ -251,7 +250,7 @@
 	@method('PUT')
             <table>
 			<tr>
-				<td colspan="2" style="height: 90px; width: 100px;" >SHIPPER<br>
+				<td colspan="2" style="height: 90px; width: 100px;" ><b>SHIPPER</b><br>
 				<div class="myDiv">{{ old('shipper',$data->shipper) }}</div>
 				
 				<td class="no-border-bottom" colspan="3" rowspan="2">
@@ -261,10 +260,10 @@
 						</div>
 						<p class="column1">
 						<b style="font-size: 16px;">HNS INTERNATIONAL</b><br>
-						<b>Corporate Office:</b> Police Plaza Concord<br>
-						Level #07, Plot #02, Road #144, Gulshan C/A, <br>Dhaka - 1212.
+						<b>Corporate Office:</b> 246, Tejgaon I/A,<br>
+						Dhaka - 1208, Bangladesh.<br>
 						Tel: +880 2 55045148-9.<br>
-						Email: info@hns-international.com.<br>Web: www.hns-international.com
+						Email: info@hns-international.com<br>Web: www.hns-international.com
 						</p>
 					</p>
 					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>COMBINED TRANSPORT BILL OF LADING</b></div>
@@ -274,7 +273,7 @@
 
 			</tr>
 			<tr>
-				<td colspan="2" style="height: 90px;">CONSIGNEE<br>
+				<td colspan="2" style="height: 90px;"><b>CONSIGNEE</b><br>
 				<div class="myDiv">{{ old('consignee',$data->consignee) }}</div>
 			</td>
 
@@ -289,7 +288,7 @@
 				
 			</tr>
 			<tr>
-				<td colspan="2" style="height: 90px;">NOTIFY PARTY<br>
+				<td colspan="2" style="height: 90px;"><b>NOTIFY PARTY</b><br>
 				<div class="myDiv">{{ old('notify_party',$data->notify_party) }}</div>
 			</td>
 
@@ -297,16 +296,16 @@
 
 					<table style="width: 400px; margin: 0;">
 						<tr>
-						<td class="no-border-left" style="height: 35px; width: 100px;">DATE OF ISSUE<br>
+						<td class="no-border-left" style="height: 35px; width: 100px;"><b>DATE OF ISSUE</b><br>
 						<input readonly id="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" type="date" name="date_of_issue" style="width:87%; height: 30%;"/>
 					</td>
-						<td class="no-border" style="width: 100px;">B/L NUMBER<br>
+						<td class="no-border" style="width: 100px;"><b>B/L NUMBER</b><br>
 						<div class="myDiv">{{ old('bl_number',$data->bl_number) }}</div>
 					</td>
 						</tr>
 					
 						<tr>
-						<td class="no-border-rbl" colspan="3" rowspan="2" height="130px">FOR DELIVERY OF GOODS PLEASE APPLY TO:<br>
+						<td class="no-border-rbl" colspan="3" rowspan="2" height="130px"><b>FOR DELIVERY OF GOODS PLEASE APPLY TO:</b><br>
 						<div class="myDiv" style="width: 100%">{{ old('for_delivery_apply_to',$data->for_delivery_apply_to) }}</div>
 					</td>
 						</tr>
@@ -318,57 +317,57 @@
 	
 			</tr>
 			<tr>
-				<td style="height: 30px; width:218px;">PLACE OF RECEIPT<br>
+				<td style="height: 30px; width:218px;"><b>PLACE OF RECEIPT</b><br>
 				<div class="myDiv">{{ old('place_of_receipt',$data->place_of_receipt) }}</div>
 			</td>
-				<td style="width: 180.3px;">PORT LOADING<br>
+				<td style="width: 183px;"><b>PORT LOADING</b><br>
 				<div class="myDiv">{{ old('port_of_loading',$data->port_of_loading) }}</div>
 			</td>
 				
 
 			</tr>
             <tr>
-				<td style="height: 30px;">OCEAN VESSEL<br>
+				<td style="height: 30px;"><b>OCEAN VESSEL</b><br>
 				<div class="myDiv">{{ old('ocean_vessel',$data->ocean_vessel) }}</div>
 			</td>
-				<td style="width: 150px;">VOYAGE NO.<br>
+				<td style="width: 150px;"><b>VOYAGE NO.</b><br>
 				<div class="myDiv">{{ old('voyage_no',$data->voyage_no) }}</div>
 			</td>
 
 	
 			</tr>
             <tr>
-				<td style="height: 35px;">PORT OF DISCHARGE<br>
+				<td style="height: 35px;"><b>PORT OF DISCHARGE</b><br>
 				<div class="myDiv">{{ old('port_of_discharge',$data->port_of_discharge) }}</div>
 			</td>
-				<td>PLACE OF DELIVERY<br>
+				<td><b>PLACE OF DELIVERY</b><br>
 				<div class="myDiv" style="width: 150px;">{{ old('place_of_delivery',$data->place_of_delivery) }}</div>
 			</td>
-				<td>FINAL DESTINATION<br>
+				<td style="width: 113px;"><b>FINAL DESTINATION</b><br>
 				<div class="myDiv">{{ old('final_destination',$data->final_destination) }}</div>
 			</td>
-				<td>FREIGHT PAYABLE AT<br>
+				<td style="width: 121px;"><b>FREIGHT PAYABLE AT</b><br>
 				<div class="myDiv">{{ old('freight_payable_at',$data->freight_payable_at) }}</div>
 			</td>
-				<td width="140px">NUMBER OF ORIGINAL B/L<br>
+				<td width="149px"><b>NUMBER OF ORIGINAL B/L</b><br>
 				<div class="myDiv">{{ old('number_of_original_bl',$data->number_of_original_bl) }}</div>
 			</td>
 			</tr>
 			</table>
 			<table>
             <tr>
-				<td class="no-border-top" style="height: 25px; text-align: center;">MARKS & NUMBER<br>CONTAINER & SEAL NUMBERS</td>
-				<td class="no-border-top" style="height: 25px; text-align: center;">NO. OF<br>PACKAGES</td>
-				<td class="no-border-tb" style="height: 25px; text-align: center;">DESCRIPTION OF PACKAGES AND GOODS<br>PARTICULARS FURNISHED BY SHIPPER</td>
-				<td class="no-border-top" style="height: 25px; text-align: center;">GROSS WEIGHT<br>KILOS</td>
-                <td class="no-border-tb" style="height: 25px; text-align: center;">MESUREMENT<br>CBM</td>
+				<td class="no-border-top" style="height: 25px; text-align: center;"><b>MARKS & NUMBER<br>CONTAINER & SEAL NUMBERS</b></td>
+				<td class="no-border-top" style="height: 25px; text-align: center;"><b>NO. OF<br>PACKAGES</b></td>
+				<td class="no-border-tb" style="height: 25px; text-align: center;"><b>DESCRIPTION OF PACKAGES AND GOODS<br>PARTICULARS FURNISHED BY SHIPPER</b></td>
+				<td class="no-border-top" style="height: 25px; text-align: center;"><b>GROSS WEIGHT<br>KILOS</b></td>
+                <td class="no-border-tb" style="height: 25px; text-align: center;"><b>MESUREMENT<br>CBM</b></td>
 			</tr>
 
             <tr>
 			<div><td class="no-border-bottom" rowspan="3"  style="width: 180px; height: 400px;"><p>{!! old('marks_container_seal_no',$data->marks_container_seal_no) !!}</p></td></div>
 			<td class="no-border-tb" rowspan="3" width="80px"><p>{!! old('number_of_packages',$data->number_of_packages) !!}</p></td>
 			<td class="no-border-bottom" rowspan="3" width="300px"><p>{!! old('description_of_packages_and_goods',$data->description_of_packages_and_goods) !!}</p></td>
-			<td class="no-border-bottom" rowspan="2" width="80px"><p>{{ old('gross_weight',$data->gross_weight) }}</p></td>
+			<td class="no-border-bottom" rowspan="2" width="86px"><p>{{ old('gross_weight',$data->gross_weight) }}</p></td>
 			<td class="no-border-bottom" rowspan="2" width="80px"><p>{{ old('measurement',$data->measurement) }}</p></td>				
 			</tr>
 
@@ -388,10 +387,10 @@
 			</table>
 			<table>
 				<tr>
-					<td>SHIPPED ON BOARD THE VESSEL<br>
+					<td><b>SHIPPED ON BOARD THE VESSEL</b><br>
 					<div>{{ old('shipped_on_board_the_vessel',$data->shipped_on_board_the_vessel) }}</div>
 					<hr style="border-top: dotted 1px;"/>
-					<p>DATED <input readonly id="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" type="date" name="on_board_date" style="width:87%; height: 5%;"/></p>
+					<p><b>DATED</b> <input readonly id="on_board_date" value="{{ old('on_board_date',$data->on_board_date) }}" type="date" name="on_board_date" style="width:87%; height: 5%;"/></p>
 				
 				</td>
 						
@@ -401,7 +400,7 @@
 													<td class="no-border-rbl" rowspan="2" style="width: 364.2px; font-size: 7px; text-align: justify;"><b>RECEIVED IN APPARENT GOOD ORDER AND CONDITION FOR TRANSPORTATION FROM THE PALCE OF RECEIPT TO THE PLACEOF DELIVERY SUBJECT TO THE TERMS AND CONDITIONS OF HNS INTERNATIONAL(SEE REVERSE) AS WELL AS TO THE CONDITONS AND EXCEPTIONS OF THE STEAMSHIP COMPANIES, CARRIERS, ORGANIZATIONS OR FRMS WHO HAVE PART IN RECEIVING, SHIPPING, CARRYING, FORARDING, STORING, HANDLING AND DELIVERY OF THE SAID GOODS, THE ABOVE MENTIONED PACKAGES SAID TO BE MARKED AND NUMBERED AS IN THE MARGIN, WEIGHT, MEASUREMENT, QUALITY, CONTENTS AND VALUE UNKNOWN SUBJECT TO THE CONDITIONS CONTAINED IN THE BILL OF LADING. THE DELIVERY WILL BE EFFECTED AT THE ABOVE DESIGNATED PLACE OF DESTINATION THERETO VIA ANY ROUTE CARRIERS DESIGNATED BY THE FORWARDING AGENTS, ONE ORIGINAL BILL OF LADING DULY ENDORSED MUST BE SURRENDERED TO THE ABOVE AGENT IN EXCHANGE FOR THE GOODS OR THE DELIVERY ORDER IN WITNESS WHEREOF THE NUMBER OF ORIGINAL BILL OF LADING STATED ABOVE HAS BEEN SIGNED ALL OF THIS TENOR AND DATE ON EOF WHICH BEING ACCOMPLISHED THE OTHER OT STAND VOID.</b><br>
 													<div style="margin-top: 95px;">
 														<hr style="border-top: dotted 1px;"/>
-													<div style="text-align: center; font-size: 12px;"><b>Singed as agents & on behalf of the Carrier</b></div>
+													<div style="text-align: center; font-size: 12px;"><b>Singed as agents & on behalf of the Carrier</b></div>
 												
 												</td>
 												</tr>														
@@ -414,9 +413,9 @@
 							<td style="margin: 0;">
 								<table style="width: 430px;">
 								<tr>
-										<td class="no-border-left" style="width: 80px; text-align: center;">FREIGHT AND CHARGES</td>
-										<td style="width: 60px; text-align: center;">PREPAID</td>
-										<td class="no-border-right" style="width: 60px; text-align: center;">COLLECT</td>
+										<td class="no-border-left" style="width: 80px; text-align: center;"><b>FREIGHT AND CHARGES</b></td>
+										<td style="width: 60px; text-align: center;"><b>PREPAID</b></td>
+										<td class="no-border-right" style="width: 60px; text-align: center;"><b>COLLECT</b></td>
 								</tr>
 
 								<tr>
