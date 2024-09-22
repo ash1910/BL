@@ -33,6 +33,8 @@ Route::get('login', function () {
 })->name('login');
 
 
+Route::get('/AirBL', [BLController::class, 'showAirBL'])->name('AirBL');
+
 // User Authentication
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('/dashboard',[AuthController::class, 'dashboard'])->name('dashboard')->middleware('auth');
