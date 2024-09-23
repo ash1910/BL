@@ -110,7 +110,7 @@ table {
 		<div>ACC NUMBER</div>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px;">
-		<p style="text-align: justify;">It is agreed that the goods described herein are accepted in apparent good order and condition (exept as noted) for carriage SUBJECT TO THE CONDITIONS OF CONTRACT ON THE REVERSE HEREOF. ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES THAT THE SHIPMENT MAY BE CARRIED VIA INTERMEDIATE STOPPING PLACES WHICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER'S ATTENTION IS DRAWN TO THE NOTICE CONCERNING CARRIER'S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if required.</p>
+		<p>It is agreed that the goods described herein are accepted in apparent good order and condition (exept as noted) for carriage SUBJECT TO THE CONDITIONS OF CONTRACT ON THE REVERSE HEREOF. ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES THAT THE SHIPMENT MAY BE CARRIED VIA INTERMEDIATE STOPPING PLACES WHICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER'S ATTENTION IS DRAWN TO THE NOTICE CONCERNING CARRIER'S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if required.</p>
 		</td>
 
 		</tr>
@@ -261,7 +261,7 @@ table {
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 236px;">
-			<p style="text-align: justify;">INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
+			<p>INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
 			</td>
 
 		</tr>
@@ -290,12 +290,12 @@ table {
 		</tr>
 		<tr>
 			<td rowspan="2" style="width: 32px;">
-			<p>No of<br>
-			Pieces RCP</p>
+			<p>No of</p>
+			<p>Pieces RCP</p>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 82px;">
-			<p>Gross<br>
-			Weight</p>
+			<p>Gross</p>
+			<p>Weight</p>
 			</td>
 			<td rowspan="2" style="width: 9px;">
 			<p>kg</p>
@@ -345,7 +345,7 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 32px; height: 250px;">
+			<td style="width: 32px;">
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
@@ -381,7 +381,10 @@ table {
 			</td>
 		</tr>
 		<tr>
-
+			<td style="width: 32px;">
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			</td>
 	
 		</tr>
 		<tr>
@@ -457,9 +460,9 @@ table {
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="23" rowspan="5" style="width: 435px">
-			<p style="text-align: justify;">Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the consignment contains dangerous goods, such part is properly described by name and is in proper condition for carriage by according to the applicable Dangerous Goods Regulations.</p>
+			<p>Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the consignment contains dangerous goods, such part is properly described by name and is in proper condition for carriage by according to the applicable Dangerous Goods Regulations.</p>
 			<p>&nbsp;</p>
-			<hr style="border-top: dotted 1px;"/>
+			<p>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</p>
 			<p>Signature of Shipper or his Agent</p>
 			</td>
 		</tr>
@@ -508,7 +511,7 @@ table {
 			<td colspan="23" rowspan="4" style="width: 435px;">
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
-			<hr style="border-top: dotted 1px;"/>
+			<p>&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</p>
 			<p>Executed on (date)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at (place)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature of issuing Carier or its Agent</p>
 			</td>
 		</tr>
@@ -558,6 +561,51 @@ table {
 			<td colspan="10" style="width: 132px;">
 			<p>&nbsp;</p>
 			</td>
+		</tr>
+		<tr>
+			<td width="790">&nbsp;</td>
+			<td width="6">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="28">&nbsp;</td>
+			<td width="13">&nbsp;</td>
+			<td width="25">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="19">&nbsp;</td>
+			<td width="14">&nbsp;</td>
+			<td width="2">&nbsp;</td>
+			<td width="13">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="6">&nbsp;</td>
+			<td width="5">&nbsp;</td>
+			<td width="26">&nbsp;</td>
+			<td width="10">&nbsp;</td>
+			<td width="5">&nbsp;</td>
+			<td width="5">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="3">&nbsp;</td>
+			<td width="23">&nbsp;</td>
+			<td width="40">&nbsp;</td>
+			<td width="19">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="10">&nbsp;</td>
+			<td width="19">&nbsp;</td>
+			<td style="width: 17px;">&nbsp;</td>
+			<td width="11">&nbsp;</td>
+			<td width="6">&nbsp;</td>
+			<td width="13">&nbsp;</td>
+			<td width="3">&nbsp;</td>
+			<td width="6">&nbsp;</td>
+			<td style="width: 9px">&nbsp;</td>
+			<td width="10">&nbsp;</td>
+			<td width="96">&nbsp;</td>
+			<td width="7">&nbsp;</td>
+			<td style="width: 57px">&nbsp;</td>
+			<td style="width: 47px">&nbsp;</td>
 		</tr>
 		</tbody>
 </table>
