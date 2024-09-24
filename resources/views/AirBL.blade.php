@@ -274,110 +274,97 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="43" style="width: 699px;">
+			<td colspan="43" style="width: 699px; border-bottom: none;">
 			<p>Handling information</p>
 			<p>&nbsp;</p>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="40" style="width: 588px;">
-			<p>&nbsp;</p>
-			<p>(For U.S.A. use only) These commodities, technology or software were exported from the Unated States in accordance with the Export Administration Regulations. Diversion contrary to USA law prohibited</p>
+			<td colspan="40" style="width: 588px; font-size: 8.5px; border-top: none;">
+			(For U.S.A. use only) These commodities, technology or software were exported from the Unated States in accordance with the Export Administration Regulations. Diversion contrary to USA law prohibited
 			</td>
-			<td colspan="3" style="width: 112px;">
-			<p>SCI</p>
+			<td colspan="3" style="width: 112px; text-align: center;">
+			SCI
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="2" style="width: 32px;">
-			<p>No of<br>
-			Pieces RCP</p>
+			<td style="text-align: center" rowspan="2" style="width: 32px;">
+			No of<br>
+			Pieces RCP
 			</td>
-			<td colspan="5" rowspan="2" style="width: 82px;">
-			<p>Gross<br>
-			Weight</p>
+			<td style="text-align: center" colspan="8" rowspan="2" style="width: 82px;">
+			Gross<br>
+			Weight
 			</td>
-			<td rowspan="2" style="width: 9px;">
-			<p>kg</p>
-			<p>lb</p>
-			</td>
-			<td rowspan="4" style="width: 9px;">
-			<p>&nbsp;</p>
-			</td>
-			<td colspan="6" style="width: 66px;">
-			<p>Rate Class</p>
+			<td style="text-align: center" rowspan="2" style="width: 9px;">
+			kg<br>lb
 			</td>
 			<td rowspan="4" style="width: 9px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" rowspan="2" style="width: 66px;">
-			<p>Chargeable</p>
-			<p>Weight</p>
+			<td style="text-align: center" colspan="6" style="width: 66px;">
+			Rate Class
+			</td>
+	
+			<td style="text-align: center" colspan="7" rowspan="2" style="width: 66px;">
+			Chargeable<br>Weight
 			</td>
 			<td rowspan="4" style="width: 9px;">
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 85px;">
-			<p>Rate</p>
-			<p>Charge</p>
+			&nbsp;&nbsp;Rate<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charge
 			</td>
 			<td rowspan="4" style="width: 9px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="10" rowspan="2" style="width: 104px;">
-			<p>Total</p>
+			<td style="text-align: center" colspan="7" rowspan="2" style="width: 104px;">
+			Total
 			</td>
 			<td rowspan="4" width="10">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="4" rowspan="2" style="width: 208px;">
-			<p>Nature and Quantity of Goods</p>
-			<p>(incl. Dimensions or Volume)</p>
+			<td style="text-align: center" colspan="5" rowspan="2" style="width: 208px;">
+			Nature and Quantity of Goods<br>
+			(incl. Dimensions or Volume)
 			</td>
 		</tr>
 		<tr>
 			<td style="width: 9px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="5" style="width: 57px;">
-			<p>Commodity</p>
-			<p>Item No.</p>
+			<td style="text-align: center" colspan="5" style="width: 57px;">
+			<p>Commodity<br>Item No.</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="width: 32px; height: 250px;">
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+
 			</td>
-			<td colspan="5" rowspan="2" style="width: 82px;">
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<td colspan="8" rowspan="2" style="width: 82px;">
+	
 			</td>
 			<td rowspan="2" style="width: 9px;">
-			<p>&nbsp;</p>
+
 			</td>
 			<td rowspan="2" style="width: 9px;">
-			<p>&nbsp;</p>
+
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">
-			<p>&nbsp;</p>
+
 			</td>
 			<td colspan="7" rowspan="2" style="width: 66px;">
-			<p>&nbsp;</p>
+
 			</td>
 			<td colspan="4" rowspan="2" style="width: 85px;">
-			<p>&nbsp;</p>
+		
 			</td>
-			<td colspan="10" rowspan="2" style="width: 104px;">
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<td colspan="7" rowspan="2" style="width: 104px;">
+	
 			</td>
-			<td colspan="4" rowspan="2" style="width: 208px;">
-			<p>&nbsp;</p>
+			<td colspan="5" rowspan="2" style="width: 208px;">
+		
 			</td>
 		</tr>
 		<tr>
@@ -432,7 +419,7 @@ table {
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="7" style="width: 88px;">
-			<p>Tax</p>
+			<p style="text-align: center">Tax</p>
 			</td>
 			<td colspan="8" style="width: 88px;">
 			<p>&nbsp;</p>
@@ -538,8 +525,7 @@ table {
 		</tr>
 		<tr>
 			<td colspan="8" rowspan="2" style="width: 132px;">
-			<p>For Carrier's Use only</p>
-			<p>at Destination</p>
+			<p style="text-align: center">For Carrier's Use only<br>at Destination</p>
 			</td>
 			<td colspan="12" style="width: 132px;">
 			<p>Charges at Destination</p>
