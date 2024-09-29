@@ -22,7 +22,7 @@ table {
             vertical-align: top;
             text-align: left;
 			font-size: 11px;
-            padding: 5px;
+            padding: 2.4px;
             background: #ffffff;
             color: #313030;
         }
@@ -52,18 +52,18 @@ table {
 <table>
 <tbody>
 		<tr>
-		<td colspan="2" style="width: 38px;">
+		<td colspan="2" style="width: 38px; border-left: hidden; border-top: hidden;">
 		<p>&nbsp;</p>
 		</td>
-		<td colspan="2" style="width: 38px;">
+		<td colspan="2" style="width: 38px; border-top: hidden;">
 		<p>&nbsp;</p>
 		</td>
-		<td colspan="39" width="624">
+		<td colspan="39" style="width: 624px; border-top: hidden; border-right: hidden;">
 		<p>&nbsp;</p>
 		</td>
 		</tr>
 		<tr>
-		<td colspan="11" style="width: 197.5px;">
+		<td colspan="11" style="width: 197.5px; border-bottom: hidden;">
 		<p>Shipper's Name and Address</p>
 		<p>&nbsp;</p>
 		</td>
@@ -101,7 +101,7 @@ table {
 
 		</tr>
 		<tr>
-		<td colspan="11" style="width: 197.5px;">
+		<td colspan="11" style="width: 197.5px; border-bottom: hidden;">
 		<p>Consignee's Name and Address</p>
 		<p>&nbsp;</p>
 		</td>
@@ -146,21 +146,21 @@ table {
 			<p>Airport of Departure (Addr. of First Carrier) and Requested Routing</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="11" width="123">
+			<td colspan="7">
 			<p>Reference Number</p>
 			</td>
-			<td colspan="4" width="123">
+			<td colspan="8" style="width: 150px">
 			<p>Optional Shipping Information</p>
 			</td>
-			<td colspan="2" style="width: 104px;">
+			<td colspan="2">
 			<p>&nbsp;</p>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="9" style="width: 113px;">
+			<td colspan="8" style="width: 113px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" width="189">
+			<td colspan="8" width="189">
 			<p>&nbsp;</p>
 			</td>
 			<td style="width: 47px">
@@ -172,25 +172,25 @@ table {
 			<p>To</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="4" width="76">
+			<td colspan="4" style="width: 76px; border-bottom: hidden;">
 			<p>By First Carrier</p>
 			</td>
-			<td colspan="7" width="76">
+			<td colspan="7" style="width: 76px; font-size: 7px; text-align: center;">
 			<p>Routing and Destination</p>
 			</td>
-			<td colspan="5" rowspan="2" width="40">
+			<td colspan="5" rowspan="2" style="width: 40px;">
 			<p>To</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="3" rowspan="2" width="40">
+			<td colspan="3" rowspan="2" style="width: 40px;">
 			<p>By</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="4" rowspan="2" width="40">
+			<td colspan="4" rowspan="2" style="width: 40px;">
 			<p>To</p>
 			<p>&nbsp;</p>
 			</td>
-			<td rowspan="2" width="40">
+			<td rowspan="2" style="width: 40px;">
 			<p>By</p>
 			<p>&nbsp;</p>
 			</td>
@@ -198,18 +198,17 @@ table {
 			<p>Currency</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="2" rowspan="2" width="28">
-			<p>CHGS</p>
-			<p>Code</p>
+			<td colspan="2" rowspan="2" style="width: 28px;">
+			<p>CHGS<br>Code</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="2" width="28">
+			<td style="width: 28px;">
 			<p>WT/VAL</p>
 			</td>
-			<td colspan="2" width="19">
+			<td colspan="2" style="width: 19px;">
 			<p>Other</p>
 			</td>
-			<td colspan="7" width="189">
+			<td colspan="8" style="width: 189px; text-align: center;">
 			<p>Declared Value for Carriage</p>
 			<p>&nbsp;</p>
 			</td>
@@ -247,10 +246,10 @@ table {
 			<p style="text-align: center;">Airport of Destination</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" style="width: 63px;">
+			<td colspan="6" style="width: 63px;">
 			<p>Flight/Date</p>
 			</td>
-			<td colspan="7" style="width: 63px;">
+			<td colspan="8" style="width: 63px;">
 			<p>For Carrier Use Only</p>
 			</td>
 			<td colspan="2" style="width: 63px;">
@@ -261,7 +260,7 @@ table {
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 236px;">
-			<p style="text-align: justify;">INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
+			<p style="text-align: justify; font-size: 8px;">INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
 			</td>
 
 		</tr>
@@ -280,10 +279,10 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="40" style="width: 588px; font-size: 8.5px; border-top: none;">
+			<td colspan="41" style="width: 588px; font-size: 8.5px; border-top: none;">
 			(For U.S.A. use only) These commodities, technology or software were exported from the Unated States in accordance with the Export Administration Regulations. Diversion contrary to USA law prohibited
 			</td>
-			<td colspan="3" style="width: 112px; text-align: center;">
+			<td colspan="4" style="width: 112px; text-align: center;">
 			SCI
 			</td>
 		</tr>
@@ -319,13 +318,13 @@ table {
 			<td rowspan="4" style="width: 9px;">
 			<p>&nbsp;</p>
 			</td>
-			<td style="text-align: center" colspan="7" rowspan="2" style="width: 104px;">
+			<td style="text-align: center" colspan="5" rowspan="2" style="width: 104px;">
 			Total
 			</td>
 			<td rowspan="4" width="10">
 			<p>&nbsp;</p>
 			</td>
-			<td style="text-align: center" colspan="5" rowspan="2" style="width: 208px;">
+			<td style="text-align: center" colspan="7" rowspan="2" style="width: 208px;">
 			Nature and Quantity of Goods<br>
 			(incl. Dimensions or Volume)
 			</td>
@@ -360,10 +359,10 @@ table {
 			<td colspan="4" rowspan="2" style="width: 85px;">
 		
 			</td>
-			<td colspan="7" rowspan="2" style="width: 104px;">
+			<td colspan="5" rowspan="2" style="width: 104px;">
 	
 			</td>
-			<td colspan="5" rowspan="2" style="width: 208px;">
+			<td colspan="7" rowspan="2" style="width: 208px;">
 		
 			</td>
 		</tr>
@@ -372,13 +371,13 @@ table {
 	
 		</tr>
 		<tr>
-			<td colspan="5" style="width: 88px;">
+			<td colspan="5" style="width: 88px; text-align: center;">
 			<p><strong>Prepaid</strong></p>
 			</td>
-			<td colspan="7" style="width: 88px;">
+			<td colspan="7" style="width: 88px; text-align: center;">
 			<p>Weight Charge</p>
 			</td>
-			<td colspan="8" style="width: 88px;">
+			<td colspan="8" style="width: 88px; text-align: center;">
 			<p><strong>Collect</strong></p>
 			</td>
 			<td colspan="23" rowspan="6" style="width: 435px;">
@@ -399,7 +398,7 @@ table {
 			<td colspan="5" style="width: 88px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" style="width: 88px;">
+			<td colspan="7" style="width: 88px; text-align: center;">
 			<p>Valuation Charge</p>
 			</td>
 			<td colspan="8" style="width: 88px;">
@@ -437,7 +436,7 @@ table {
 			<td colspan="3" style="width: 47px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="13" style="width: 170px;">
+			<td colspan="13" style="width: 170px; text-align: center;">
 			<p>Total Other Charges Due Agent</p>
 			</td>
 			<td colspan="4" style="width: 47px;">
@@ -447,7 +446,7 @@ table {
 			<p style="text-align: justify;">Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the consignment contains dangerous goods, such part is properly described by name and is in proper condition for carriage by according to the applicable Dangerous Goods Regulations.</p>
 			<p>&nbsp;</p>
 			<hr style="border-top: dotted 1px;"/>
-			<p>Signature of Shipper or his Agent</p>
+			<p style="text-align: center;">Signature of Shipper or his Agent</p>
 			</td>
 		</tr>
 		<tr>
@@ -462,7 +461,7 @@ table {
 			<td colspan="3" style="width: 47px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="13" style="width: 170px;">
+			<td colspan="13" style="width: 170px; text-align: center;">
 			<p>Total Other Charges Due Carrier</p>
 			</td>
 			<td colspan="4" style="width: 47px;">
@@ -486,13 +485,13 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="8" style="width: 132px;">
+			<td colspan="8" style="width: 132px; text-align: center;">
 			<p>Total Prepaid</p>
 			</td>
-			<td colspan="12" style="width: 132px;">
+			<td colspan="12" style="width: 132px; text-align: center;">
 			<p>Total Collect</p>
 			</td>
-			<td colspan="23" rowspan="4" style="width: 435px;">
+			<td colspan="23" rowspan="4" style="width: 435px; text-align: center;">
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<hr style="border-top: dotted 1px;"/>
@@ -508,10 +507,10 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="8" style="width: 132px;">
+			<td colspan="8" style="width: 132px; text-align: center;">
 			<p>Currency Conversion Rates</p>
 			</td>
-			<td colspan="12" style="width: 132px;">
+			<td colspan="12" style="width: 132px; text-align: center;">
 			<p>CC Charges in Dest. Currency</p>
 			</td>
 		</tr>
@@ -524,13 +523,13 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="8" rowspan="2" style="width: 132px;">
-			<p style="text-align: center">For Carrier's Use only<br>at Destination</p>
+			<td colspan="8" rowspan="2" style="width: 132px; text-align: center;">
+			<p>For Carrier's Use only<br>at Destination</p>
 			</td>
-			<td colspan="12" style="width: 132px;">
+			<td colspan="12" style="width: 132px; text-align: center;">
 			<p>Charges at Destination</p>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; text-align: center;">
 			<p>Total Collect Charges</p>
 			</td>
 			<td colspan="13" rowspan="2" style="width: 303px;">
