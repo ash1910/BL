@@ -9,14 +9,6 @@ use Auth;
 
 class BLController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function showAirBL()
-    {
-        return view("AirBL");
-    }
     
     /**
      * Display a listing of the resource.

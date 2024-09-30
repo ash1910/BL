@@ -363,7 +363,7 @@
             <div class="inner">
               <h3>{{ $totalBL }}</h3>
 
-              <p>Number of BL</p>
+              <p>Number of Sea BL</p>
             </div>
             <div class="icon">
               <i class="ion ion-document"></i>
