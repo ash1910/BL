@@ -305,6 +305,18 @@
             <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Air BL Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Air BL List</a></li>
+            <li><a href="/AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
+          </ul>
+        </li>
         @if(Auth::user()->role == "SuperAdmin")
         <li class="treeview">
           <a href="#">

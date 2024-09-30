@@ -293,14 +293,26 @@
       <li class="active"><a href="/dashboard"><i class="fa fa-circle-o text-aqua"></i> Dashboard</a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>BL Management</span>
+            <i class="fa fa-dashboard"></i> <span>Sea BL Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="/bl-list"><i class="fa fa-circle-o"></i> BL List</a></li>
-            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
+            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New Sea BL</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Air BL Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Air BL List</a></li>
+            <li><a href="/AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
           </ul>
         </li>
         @if(Auth::user()->role == "SuperAdmin")
