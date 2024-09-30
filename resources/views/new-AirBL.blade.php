@@ -76,7 +76,7 @@
 		</td>
 		<td colspan="15" style="width: 197.5px; font-weight: bold;">
 		<p>Shipper's Account Number</p>
-		<div></div>
+		<textarea name="" style="width:98%; height: 80%;"></textarea>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px; height: 10px;">
 		<p>Not negotiable</p>
@@ -99,7 +99,7 @@
 		</tr>
 		<tr>
 		<td colspan="26" rowspan="2" style="width: 395px; height: 10px;">
-		<p>&nbsp;</p>
+		<textarea></textarea>
 		</td>
 
 		<tr>

@@ -301,8 +301,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/bl-list"><i class="fa fa-circle-o"></i> BL List</a></li>
-            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New BL</a></li>
+            <li class="active"><a href="/bl-list"><i class="fa fa-circle-o"></i> Sea BL List</a></li>
+            <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New Sea BL</a></li>
           </ul>
         </li>
         <li class="treeview">
