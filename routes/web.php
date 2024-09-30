@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BLController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AirBLController;
 
 
 
@@ -33,7 +34,8 @@ Route::get('login', function () {
 })->name('login');
 
 
-Route::get('/AirBL', [BLController::class, 'showAirBL'])->name('AirBL');
+//Air BL View
+Route::get('/AirBL', [AirBLController::class, 'index'])->name('AirBL');
 
 // User Authentication
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
