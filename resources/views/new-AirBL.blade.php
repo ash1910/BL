@@ -29,10 +29,15 @@
             vertical-align: top;
             text-align: left;
 			font-size: 11px;
-            padding: 2.2px;
+            padding: 2.5px;
             background: #ffffff;
             color: #313030;
         }
+
+		textarea {
+        resize: none;
+		font-size: 11px;
+		}
 		
 		.column {
 			float: left;
@@ -71,12 +76,12 @@
 		</tr>
 		<tr>
 		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Shipper's Name and Address</p>
+		Shipper's Name and Address
 		<p>&nbsp;</p>
 		</td>
 		<td colspan="15" style="width: 197.5px; font-weight: bold;">
-		<p>Shipper's Account Number</p>
-		<textarea name="" style="width:98%; height: 80%;"></textarea>
+		Shipper's Account Number
+		<textarea style="width:98%; height: 80%;" type="text" name="shipper_account_number"></textarea>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px; height: 10px;">
 		<p>Not negotiable</p>
@@ -99,7 +104,7 @@
 		</tr>
 		<tr>
 		<td colspan="26" rowspan="2" style="width: 395px; height: 10px;">
-		<textarea></textarea>
+		<textarea style="width: 100%; height: 100%;" type="text" name="shipper_name_and_address"></textarea>
 		</td>
 
 		<tr>
@@ -110,12 +115,12 @@
 		</tr>
 		<tr>
 		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Consignee's Name and Address</p>
+		Consignee's Name and Address
 		<p>&nbsp;</p>
 		</td>
 		<td colspan="15" style="width: 197.5px; height: 48px; font-weight: bold;">
-		<p>Consignee's Account Number</p>
-		<div></div>
+		Consignee's Account Number
+		<textarea style="width: 98%;" type="text" name="consignee_account_number"></textarea>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px;">
 		<p style="text-align: justify;">It is agreed that the goods described herein are accepted in apparent good order and condition (exept as noted) for carriage SUBJECT TO THE CONDITIONS OF CONTRACT ON THE REVERSE HEREOF. ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES THAT THE SHIPMENT MAY BE CARRIED VIA INTERMEDIATE STOPPING PLACES WHICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER'S ATTENTION IS DRAWN TO THE NOTICE CONCERNING CARRIER'S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if required.</p>
@@ -124,38 +129,37 @@
 		</tr>
 		<tr>
 			<td colspan="26" style="width: 395px; height: 120px;">
-			<p>&nbsp;</p>
+			<textarea style="width: 100%; height: 100%;" type="text" name="consignee_name_and_address"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="26" style="width: 395px; font-weight: bold;">
-			<p>Issuing Carrier's Agent Name and City</p>
-			<p>&nbsp;</p>
+			Issuing Carrier's Agent Name and City
+			<textarea style="width: 99%; height: 80%;" type="text" name="issuing_carrier_agent_name_and_city"></textarea>
 			</td>
 			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Accouting Information</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<p>&nbsp;</p>
+			Accounting Information
+			<textarea style="width: 100%; height: 79px;" type="text" name="accounting_information"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 197.5px; font-weight: bold;">
-			<p>Agent's IATA Code</p>
-			<p>&nbsp;</p>
+			Agent's IATA Code
+			<textarea style="width:98%; height: 80%;" type="text" name="agent_iata_code"></textarea>
 			</td>
 			<td colspan="15" style="width: 197.5px; font-weight: bold;">
-			<p>Account No.</p>
-			<p>&nbsp;</p>
+			Account No.
+			<textarea style="width:98%; height: 80%;" type="text" name="account_number"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="26" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Airport of Departure (Addr. of First Carrier) and Requested Routing</p>
-			<p>&nbsp;</p>
+			Airport of Departure (Addr. of First Carrier) and Requested Routing
+			<textarea style="width:99%; height: 30px;" type="text" name="account_number"></textarea>
 			</td>
 			<td colspan="8" style="border-bottom: hidden; font-weight: bold;">
-			<p>Reference Number</p>
+			Reference Number
+			<textarea style="width:99%; height: 30px;" type="text" name="reference_number"></textarea>
 			</td>
 			<td colspan="8" style="width: 150px; text-align: center; font-weight: bold;">
 			<p>Optional Shipping Information</p>
@@ -178,7 +182,7 @@
 		<tr>
 			<td colspan="2" rowspan="2" style="width: 38px; font-weight: bold;">
 			<p>To</p>
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 30px;" type="text" name="to_r"></textarea>
 			</td>
 			<td colspan="4" style="width: 76px; border-bottom: hidden; font-weight: bold;">
 			<p>By First Carrier</p>
@@ -554,6 +558,5 @@
 		</tr>
 		</tbody>
 </table>
-<p>&nbsp;</p>
 <body>
 </html>

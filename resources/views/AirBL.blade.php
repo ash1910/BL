@@ -29,7 +29,7 @@
             vertical-align: top;
             text-align: left;
 			font-size: 11px;
-            padding: 2.2px;
+            padding: 2.5px;
             background: #ffffff;
             color: #313030;
         }
@@ -133,7 +133,7 @@
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Accouting Information</p>
+			<p>Accounting Information</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			<p>&nbsp;</p>
@@ -554,6 +554,5 @@
 		</tr>
 		</tbody>
 </table>
-<p>&nbsp;</p>
 <body>
 </html>
