@@ -128,7 +128,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="26" style="width: 395px; font-weight: bold;">
+			<td colspan="26" style="width: 395px; font-weight: bold; height: 65px;">
 			<p>Issuing Carrier's Agent Name and City</p>
 			<p>&nbsp;</p>
 			</td>
@@ -210,18 +210,18 @@
 			<p>CHGS<br>Code</p>
 			<p>&nbsp;</p>
 			</td>
-			<td style="width: 28px; font-weight: bold;">
+			<td colspan="2" style="width: 28px; font-weight: bold;">
 			<p>WT/VAL</p>
 			</td>
 			<td colspan="2" style="width: 19px; font-weight: bold;">
 			<p>Other</p>
 			</td>
-			<td colspan="8" style="width: 189px; text-align: center; font-weight: bold;">
-			<p>Declared Value for Carriage</p>
+			<td colspan="4" rowspan="2"style="width: 189px; text-align: center; font-weight: bold;">
+			Declared Value for Carriage
 			<p>&nbsp;</p>
 			</td>
-			<td rowspan="2" style="width: 47px; font-weight: bold;">
-			<p>Declared Value for Customs</p>
+			<td colspan="5" rowspan="2" style="width: 47px; text-align: center; font-weight: bold;">
+			Declared Value for Customs
 			<p>&nbsp;</p>
 			</td>
 		</tr>
@@ -233,21 +233,19 @@
 			<p>PPD</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="2" style="width: 17px; font-weight: bold;">
+			<td colspan="1" style="width: 17px; font-weight: bold;">
 			<p>COLL</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="2" style="width: 16px; font-weight: bold;">
+			<td colspan="1" style="width: 16px; font-weight: bold;">
 			<p>PPD</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="2" style="width: 16px; font-weight: bold;">
+			<td colspan="1" style="width: 16px; font-weight: bold;">
 			<p>COLL</p>
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="4" style="width: 170px;">
-			<p>&nbsp;</p>
-			</td>
+		
 		</tr>
 		<tr>
 			<td colspan="10" rowspan="2" style="width: 161px; font-weight: bold;">
@@ -257,7 +255,7 @@
 			<td colspan="6" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
-			<td colspan="8" style="width: 63px; text-align:center; font-weight: bold;">
+			<td colspan="9" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>For Carrier Use Only</p>
 			</td>
 			<td colspan="2" style="width: 63px; text-align:center; font-weight: bold;">
@@ -273,7 +271,7 @@
 
 		</tr>
 		<tr>
-			<td colspan="9" style="width: 94px;">
+			<td colspan="10" style="width: 94px;">
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="7" style="width: 95px;">
@@ -406,7 +404,7 @@
 			<td colspan="5" style="width: 88px; border-bottom: hidden;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" style="width: 88px; text-align: center; font-weight: bold;">
+			<td colspan="7" style="width: 110px; text-align: center; font-weight: bold;">
 			<p>Valuation Charge</p>
 			</td>
 			<td colspan="8" style="width: 88px; border-bottom: hidden;">

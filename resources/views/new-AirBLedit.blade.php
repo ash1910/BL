@@ -34,9 +34,9 @@
             color: #313030;
         }
 
-        textarea {
-            resize: none;
-            font-size: 11px;
+		textarea {
+        resize: none;
+		font-size: 11px;
 		}
 		
 		.column {
@@ -61,8 +61,6 @@
 </style>
 
 <body>
-    <form action="{{ route('AirBL.store') }}" method="POST">
-        @csrf
 <table>
 <tbody>
 		<tr>
@@ -78,7 +76,7 @@
 		</tr>
 		<tr>
 		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Shipper's Name and Address</p>
+		Shipper's Name and Address
 		<p>&nbsp;</p>
 		</td>
 		<td colspan="15" style="width: 197.5px; font-weight: bold;">
@@ -117,11 +115,11 @@
 		</tr>
 		<tr>
 		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Consignee's Name and Address</p>
+		Consignee's Name and Address
 		<p>&nbsp;</p>
 		</td>
 		<td colspan="15" style="width: 197.5px; height: 48px; font-weight: bold;">
-		<p>Consignee's Account Number</p>
+		Consignee's Account Number
 		<textarea style="width: 98%;" type="text" name="consignee_account_number"></textarea>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px;">
@@ -135,34 +133,33 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="26" style="width: 395px; font-weight: bold; height: 65px;">
-			<p>Issuing Carrier's Agent Name and City</p>
-			<p>&nbsp;</p>
+			<td colspan="26" style="width: 395px; height: 65px; font-weight: bold;">
+			Issuing Carrier's Agent Name and City
+			<textarea style="width: 99%; height: 80%;" type="text" name="issuing_carrier_agent_name_and_city"></textarea>
 			</td>
 			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Accounting Information</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<p>&nbsp;</p>
+			Accounting Information
+			<textarea style="width: 100%; height: 79px;" type="text" name="accounting_information"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 197.5px; font-weight: bold;">
-			<p>Agent's IATA Code</p>
-			<p>&nbsp;</p>
+			Agent's IATA Code
+			<textarea style="width:98%; height: 80%;" type="text" name="agent_iata_code"></textarea>
 			</td>
 			<td colspan="15" style="width: 197.5px; font-weight: bold;">
-			<p>Account No.</p>
-			<p>&nbsp;</p>
+			Account No.
+			<textarea style="width:98%; height: 80%;" type="text" name="account_number"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="26" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Airport of Departure (Addr. of First Carrier) and Requested Routing</p>
-			<p>&nbsp;</p>
+			Airport of Departure (Addr. of First Carrier) and Requested Routing
+			<textarea style="width:99%; height: 30px;" type="text" name="account_number"></textarea>
 			</td>
 			<td colspan="8" style="border-bottom: hidden; font-weight: bold;">
-			<p>Reference Number</p>
+			Reference Number
+			<textarea style="width:99%; height: 30px;" type="text" name="reference_number"></textarea>
 			</td>
 			<td colspan="8" style="width: 150px; text-align: center; font-weight: bold;">
 			<p>Optional Shipping Information</p>
@@ -184,93 +181,94 @@
 		</tr>
 		<tr>
 			<td colspan="2" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			To
+			<textarea style="width:99%; height: 30px;" type="text" name="to_a"></textarea>
 			</td>
 			<td colspan="4" style="width: 76px; border-bottom: hidden; font-weight: bold;">
-			<p>By First Carrier</p>
+			By First Carrier
 			</td>
 			<td colspan="7" style="width: 76px; font-size: 7px; text-align: center; font-weight: bold;">
-			<p>Routing and Destination</p>
+			Routing and Destination
 			</td>
 			<td colspan="5" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			To
+			<textarea style="width:99%; height: 30px;" type="text" name="to_b"></textarea>
 			</td>
 			<td colspan="3" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			By
+			<textarea style="width:99%; height: 30px;" type="text" name="by_a"></textarea>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			To
+			<textarea style="width:99%; height: 30px;" type="text" name="to_c"></textarea>
 			</td>
 			<td rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			By
+			<textarea style="width:99%; height: 30px;" type="text" name="by_b"></textarea>
 			</td>
 			<td colspan="3" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>Currency</p>
-			<p>&nbsp;</p>
+			Currency
+			<textarea style="width:99%; height: 30px;" type="text" name="currency"></textarea>
 			</td>
 			<td colspan="2" rowspan="2" style="width: 28px; font-weight: bold;">
-			<p>CHGS<br>Code</p>
-			<p>&nbsp;</p>
+			CHGS<br>Code
+			<textarea style="width:99%; height: 30px;" type="text" name="chgs_code"></textarea>
 			</td>
 			<td colspan="2" style="width: 28px; font-weight: bold;">
-			<p>WT/VAL</p>
+			WT/VAL
 			</td>
 			<td colspan="2" style="width: 19px; font-weight: bold;">
-			<p>Other</p>
+			Other
 			</td>
-			<td colspan="4" rowspan="2"style="width: 189px; text-align: center; font-weight: bold;">
+			<td colspan="7" style="width: 189px; text-align: center; font-weight: bold;">
 			Declared Value for Carriage
-			<p>&nbsp;</p>
 			</td>
-			<td colspan="5" rowspan="2" style="width: 47px; text-align: center; font-weight: bold;">
+			<td rowspan="2" style="width: 47px; font-weight: bold;">
 			Declared Value for Customs
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 30px;" type="text" name="declare_value_for_customs"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 151px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 30px;" type="text" name="by_first_carrier"></textarea>
 			</td>
 			<td style="width: 17px; font-weight: bold; text-align: center;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			PPD
+			<textarea style="width:99%; height: 30px;" type="text" name="ppd_a"></textarea>
 			</td>
-			<td colspan="1" style="width: 17px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			<td colspan="" style="width: 17px; font-weight: bold;">
+			COLL
+			<textarea style="width:99%; height: 30px;" type="text" name="coll_a"></textarea>
 			</td>
-			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			<td colspan="" style="width: 16px; font-weight: bold;">
+			PPD
+			<textarea style="width:99%; height: 30px;" type="text" name="ppd_b"></textarea>
 			</td>
-			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			<td colspan="" style="width: 16px; font-weight: bold;">
+			COLL
+			<textarea style="width:99%; height: 30px;" type="text" name="coll_b"></textarea>
 			</td>
-		
+			<td colspan="7" style="width: 170px;">
+			<textarea style="width:99%; height: 30px;" type="text" name="declare_value_carriage"></textarea>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="10" rowspan="2" style="width: 161px; font-weight: bold;">
 			<p style="text-align: center;">Airport of Destination</p>
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 30px;" type="text" name="airport_of_destination"></textarea>
 			</td>
 			<td colspan="6" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
-			<td colspan="9" style="width: 63px; text-align:center; font-weight: bold;">
+			<td colspan="8" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>For Carrier Use Only</p>
 			</td>
 			<td colspan="2" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
 			<td colspan="9" rowspan="2" style="width: 113px; text-align:center; font-weight: bold;">
-			<p>Amount of Insurance</p>
-			<p>&nbsp;</p>
+			Amount of Insurance
+			<textarea style="width:99%; height: 30px;" type="text" name="declare_value_for_customs"></textarea>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 236px;">
 			<p style="text-align: justify; font-size: 8px;">INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
@@ -278,11 +276,11 @@
 
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 94px;">
-			<p>&nbsp;</p>
+			<td colspan="9" style="width: 94px;">
+			<textarea style="width:99%; height: 30px;" type="text" name="flight_date_a"></textarea>
 			</td>
 			<td colspan="7" style="width: 95px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 30px;" type="text" name="flight_date_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -311,7 +309,7 @@
 			<td rowspan="2" style="text-align: center; width: 9px; font-weight: bold;">
 			kg<br>lb
 			</td>
-			<td rowspan="4" style="width: 9px;">
+			<td rowspan="4" style="width: 5px;">
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="6" style="text-align: center; width: 66px; font-weight: bold;">
@@ -321,61 +319,69 @@
 			<td colspan="7" rowspan="2" style="text-align: center; width: 66px; font-weight: bold;">
 			Chargeable<br>Weight
 			</td>
-			<td rowspan="4" style="width: 9px;">
+			<td rowspan="4" style="width: 5px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="4" rowspan="2" style="width: 85px; font-weight: bold;">
+			<td colspan="3" rowspan="2" style="width: 80px; font-weight: bold;">
 			&nbsp;&nbsp;Rate<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Charge
 			</td>
-			<td rowspan="4" style="width: 9px;">
+			<td rowspan="4" style="width: 5px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="5" rowspan="2" style="text-align: center; width: 104px; font-weight: bold;">
+			<td colspan="4" rowspan="2" style="text-align: center; width: 105px; font-weight: bold;">
 			Total
 			</td>
-			<td rowspan="4" width="10">
+			<td rowspan="3" style="width: 5px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" rowspan="2" style="text-align: center; width: 208px; font-weight: bold;">
+			<td colspan="9" rowspan="2" style="text-align: center; width: 208px; font-weight: bold;">
 			Nature and Quantity of Goods<br>
 			(incl. Dimensions or Volume)
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 9px;">
+			<td style="width: 12px;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="5" style="text-align: center; width: 57px; font-weight: bold;">
+			<td colspan="5" style="text-align: center; width: 57px; font-weight: bold; width: 100px;">
 			<p>Commodity<br>Item No.</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="width: 32px; height: 250px;">
+			<textarea style="width:99%; height: 100%;" type="text" name="number_of_pierces_rcp"></textarea>
 
 			</td>
 			<td colspan="8" rowspan="2" style="width: 82px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="gross_weight"></textarea>
 	
 			</td>
 			<td rowspan="2" style="width: 9px;">
+				<textarea style="width:99%; height: 243px;" type="text" name="gross_weight"></textarea>
 
 			</td>
 			<td rowspan="2" style="width: 9px;">
-
+			<textarea style="width:99%; height: 243px;" type="text" name="rate_class"></textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="commodity_item_no"></textarea>
 
 			</td>
 			<td colspan="7" rowspan="2" style="width: 66px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="chargable_weight"></textarea>
 
 			</td>
-			<td colspan="4" rowspan="2" style="width: 85px;">
+			<td colspan="3" rowspan="2" style="width: 80px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="rate_charge"></textarea>
 		
 			</td>
-			<td colspan="5" rowspan="2" style="width: 104px;">
+			<td colspan="4" rowspan="2" style="width: 105px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="total"></textarea>
 	
 			</td>
-			<td colspan="7" rowspan="2" style="width: 208px;">
+			<td colspan="9" rowspan="2" style="width: 208px;">
+			<textarea style="width:99%; height: 243px;" type="text" name="nature_and_quantity_of_goods"></textarea>
 		
 			</td>
 		</tr>
@@ -401,17 +407,17 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="prepaid"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="collect"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="5" style="width: 88px; border-bottom: hidden;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" style="width: 110px; text-align: center; font-weight: bold;">
+			<td colspan="7" style="width: 88px; text-align: center; font-weight: bold;">
 			<p>Valuation Charge</p>
 			</td>
 			<td colspan="8" style="width: 88px; border-bottom: hidden;">
@@ -420,29 +426,28 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="valuation_charge_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="valuation_charge_b"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="5" style="width: 88px; border-bottom: hidden;">
-			<p>&nbsp;</p>
 			</td>
 			<td colspan="7" style="width: 88px; font-weight: bold;">
 			<p style="text-align: center">Tax</p>
 			</td>
 			<td colspan="8" style="width: 88px; border-bottom: hidden;">
-			<p>&nbsp;</p>
+
 			</td>
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="tax_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="tax_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -464,10 +469,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_other_charges_due_agent_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_other_charges_due_agent_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -483,10 +488,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_other_charges_due_carrier_b"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_other_charges_due_carrier_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -513,10 +518,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_prepaid"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 100%;" type="text" name="total_collect"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -558,11 +563,6 @@
 			</td>
 		</tr>
 		</tbody>
-</table><br>
-
-<div class="container">
-				<button class="button-7" type="submit">Save</button>
-				</div>  
-    </form>
+</table>
 <body>
 </html>

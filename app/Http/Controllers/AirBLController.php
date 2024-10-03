@@ -31,6 +31,21 @@ class AirBLController extends Controller
     public function store(Request $request)
     {
         //
+        // $request->validate([
+        //     'bl_number' => 'required',
+
+        // ]);
+
+        AirBL::create([
+            'shipper_name_and_address' => $request->shipper_name_and_address,
+            'shipper_account_number' => $request->shipper_account_number,
+            'consignee_name_and_address' => $request->consignee_name_and_address,
+            'consignee_account_number' => $request->consignee_account_number,
+
+    
+       ]);
+
+        return redirect('/AirBL')->with('status','BL Created Successfully');
     }
 
     /**

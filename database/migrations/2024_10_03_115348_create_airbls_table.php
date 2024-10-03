@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('air_b_l_s', function (Blueprint $table) {
+        Schema::create('airbls', function (Blueprint $table) {
             $table->id();
+            $table->text('shipper_name_and_address');
+            $table->text('shipper_account_number');
+            $table->text('consignee_name_and_address');
+            $table->text('consignee_account_number');
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('air_b_l_s');
+        Schema::dropIfExists('airbls');
     }
 };
