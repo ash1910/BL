@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AirBL extends Model
 {
     use HasFactory;
-
+    protected $table = 'airbls';
     protected $fillable = [
         'shipper_name_and_address',
         'shipper_account_number',

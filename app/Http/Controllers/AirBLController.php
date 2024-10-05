@@ -31,10 +31,13 @@ class AirBLController extends Controller
     public function store(Request $request)
     {
         //
-        // $request->validate([
-        //     'bl_number' => 'required',
+        /* $request->validate([
+            'shipper_name_and_address' => 'nullable',
+            'shipper_account_number' => 'nullable',
+            'consignee_name_and_address' => 'nullable',
+            'consignee_account_number' => 'nullable',
 
-        // ]);
+         ]);*/
 
         AirBL::create([
             'shipper_name_and_address' => $request->shipper_name_and_address,
