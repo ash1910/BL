@@ -293,7 +293,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
       <li><a href="/dashboard"><i class="fa fa-circle-o text-aqua"></i><span> Dashboard</span></a></li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>BL Management</span>
             <span class="pull-right-container">
@@ -301,11 +301,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/bl-list"><i class="fa fa-circle-o"></i> Sea BL List</a></li>
+            <li><a href="/bl-list"><i class="fa fa-circle-o"></i> Sea BL List</a></li>
             <li><a href="/new-bl"><i class="fa fa-circle-o"></i> New Sea BL</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Air BL Management</span>
             <span class="pull-right-container">
@@ -313,8 +313,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/airbl-list"><i class="fa fa-circle-o"></i> Air BL List</a></li>
-            <li><a href="/AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
+            <li class="active"><a href="/airbl-list"><i class="fa fa-circle-o"></i> Air BL List</a></li>
+            <li><a href="/new-AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
           </ul>
         </li>
         @if(Auth::user()->role == "SuperAdmin")
@@ -341,11 +341,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Bill Of Lading
+      Airwaybill
       </h1>
       <ol class="breadcrumb">
         <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Bl List</li>
+        <li class="active">Airwaybill List</li>
       </ol>
     </section>
 
@@ -360,16 +360,16 @@
         @endsession
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">BL Reports</h3>
+              <h3 class="box-title">Airwaybill Reports</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>BL Number</th>
-                  <th>Shipper</th>
-                  <th>Issue Date</th>
+                  <th>Shipper's Name and Address</th>
+                  <th>Shipper's Account Number</th>
+                  <th>Consignee's Account Number</th>
                   <!--<th>On Board Date</th>-->
                   <!--<th>Port Of Discharge</th>-->
                   <!--<th>Final Destination</th>-->
@@ -381,9 +381,9 @@
                 <tbody>
                 @foreach ($datas as $data)
                 <tr>
-                <td>{{ $data->bl_number }}</td>
-                <td>{{ $data->shipper }}</td>
-                <td>{{ $data->date_of_issue }}</td>
+                <td>{{ $data->shipper_name_and_address }}</td>
+                <td>{{ $data->shipper_account_number }}</td>
+                <td>{{ $data->consignee_account_number }}</td>
                 <!--<td>{{ $data->on_board_date }}</td>-->
                 <!--<td>{{ $data->port_of_discharge }}</td>-->
                 <!--<td>{{ $data->final_destination }}</td>-->
@@ -394,7 +394,7 @@
                 <a href="{{ route('show-bl.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
                 <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
                 @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")
-                <form action="{{ route('bl-list.destroy', $data->id) }}" method="POST" class="button-container">
+                <form action="{{ route('airbl-list.destroy', $data->id) }}" method="POST" class="button-container">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')">Delete</button>

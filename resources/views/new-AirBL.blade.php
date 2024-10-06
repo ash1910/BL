@@ -61,7 +61,7 @@
 </style>
 
 <body>
-    <form action="{{ route('AirBL.store') }}" method="POST">
+    <form action="{{ route('airbl-list.store') }}" method="POST">
         @csrf
 <table>
 <tbody>
@@ -117,11 +117,11 @@
 		</tr>
 		<tr>
 		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Consignee's Name and Address</p>
+		Consignee's Name and Address
 		<p>&nbsp;</p>
 		</td>
 		<td colspan="15" style="width: 197.5px; height: 48px; font-weight: bold;">
-		<p>Consignee's Account Number</p>
+		Consignee's Account Number
 		<textarea style="width: 98%;" type="text" name="consignee_account_number"></textarea>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px;">
@@ -136,33 +136,32 @@
 		</tr>
 		<tr>
 			<td colspan="26" style="width: 395px; font-weight: bold; height: 65px;">
-			<p>Issuing Carrier's Agent Name and City</p>
-			<p>&nbsp;</p>
+			Issuing Carrier's Agent Name and City
+			<textarea style="width:98%; height: 78%;" type="text" name="issuing_carrier_agent_name_and_city"></textarea>
 			</td>
 			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Accounting Information</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<p>&nbsp;</p>
+			Accounting Information
+			<textarea style="width:98%; height: 95px;" type="text" name="account_information"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 197.5px; font-weight: bold;">
-			<p>Agent's IATA Code</p>
-			<p>&nbsp;</p>
+			Agent's IATA Code
+			<textarea style="width: 98%;" type="text" name="agent_iata_code"></textarea>
 			</td>
 			<td colspan="15" style="width: 197.5px; font-weight: bold;">
-			<p>Account No.</p>
-			<p>&nbsp;</p>
+			Account No.
+			<textarea style="width: 98%;" type="text" name="account_number"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="26" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Airport of Departure (Addr. of First Carrier) and Requested Routing</p>
-			<p>&nbsp;</p>
+			Airport of Departure (Addr. of First Carrier) and Requested Routing
+			<textarea style="width:99%; height: 95%;" type="text" name="airport_of_departure"></textarea>
 			</td>
 			<td colspan="8" style="border-bottom: hidden; font-weight: bold;">
-			<p>Reference Number</p>
+			Reference Number
+			<textarea style="width:99%; height: 95%;" type="text" name="reference_number"></textarea>
 			</td>
 			<td colspan="8" style="width: 150px; text-align: center; font-weight: bold;">
 			<p>Optional Shipping Information</p>
@@ -185,7 +184,7 @@
 		<tr>
 			<td colspan="2" rowspan="2" style="width: 38px; font-weight: bold;">
 			<p>To</p>
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 95%;" type="text" name="to_a"></textarea>
 			</td>
 			<td colspan="4" style="width: 76px; border-bottom: hidden; font-weight: bold;">
 			<p>By First Carrier</p>
@@ -194,12 +193,12 @@
 			<p>Routing and Destination</p>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			To
+			<textarea style="width:99%; height: 95%;" type="text" name="to_b"></textarea>
 			</td>
 			<td colspan="3" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			By
+			<textarea style="width:99%; height: 95%;" type="text" name="by_a"></textarea>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 40px; font-weight: bold;">
 			<p>To</p>
@@ -234,7 +233,7 @@
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 151px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 97%;" type="text" name="by_first_carrier"></textarea>
 			</td>
 			<td style="width: 17px; font-weight: bold; text-align: center;">
 			<p>PPD</p>

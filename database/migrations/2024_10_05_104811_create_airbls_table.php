@@ -17,6 +17,16 @@ return new class extends Migration
             $table->text('shipper_account_number');
             $table->text('consignee_name_and_address');
             $table->text('consignee_account_number');
+            $table->text('issuing_carrier_agent_name_and_city');
+            $table->text('account_information');
+            $table->text('agent_iata_code');
+            $table->text('account_number');
+            $table->text('airport_of_departure');
+            $table->text('reference_number');
+            $table->text('to_a');
+            $table->text('by_first_carrier');
+            $table->text('to_b');
+            $table->text('by_a');
             $table->timestamps();
         });
     }
