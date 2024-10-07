@@ -312,7 +312,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Air BL List</a></li>
-            <li><a href="/AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
+            <li><a href="/new-AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
           </ul>
         </li>
         @if(Auth::user()->role == "SuperAdmin")
