@@ -58,6 +58,10 @@ class AirBLController extends Controller
             'by_first_carrier' => $request->by_first_carrier,
             'to_b' => $request->to_b,
             'by_a' => $request->by_a,
+            'to_c' =>$request->to_c,
+            'by_b' => $request->by_b,
+            'currency' => $request->currency,
+            'chgs_code' => $request->chgs_code,
 
     
        ]);

@@ -201,20 +201,20 @@
 			<textarea style="width:99%; height: 95%;" type="text" name="by_a"></textarea>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			To
+			<textarea style="width:99%; height: 95%;" type="text" name="to_c"></textarea>
 			</td>
 			<td rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			By
+			<textarea style="width:99%; height: 95%;" type="text" name="by_b"></textarea>
 			</td>
 			<td colspan="3" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>Currency</p>
-			<p>&nbsp;</p>
+			Currency
+			<textarea style="width:99%; height: 95%;" type="text" name="currency"></textarea>
 			</td>
 			<td colspan="2" rowspan="2" style="width: 28px; font-weight: bold;">
-			<p>CHGS<br>Code</p>
-			<p>&nbsp;</p>
+			CHGS<br>Code
+			<textarea style="width:99%; height: 95%;" type="text" name="chgs_code"></textarea>
 			</td>
 			<td colspan="2" style="width: 28px; font-weight: bold;">
 			<p>WT/VAL</p>
@@ -236,27 +236,27 @@
 			<textarea style="width:99%; height: 97%;" type="text" name="by_first_carrier"></textarea>
 			</td>
 			<td style="width: 17px; font-weight: bold; text-align: center;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			PPD
+			<textarea style="width:99%; height: 95%;" type="text" name="ppd_v"></textarea>
 			</td>
 			<td colspan="1" style="width: 17px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			COLL
+			<textarea style="width:99%; height: 95%;" type="text" name="coll_v"></textarea>
 			</td>
 			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			PPD
+			<textarea style="width:99%; height: 95%;" type="text" name="ppd_o"></textarea>
 			</td>
 			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			COLL
+			<textarea style="width:99%; height: 95%;" type="text" name="coll_o"></textarea>
 			</td>
 		
 		</tr>
 		<tr>
 			<td colspan="10" rowspan="2" style="width: 161px; font-weight: bold;">
 			<p style="text-align: center;">Airport of Destination</p>
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 95%;" type="text" name="airport_of_destination"></textarea>
 			</td>
 			<td colspan="6" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
