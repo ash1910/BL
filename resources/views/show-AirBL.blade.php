@@ -56,6 +56,8 @@
 </style>
 
 <body>
+@csrf
+@method('PUT')
 <table>
 <tbody>
 		<tr>
@@ -74,9 +76,9 @@
 		<p>Shipper's Name and Address</p>
 		<p>&nbsp;</p>
 		</td>
-		<td colspan="15" style="width: 197.5px; font-weight: bold;">
-		<p>Shipper's Account Number</p>
-		<div></div>
+		<td colspan="15" style="width: 197.5px;">
+		<b>Shipper's Account Number</b>
+		<div>{{ old('shipper_account_number',$data->shipper_account_number) }}</div>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px; height: 10px;">
 		<p>Not negotiable</p>
@@ -99,7 +101,7 @@
 		</tr>
 		<tr>
 		<td colspan="26" rowspan="2" style="width: 395px; height: 10px;">
-		<p>&nbsp;</p>
+		{{ old('shipper_name_and_address',$data->shipper_name_and_address) }}
 		</td>
 
 		<tr>
@@ -113,9 +115,9 @@
 		<p>Consignee's Name and Address</p>
 		<p>&nbsp;</p>
 		</td>
-		<td colspan="15" style="width: 197.5px; height: 48px; font-weight: bold;">
-		<p>Consignee's Account Number</p>
-		<div></div>
+		<td colspan="15" style="width: 197.5px;">
+		<b>Consignee's Account Number</b>
+		<div>{{ old('consignee_account_number',$data->consignee_account_number) }}</div>
 		</td>
 		<td colspan="17" rowspan="2" style="width: 395px;">
 		<p style="text-align: justify;">It is agreed that the goods described herein are accepted in apparent good order and condition (exept as noted) for carriage SUBJECT TO THE CONDITIONS OF CONTRACT ON THE REVERSE HEREOF. ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES THAT THE SHIPMENT MAY BE CARRIED VIA INTERMEDIATE STOPPING PLACES WHICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER'S ATTENTION IS DRAWN TO THE NOTICE CONCERNING CARRIER'S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if required.</p>
@@ -124,17 +126,17 @@
 		</tr>
 		<tr>
 			<td colspan="26" style="width: 395px; height: 120px;">
-			<p>&nbsp;</p>
+			<div>{{ old('consignee_name_and_address',$data->consignee_name_and_address) }}</div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="26" style="width: 395px; font-weight: bold; height: 65px;">
-			<p>Issuing Carrier's Agent Name and City</p>
-			<p>&nbsp;</p>
+			<td colspan="26" style="width: 395px; height: 65px;">
+			<b>Issuing Carrier's Agent Name and City</b>
+			<div>{{ old('issuing_carrier_agent_name_and_city',$data->issuing_carrier_agent_name_and_city) }}</div>
 			</td>
-			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Accounting Information</p>
-			<p>&nbsp;</p>
+			<td colspan="17" rowspan="2" style="width: 395px;">
+			<b>Accounting Information</b>
+			<div>{{ old('account_information',$data->account_information) }}</div>
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			<p>&nbsp;</p>
 			</td>

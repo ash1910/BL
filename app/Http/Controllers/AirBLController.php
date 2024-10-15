@@ -72,10 +72,10 @@ class AirBLController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AirBL $airBL)
+    public function show(AirBL $id)
     {
         //
-        return view("AirBL");
+        return view('show-AirBL', ['data' => $id ]); 
     }
 
     /**

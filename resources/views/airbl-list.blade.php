@@ -391,7 +391,7 @@
                 <!--<td>{{ $data->number_of_original_bl }}</td>-->
                 <td>
                 <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
-                <a href="{{ route('show-bl.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
+                <a href="{{ route('show-AirBL.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
                 <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
                 @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")
                 <form action="{{ route('airbl-list.destroy', $data->id) }}" method="POST" class="button-container">

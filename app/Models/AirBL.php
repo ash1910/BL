@@ -24,5 +24,9 @@ class AirBL extends Model
         'by_first_carrier',
         'to_b',
         'by_a',
+        'to_c',
+        'by_b',
+        'currency',
+        'chgs_code',
     ];
 }

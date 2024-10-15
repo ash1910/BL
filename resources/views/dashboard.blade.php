@@ -311,7 +311,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Air BL List</a></li>
+            <li><a href="/airbl-list"><i class="fa fa-circle-o"></i> Air BL List</a></li>
             <li><a href="/new-AirBL"><i class="fa fa-circle-o"></i> New Air BL</a></li>
           </ul>
         </li>

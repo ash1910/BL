@@ -40,6 +40,7 @@ Route::get('/AirBL', [AirBLController::class, 'show'])->name('AirBL.show')->midd
 Route::get('/new-AirBL', [AirBLController::class, 'create'])->name('new-AirBL.create')->middleware('auth');
 Route::post('/airbl-list', [AirBLController::class, 'store'])->name('airbl-list.store')->middleware('auth');
 Route::delete('/airbl-list/{id}', [AirBLController::class, 'destroy'])->name('airbl-list.destroy')->middleware('auth');
+Route::get('/show-AirBL/{id}', [AirBLController::class, 'show'])->name('show-AirBL.show')->middleware('auth');
 
 // User Authentication
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
