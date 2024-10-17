@@ -137,27 +137,26 @@
 			<td colspan="17" rowspan="2" style="width: 395px;">
 			<b>Accounting Information</b>
 			<div>{{ old('account_information',$data->account_information) }}</div>
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<p>&nbsp;</p>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="11" style="width: 197.5px; font-weight: bold;">
-			<p>Agent's IATA Code</p>
-			<p>&nbsp;</p>
+			<td colspan="11" style="width: 197.5px;">
+			<b>Agent's IATA Code</b>
+			<div>{{ old('agent_iata_code',$data->agent_iata_code) }}</div>
 			</td>
-			<td colspan="15" style="width: 197.5px; font-weight: bold;">
-			<p>Account No.</p>
-			<p>&nbsp;</p>
+			<td colspan="15" style="width: 197.5px;">
+			<b>Account No.</b>
+			<div>{{ old('account_number',$data->account_number) }}</div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="26" rowspan="2" style="width: 395px; font-weight: bold;">
-			<p>Airport of Departure (Addr. of First Carrier) and Requested Routing</p>
-			<p>&nbsp;</p>
+			<td colspan="26" rowspan="2" style="width: 395px;">
+			<b>Airport of Departure (Addr. of First Carrier) and Requested Routing</b>
+			<div>{{ old('airport_of_departure',$data->airport_of_departure) }}</div>
 			</td>
-			<td colspan="8" style="border-bottom: hidden; font-weight: bold;">
-			<p>Reference Number</p>
+			<td colspan="8" style="border-bottom: hidden;">
+			<b>Reference Number</b>
+			<div>{{ old('reference_number',$data->reference_number) }}</div>
 			</td>
 			<td colspan="8" style="width: 150px; text-align: center; font-weight: bold;">
 			<p>Optional Shipping Information</p>
@@ -178,39 +177,39 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			<td colspan="2" rowspan="2" style="width: 38px;">
+			<b>To</b>
+			<div>{{ old('to_a',$data->to_a) }}</div>
 			</td>
-			<td colspan="4" style="width: 76px; border-bottom: hidden; font-weight: bold;">
-			<p>By First Carrier</p>
+			<td colspan="4" style="width: 76px; border-bottom: hidden;">
+			<b>By First Carrier</b>
 			</td>
 			<td colspan="7" style="width: 76px; font-size: 7px; text-align: center; font-weight: bold;">
 			<p>Routing and Destination</p>
 			</td>
-			<td colspan="5" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			<td colspan="5" rowspan="2" style="width: 40px;">
+			<b>To</b>
+			<div>{{ old('to_b',$data->to_b) }}</div>
 			</td>
-			<td colspan="3" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			<td colspan="3" rowspan="2" style="width: 40px;">
+			<b>By</b>
+			<div>{{ old('by_a',$data->by_a) }}</div>
 			</td>
-			<td colspan="4" rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>To</p>
-			<p>&nbsp;</p>
+			<td colspan="4" rowspan="2" style="width: 40px;">
+			<b>To</b>
+			<div>{{ old('to_c',$data->to_c) }}</div>
 			</td>
-			<td rowspan="2" style="width: 40px; font-weight: bold;">
-			<p>By</p>
-			<p>&nbsp;</p>
+			<td rowspan="2" style="width: 40px;">
+			<b>By</b>
+			<div>{{ old('by_b',$data->by_b) }}</div>
 			</td>
-			<td colspan="3" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>Currency</p>
-			<p>&nbsp;</p>
+			<td colspan="3" rowspan="2" style="width: 38px;">
+			<b>Currency</b>
+			<div>{{ old('currency',$data->currency) }}</div>
 			</td>
-			<td colspan="2" rowspan="2" style="width: 28px; font-weight: bold;">
-			<p>CHGS<br>Code</p>
-			<p>&nbsp;</p>
+			<td colspan="2" rowspan="2" style="width: 28px;">
+			<b>CHGS<br>Code</b>
+			<div>{{ old('chgs_code',$data->chgs_code) }}</div>
 			</td>
 			<td colspan="2" style="width: 28px; font-weight: bold;">
 			<p>WT/VAL</p>
@@ -229,11 +228,11 @@
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 151px;">
-			<p>&nbsp;</p>
+			<div>{{ old('by_first_carrier',$data->by_first_carrier) }}</div>
 			</td>
 			<td style="width: 17px; font-weight: bold; text-align: center;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			<b>PPD</b>
+			<div>{{ old('ppd_v',$data->ppd_v) }}</div>
 			</td>
 			<td colspan="1" style="width: 17px; font-weight: bold;">
 			<p>COLL</p>
