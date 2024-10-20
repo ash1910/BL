@@ -217,43 +217,43 @@
 			<td colspan="2" style="width: 19px; font-weight: bold;">
 			<p>Other</p>
 			</td>
-			<td colspan="4" rowspan="2"style="width: 189px; text-align: center; font-weight: bold;">
-			Declared Value for Carriage
-			<p>&nbsp;</p>
+			<td colspan="4" rowspan="2"style="width: 189px; text-align: center;">
+			<b>Declared Value for Carriage</b>
+			<div>{{ old('declared_value_for_carriage',$data->declared_value_for_carriage) }}</div>
 			</td>
-			<td colspan="5" rowspan="2" style="width: 47px; text-align: center; font-weight: bold;">
-			Declared Value for Customs
-			<p>&nbsp;</p>
+			<td colspan="5" rowspan="2" style="width: 47px; text-align: center;">
+			<b>Declared Value for Customs</b>
+			<div>{{ old('declared_value_for_customs',$data->declared_value_for_customs) }}</div>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 151px;">
 			<div>{{ old('by_first_carrier',$data->by_first_carrier) }}</div>
 			</td>
-			<td style="width: 17px; font-weight: bold; text-align: center;">
+			<td style="width: 17px; text-align: center;">
 			<b>PPD</b>
 			<div>{{ old('ppd_v',$data->ppd_v) }}</div>
 			</td>
-			<td colspan="1" style="width: 17px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			<td colspan="1" style="width: 17px;">
+			<b>COLL</b>
+			<div>{{ old('coll_v',$data->coll_v) }}</div>
 			</td>
-			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>PPD</p>
-			<p>&nbsp;</p>
+			<td colspan="1" style="width: 16px;">
+			<b>PPD</b>
+			<div>{{ old('ppd_o',$data->ppd_o) }}</div>
 			</td>
-			<td colspan="1" style="width: 16px; font-weight: bold;">
-			<p>COLL</p>
-			<p>&nbsp;</p>
+			<td colspan="1" style="width: 16px;">
+			<b>COLL</b>
+			<div>{{ old('coll_o',$data->coll_o) }}</div>
 			</td>
 		
 		</tr>
 		<tr>
-			<td colspan="10" rowspan="2" style="width: 161px; font-weight: bold;">
-			<p style="text-align: center;">Airport of Destination</p>
-			<p>&nbsp;</p>
+			<td colspan="10" rowspan="2" style="width: 161px;">
+			<b style="text-align: center;">Airport of Destination</b>
+			<div>{{ old('airport_of_destination',$data->airport_of_destination) }}</div>
 			</td>
-			<td colspan="6" style="width: 63px; text-align:center; font-weight: bold;">
+			<td colspan="7" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
 			<td colspan="9" style="width: 63px; text-align:center; font-weight: bold;">
@@ -262,7 +262,7 @@
 			<td colspan="2" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
-			<td colspan="9" rowspan="2" style="width: 113px; text-align:center; font-weight: bold;">
+			<td colspan="8" rowspan="2" style="width: 113px; text-align:center; font-weight: bold;">
 			<p>Amount of Insurance</p>
 			<p>&nbsp;</p>
 			</td>
@@ -272,7 +272,7 @@
 
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 94px;">
+			<td colspan="11" style="width: 94px;">
 			<p>&nbsp;</p>
 			</td>
 			<td colspan="7" style="width: 95px;">
@@ -354,7 +354,7 @@
 			<td rowspan="2" style="width: 9px;">
 
 			</td>
-			<td rowspan="2" style="width: 9px;">
+			<td rowspan="2" style="width: 11px;">
 
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">

@@ -28,5 +28,12 @@ class AirBL extends Model
         'by_b',
         'currency',
         'chgs_code',
+        'declared_value_for_carriage',
+        'declared_value_for_customs',
+        'ppd_v',
+        'coll_v',
+        'ppd_o',
+        'coll_o',
+        'airport_of_destination',
     ];
 }

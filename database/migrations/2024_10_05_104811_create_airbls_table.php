@@ -27,6 +27,17 @@ return new class extends Migration
             $table->text('by_first_carrier');
             $table->text('to_b');
             $table->text('by_a');
+            $table->text('to_c');
+            $table->text('by_b');
+            $table->text('currency');
+            $table->text('chgs_code');
+            $table->text('declared_value_for_carriage');
+            $table->text('declared_value_for_customs');
+            $table->text('ppd_v');
+            $table->text('coll_v');
+            $table->text('ppd_o');
+            $table->text('coll_o');
+            $table->text('airport_of_destination');
             $table->timestamps();
         });
     }

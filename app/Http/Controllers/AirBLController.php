@@ -62,6 +62,14 @@ class AirBLController extends Controller
             'by_b' => $request->by_b,
             'currency' => $request->currency,
             'chgs_code' => $request->chgs_code,
+            'declared_value_for_carriage' => $request->declared_value_for_carriage,
+            'declared_value_for_customs' => $request->declared_value_for_customs,
+            'by_first_carrier' => $request->by_first_carrier,
+            'ppd_v' => $request->ppd_v,
+            'coll_v' => $request->coll_v,
+            'ppd_o' => $request->ppd_o,
+            'coll_o' => $request->coll_o,
+            'airport_of_destination' => $request->airport_of_destination,
 
     
        ]);

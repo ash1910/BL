@@ -1,5 +1,22 @@
 <html>
 <head>
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Bill Of Lading | Create BL</title>
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+		
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+
+	<!-- Include CKEditor 5 from CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5-classic-plus@41.3.0/build/ckeditor.js"></script>
+	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.1/ckeditor5.css" />
+	<script src="../../dist/js/popupairbl.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
 		@page {
@@ -58,9 +75,180 @@
 			clear: both;
 			display: table;
 			}
+
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+
+	textarea {
+        resize: none;
+		font-size: 11px;
+	}
+	
+	.container {
+        text-align: center;
+		display: block;
+        margin-bottom: 10px;
+    }
+
+
+    button {
+		padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+	.ck-editor__editable_inline {
+		min-height: 400px;
+		min-width: none;
+	}
+
+	.element {
+		max-width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Basic styles for popup */
+	.popup {
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		justify-content: center;
+		align-items: center;
+	}
+
+	.popup-content {
+		background: white;
+		padding: 20px;
+		border-radius: 5px;
+		width: 80%;
+		max-width: 600px;
+	}
+
+	.close-button {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 24px;
+		cursor: pointer;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.text-tiny {
+		font-size: 0.7em;
+	}
+
+	.text-small {
+		font-size: 0.85em;
+	}
+
+	.text-big {
+		font-size: 1.4em;
+	}
+
+	.text-huge {
+		font-size: 1.8em;
+	}
+	.icon-button {
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 0;
+			margin: 0;
+		}
+
+		.icon-button img {
+			width: 20px; /* Adjust size as needed */
+			height: 20px; /* Adjust size as needed */
+		}
+
+		.icon-button:focus {
+			outline: none; /* Remove default focus outline */
+		}
+
+		.icon-button:hover {
+			transform: translateY(-1px);
+		}
+		.icon-button:active {
+			background-color: #F0F0F1;
+			border-color: rgba(0, 0, 0, 0.15);
+			box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+			color: rgba(0, 0, 0, 0.65);
+			transform: translateY(0);
+		}
+
+		.button-7 {
+		background-color: #0095ff;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+		box-sizing: border-box;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 1.15385;
+		margin: 0;
+		outline: none;
+		padding: 8px .8em;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		vertical-align: baseline;
+		white-space: nowrap;
+	}
+
+	.button-7:hover,
+	.button-7:focus {
+		background-color: #07c;
+	}
+
+	.button-7:focus {
+		box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+	}
+
+	.button-7:active {
+		background-color: #0064bd;
+		box-shadow: none;
+	}
+
+	.back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 20px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #0056b3;
+        }
 </style>
 
 <body>
+<a href="/airbl-list" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+<div class="element">
     <form action="{{ route('airbl-list.store') }}" method="POST">
         @csrf
 <table>
@@ -77,9 +265,21 @@
 		</td>
 		</tr>
 		<tr>
-		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		<p>Shipper's Name and Address</p>
-		<p>&nbsp;</p>
+		<td colspan="11" style="width: 197.5px; border-bottom: hidden;">
+		<b>Shipper's Name and Address</b>
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup" type="button" style="margin-left: 60px; margin-top: 7px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup">&times;</span>
+									<h2>Shipper's Name and Address</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor"></textarea><br>
+									<button class="button-7" id="saveButton" type="button">Save</button>
+									<button class="button-7" id="closePopupButton" type="button">Close</button>
+								</div>
+							</div>
 		</td>
 		<td colspan="15" style="width: 197.5px; font-weight: bold;">
 		Shipper's Account Number
@@ -106,7 +306,9 @@
 		</tr>
 		<tr>
 		<td colspan="26" rowspan="2" style="width: 395px; height: 10px;">
-		<textarea style="width: 100%; height: 100%;" type="text" name="shipper_name_and_address"></textarea>
+		<!--<textarea style="width: 100%; height: 100%;" type="text" name="shipper_name_and_address"></textarea>-->
+		<input class="hidden" type="text" id="geteditor" name="shipper_name_and_address">
+		<div id="displayArea"></div>
 		</td>
 
 		<tr>
@@ -116,9 +318,21 @@
 
 		</tr>
 		<tr>
-		<td colspan="11" style="width: 197.5px; border-bottom: hidden; font-weight: bold;">
-		Consignee's Name and Address
-		<p>&nbsp;</p>
+		<td colspan="11" style="width: 197.5px; border-bottom: hidden;">
+		<b>Consignee's Name and Address</b>
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup1" type="button" style="margin-left: 60px; margin-top: 7px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup1" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup1">&times;</span>
+									<h2>Consignee's Name and Address</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor1"></textarea><br>
+									<button class="button-7" id="saveButton1" type="button">Save</button>
+									<button class="button-7" id="closePopupButton1" type="button">Close</button>
+								</div>
+							</div>
 		</td>
 		<td colspan="15" style="width: 197.5px; height: 48px; font-weight: bold;">
 		Consignee's Account Number
@@ -131,17 +345,49 @@
 		</tr>
 		<tr>
 			<td colspan="26" style="width: 395px; height: 120px;">
-			<textarea style="width: 100%; height: 100%;" type="text" name="consignee_name_and_address"></textarea>
+			<!--<textarea style="width: 100%; height: 100%;" type="text" name="consignee_name_and_address"></textarea>-->
+			<input class="hidden" type="text" id="geteditor1" name="consignee_name_and_address">
+			<div id="displayArea1"></div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="26" style="width: 395px; font-weight: bold; height: 65px;">
-			Issuing Carrier's Agent Name and City
-			<textarea style="width:98%; height: 78%;" type="text" name="issuing_carrier_agent_name_and_city"></textarea>
+			<td colspan="26" style="width: 395px; height: 75px;">
+			<b>Issuing Carrier's Agent Name and City</b><br>
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup2" type="button" style="margin-left: 200px; margin-top: -15px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup2" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup2">&times;</span>
+									<h2>Issuing Carrier's Agent Name and City</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor2"></textarea><br>
+									<button class="button-7" id="saveButton2" type="button">Save</button>
+									<button class="button-7" id="closePopupButton2" type="button">Close</button>
+								</div>
+							</div>
+			<!--<textarea style="width:98%; height: 78%;" type="text" name="issuing_carrier_agent_name_and_city"></textarea>-->
+			<input class="hidden" type="text" id="geteditor2" name="issuing_carrier_agent_name_and_city">
+			<div id="displayArea2"></div>
 			</td>
-			<td colspan="17" rowspan="2" style="width: 395px; font-weight: bold;">
-			Accounting Information
-			<textarea style="width:98%; height: 95px;" type="text" name="account_information"></textarea>
+			<td colspan="17" rowspan="2" style="width: 395px;">
+			<b>Accounting Information</b><br>
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup3" type="button" style="margin-top: -15px; margin-left: 130px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup3" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup3">&times;</span>
+									<h2>Accounting Information</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor3"></textarea><br>
+									<button class="button-7" id="saveButton3" type="button">Save</button>
+									<button class="button-7" id="closePopupButton3" type="button">Close</button>
+								</div>
+							</div>
+			<input class="hidden" type="text" id="geteditor3" name="account_information">
+			<div id="displayArea3"></div>
+			<!--<textarea style="width:98%; height: 95px;" type="text" name="account_information"></textarea>-->
 			</td>
 		</tr>
 		<tr>
@@ -224,11 +470,11 @@
 			</td>
 			<td colspan="4" rowspan="2"style="width: 189px; text-align: center; font-weight: bold;">
 			Declared Value for Carriage
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 95%;" type="text" name="declared_value_for_carriage"></textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 47px; text-align: center; font-weight: bold;">
 			Declared Value for Customs
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 95%;" type="text" name="declared_value_for_customs"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -258,7 +504,7 @@
 			<p style="text-align: center;">Airport of Destination</p>
 			<textarea style="width:99%; height: 95%;" type="text" name="airport_of_destination"></textarea>
 			</td>
-			<td colspan="6" style="width: 63px; text-align:center; font-weight: bold;">
+			<td colspan="7" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
 			<td colspan="9" style="width: 63px; text-align:center; font-weight: bold;">
@@ -267,9 +513,9 @@
 			<td colspan="2" style="width: 63px; text-align:center; font-weight: bold;">
 			<p>Flight/Date</p>
 			</td>
-			<td colspan="9" rowspan="2" style="width: 113px; text-align:center; font-weight: bold;">
-			<p>Amount of Insurance</p>
-			<p>&nbsp;</p>
+			<td colspan="8" rowspan="2" style="width: 113px; text-align:center; font-weight: bold;">
+			Amount of Insurance
+			<textarea style="width:99%; height: 95%;" type="text" name="ammount_of_insurance"></textarea>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 236px;">
 			<p style="text-align: justify; font-size: 8px;">INSURANCE &ndash; If Carrier offers insurance, and such insurance is requested in&nbsp; accordance with the conditions thereof, indicate amount to be insured in figures in box marked "Amount of Insurance"</p>
@@ -277,11 +523,11 @@
 
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 94px;">
-			<p>&nbsp;</p>
+			<td colspan="11" style="width: 94px;">
+			<textarea style="width:99%; height: 95%;" type="text" name="flight"></textarea>
 			</td>
 			<td colspan="7" style="width: 95px;">
-			<p>&nbsp;</p>
+			<textarea style="width:99%; height: 95%;" type="text" name="date"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -351,28 +597,42 @@
 		</tr>
 		<tr>
 			<td style="width: 32px; height: 250px;">
-
+			<textarea style="width:99%; height: 100%;" type="text" name="no_of_pieces_rcp"></textarea>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 82px;">
-	
+			<textarea style="width:99%; height: 244px;" type="text" name="gross_weight"></textarea>
 			</td>
 			<td rowspan="2" style="width: 9px;">
-
+			<textarea style="width:99%; height: 244px;" type="text" name="kg_lb"></textarea>
 			</td>
-			<td rowspan="2" style="width: 9px;">
-
+			<td rowspan="2" style="width: 11px;">
+			<textarea style="width:99%; height: 244px;" type="text" name="rate_class"></textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">
-
+			<textarea style="width:99%; height: 244px;" type="text" name="commodity_item_no"></textarea>
 			</td>
 			<td colspan="7" rowspan="2" style="width: 66px;">
-
+			<textarea style="width:99%; height: 244px;" type="text" name="chargeable_weight"></textarea>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 85px;">
-		
+			<textarea style="width:99%; height: 244px;" type="text" name="rate_charge"></textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 104px;">
-	
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup4" type="button" style="margin-top: -30px; margin-left: 120px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup4" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup4">&times;</span>
+									<h2>Accounting Information</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor4"></textarea><br>
+									<button class="button-7" id="saveButton4" type="button">Save</button>
+									<button class="button-7" id="closePopupButton4" type="button">Close</button>
+								</div>
+							</div>
+			<input class="hidden" type="text" id="geteditor4" name="account_information">
+			<div id="displayArea4"></div>
 			</td>
 			<td colspan="7" rowspan="2" style="width: 208px;">
 		
