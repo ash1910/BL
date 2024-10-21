@@ -428,8 +428,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" rowspan="2" style="width: 38px; font-weight: bold;">
-			<p>To</p>
+			<td colspan="2" rowspan="2" style="width: 38px;">
+			<b>To</b>
 			<textarea style="width:99%; height: 95%;" type="text" name="to_a"></textarea>
 			</td>
 			<td colspan="4" style="width: 76px; border-bottom: hidden; font-weight: bold;">
@@ -619,23 +619,38 @@
 			</td>
 			<td colspan="5" rowspan="2" style="width: 104px;">
 						<!-- Button to open the popup -->
-						<button class="icon-button" id="openPopup4" type="button" style="margin-top: -30px; margin-left: 120px;"><img src="/icons/add-list.png" alt="Icon"></button>
+						<button class="icon-button" id="openPopup4" type="button" style="margin-top: -30px; margin-left: 5px;"><img src="/icons/add-list.png" alt="Icon"></button>
 
 								<!-- Popup Modal -->
 								<div id="popup4" class="popup">
 								<div class="popup-content">
 									<span class="close-button" id="closePopup4">&times;</span>
-									<h2>Accounting Information</h2>
+									<h2>Total</h2>
 									<textarea  class="ck-editor__editable_inline" id="editor4"></textarea><br>
 									<button class="button-7" id="saveButton4" type="button">Save</button>
 									<button class="button-7" id="closePopupButton4" type="button">Close</button>
 								</div>
 							</div>
-			<input class="hidden" type="text" id="geteditor4" name="account_information">
-			<div id="displayArea4"></div>
+			<input class="hidden" type="text" id="geteditor4" name="total">
+			<div id="displayArea4" style="margin-top: -7px;"></div>
 			</td>
 			<td colspan="7" rowspan="2" style="width: 208px;">
-		
+						<!-- Button to open the popup -->
+						<button class="icon-button" id="openPopup5" type="button" style="margin-top: -30px; margin-left: 4px;"><img src="/icons/add-list.png" alt="Icon"></button>
+
+								<!-- Popup Modal -->
+								<div id="popup5" class="popup">
+								<div class="popup-content">
+									<span class="close-button" id="closePopup5">&times;</span>
+									<h2>Nature and Quantity of Goods
+									(incl. Dimensions or Volume)</h2>
+									<textarea  class="ck-editor__editable_inline" id="editor5"></textarea><br>
+									<button class="button-7" id="saveButton5" type="button">Save</button>
+									<button class="button-7" id="closePopupButton5" type="button">Close</button>
+								</div>
+							</div>
+			<input class="hidden" type="text" id="geteditor5" name="account_information">
+			<div id="displayArea5" style="margin-top: -7px;"></div>
 			</td>
 		</tr>
 		<tr>
@@ -660,17 +675,17 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="prepaid"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="collect"></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="5" style="width: 88px; border-bottom: hidden;">
 			<p>&nbsp;</p>
 			</td>
-			<td colspan="7" style="width: 110px; text-align: center; font-weight: bold;">
+			<td colspan="7" style="width: 111px; text-align: center; font-weight: bold;">
 			<p>Valuation Charge</p>
 			</td>
 			<td colspan="8" style="width: 88px; border-bottom: hidden;">
@@ -679,10 +694,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -698,10 +713,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_b"></textarea>
 			</td>
 		</tr>
 		<tr>
