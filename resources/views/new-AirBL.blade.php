@@ -385,7 +385,7 @@
 									<button class="button-7" id="closePopupButton3" type="button">Close</button>
 								</div>
 							</div>
-			<input class="hidden" type="text" id="geteditor3" name="account_information">
+			<input class="hidden" type="text" id="geteditor3" name="accounting_information">
 			<div id="displayArea3"></div>
 			<!--<textarea style="width:98%; height: 95px;" type="text" name="account_information"></textarea>-->
 			</td>
@@ -524,10 +524,10 @@
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 94px;">
-			<textarea style="width:99%; height: 95%;" type="text" name="flight"></textarea>
+			<textarea style="width:99%; height: 95%;" type="text" name="flight_no"></textarea>
 			</td>
 			<td colspan="7" style="width: 95px;">
-			<textarea style="width:99%; height: 95%;" type="text" name="date"></textarea>
+			<textarea style="width:99%; height: 95%;" type="text" name="flight_date"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -649,7 +649,7 @@
 									<button class="button-7" id="closePopupButton5" type="button">Close</button>
 								</div>
 							</div>
-			<input class="hidden" type="text" id="geteditor5" name="account_information">
+			<input class="hidden" type="text" id="geteditor5" name="nature_and_quantity_of_goods">
 			<div id="displayArea5" style="margin-top: -7px;"></div>
 			</td>
 		</tr>
@@ -713,10 +713,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_a"></textarea>
+			<textarea style="width:100%; height: 100%;" type="text" name="tax_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<textarea style="width:100%; height: 100%;" type="text" name="valuation_charge_b"></textarea>
+			<textarea style="width:100%; height: 100%;" type="text" name="tax_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -738,10 +738,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_other_charges_due_agent_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_other_charges_due_agent_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -757,10 +757,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_other_charges_due_carrier_a"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_other_charges_due_carrier_b"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -787,10 +787,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_prepaid"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_collect"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -803,10 +803,10 @@
 		</tr>
 		<tr>
 			<td colspan="9" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="currency_conversion_rates"></textarea>
 			</td>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="cc_charges_in_dest_currency"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -825,10 +825,10 @@
 		</tr>
 		<tr>
 			<td colspan="11" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="charges_at_destination"></textarea>
 			</td>
 			<td colspan="10" style="width: 132px;">
-			<p>&nbsp;</p>
+			<textarea style="width:100%; height: 100%;" type="text" name="total_collect_charges"></textarea>
 			</td>
 		</tr>
 		</tbody>
