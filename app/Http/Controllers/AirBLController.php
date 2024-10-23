@@ -114,6 +114,15 @@ class AirBLController extends Controller
         return view('show-AirBL', ['data' => $id ]); 
     }
 
+        /**
+     * Display the specified resource.
+     */
+    public function print(AirBL $id)
+    {
+        //
+        return view('print-AirBL', ['data' => $id ]); 
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

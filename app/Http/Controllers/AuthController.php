@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Bl;
+use App\Models\AirBL;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -211,10 +212,11 @@ class AuthController extends Controller
 
             // Get the total number of rows
             $totalBL = Bl::count();
+            $totalAirBL = AirBL::count();
             $totalUser = User::count();
         
 
-            return view('dashboard', compact('user', 'totalBL', 'totalUser'));
+            return view('dashboard', compact('user', 'totalBL', 'totalAirBL', 'totalUser'));
         }
   
         return Redirect::route("login");

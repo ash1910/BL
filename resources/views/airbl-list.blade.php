@@ -381,7 +381,7 @@
                 <tbody>
                 @foreach ($datas as $data)
                 <tr>
-                <td>{{ $data->shipper_name_and_address }}</td>
+                <td>{!! $data->shipper_name_and_address !!}</td>
                 <td>{{ $data->shipper_account_number }}</td>
                 <td>{{ $data->consignee_account_number }}</td>
                 <!--<td>{{ $data->on_board_date }}</td>-->
@@ -682,7 +682,7 @@
                         // Prevent the default link behavior
                         event.preventDefault();
             if (id && stamp) {
-                var url = "{{ route('print-bl.show', ['id' => '__ID__']) }}".replace('__ID__', id) + "?stamp=" + stamp + "&print=true";
+                var url = "{{ route('print-AirBL.show', ['id' => '__ID__']) }}".replace('__ID__', id) + "?stamp=" + stamp + "&print=true";
                 window.open(url, '_blank');
             } else {
                 alert('Please select a stamp type.');
