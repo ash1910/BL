@@ -326,3 +326,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+
+    //NEW POPUP TEXAREA 6
+    document.addEventListener('DOMContentLoaded', () => {
+        let editor6;
+        
+        // Open popup
+    document.getElementById('openPopup6').addEventListener('click', () => {
+        document.getElementById('popup6').style.display = 'flex';
+    
+        // Initialize CKEditor 5 if not already initialized
+    if (!editor6) {
+        ClassicEditor
+            .create(document.querySelector('#editor6'))
+            .then(ckeditor => {
+                editor6 = ckeditor;
+                const textareaData = document.getElementById('geteditor6').value;
+                editor6.setData(textareaData);
+            })
+            .catch(error => {
+                console.error('There was a problem initializing CKEditor:', error);
+            });
+    }
+});
+    
+    
+    // Close popup
+    document.getElementById('closePopupButton6').addEventListener('click', function() {
+      document.getElementById('popup6').style.display = 'none';
+    });
+
+    // Close popup
+    document.getElementById('closePopup6').addEventListener('click', function() {
+        document.getElementById('popup6').style.display = 'none';
+    });
+
+    //Save content from CKEditor to textarea
+    document.getElementById('saveButton6').addEventListener('click', async () => {
+    try {
+        if (editor6) {
+            // Fetch the data from the editor asynchronously
+            const data = await editor6.getData();
+            // Update the value of geteditor with the retrieved data
+            geteditor6.value = data;
+            displayArea6.innerHTML = data;
+            // Optionally close the popup after saving
+            popup6.style.display = 'none';
+        }
+    } catch (error) {
+        console.error('There was a problem saving the content:', error);
+    }
+});
+
+
+});

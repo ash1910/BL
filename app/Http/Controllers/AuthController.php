@@ -99,7 +99,8 @@ class AuthController extends Controller
             
         //Auth::login($user); 
 
-        return redirect("add-user")->withSuccess('Great! You have Successfully Added an User.');
+        //return redirect("add-user")->withSuccess('Great! You have Successfully Added an User.');
+        return Redirect::route('add-user')->withSuccess('Great! You have Successfully Added an User.');
     }
 
         /**
@@ -188,14 +189,14 @@ class AuthController extends Controller
                 Auth::logout();
     
                 // Redirect to the login page with an error message
-                return redirect()->route('login')->withErrors([
+                return Redirect::route('login')->withErrors([
                     'email' => 'Your account is disabled. Please contact Administrator.',
                 ]);
             }
         }
     
         // Redirect to the login page with an error message if authentication fails
-        return redirect()->route('login')->withErrors([
+        return Redirect::route('login')->withErrors([
             'email' => 'Oops! You have entered invalid credentials.',
         ]);
     }

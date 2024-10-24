@@ -390,7 +390,7 @@
                 <!--<td>{{ $data->freight_payable_at }}</td>-->
                 <!--<td>{{ $data->number_of_original_bl }}</td>-->
                 <td>
-                <a href="{{ route('modify.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
+                <a href="{{ route('modify-AirBL.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('show-AirBL.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
                 <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
                 @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")

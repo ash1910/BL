@@ -35,13 +35,65 @@ class AirBLController extends Controller
     public function store(Request $request)
     {
         //
-        /* $request->validate([
+        $request->validate([
             'shipper_name_and_address' => 'nullable',
             'shipper_account_number' => 'nullable',
             'consignee_name_and_address' => 'nullable',
             'consignee_account_number' => 'nullable',
+            'issuing_carrier_agent_name_and_city' => 'nullable',
+            'accounting_information' => 'nullable',
+            'agent_iata_code' => 'nullable',
+            'account_number' => 'nullable',
+            'airport_of_departure' => 'nullable',
+            'reference_number' => 'nullable',
+            'to_a' => 'nullable',
+            'by_first_carrier' => 'nullable',
+            'to_b' => 'nullable',
+            'by_a' => 'nullable',
+            'to_c' => 'nullable',
+            'by_b' => 'nullable',
+            'currency' => 'nullable',
+            'chgs_code' => 'nullable',
+            'declared_value_for_carriage' => 'nullable',
+            'declared_value_for_customs' => 'nullable',
+            'by_first_carrier' => 'nullable',
+            'ppd_v' => 'nullable',
+            'coll_v' => 'nullable',
+            'ppd_o' => 'nullable',
+            'coll_o' => 'nullable',
+            'handling_information' => 'nullable',
+            'airport_of_destination' => 'nullable',
+            'ammount_of_insurance' => 'nullable',
+            'flight_no' => 'nullable',
+            'flight_date' => 'nullable',
+            'no_of_pieces_rcp' => 'nullable',
+            'gross_weight' => 'nullable',
+            'kg_lb' => 'nullable',
+            'rate_class' => 'nullable',
+            'commodity_item_no' => 'nullable',
+            'chargeable_weight' => 'nullable',
+            'rate_charge' => 'nullable',
+            'total' => 'nullable',
+            'nature_and_quantity_of_goods' => 'nullable',
+            'prepaid' => 'nullable',
+            'collect' => 'nullable',
+            'valuation_charge_a' => 'nullable',
+            'valuation_charge_b' => 'nullable',
+            'tax_a' => 'nullable',
+            'tax_b' => 'nullable',
+            'total_other_charges_due_agent_a' => 'nullable',
+            'total_other_charges_due_agent_b' => 'nullable',
+            'total_other_charges_due_carrier_a' => 'nullable',
+            'total_other_charges_due_carrier_b' => 'nullable',
+            'total_prepaid' => 'nullable',
+            'total_collect' => 'nullable',
+            'currency_conversion_rates' => 'nullable',
+            'cc_charges_in_dest_currency' => 'nullable',
+            'charges_at_destination' => 'nullable',
+            'total_collect_charges' => 'nullable',
 
-         ]);*/
+
+         ]);
 
         AirBL::create([
             'shipper_name_and_address' => $request->shipper_name_and_address,
@@ -69,6 +121,7 @@ class AirBLController extends Controller
             'coll_v' => $request->coll_v,
             'ppd_o' => $request->ppd_o,
             'coll_o' => $request->coll_o,
+            'handling_information' =>$request->handling_information,
             'airport_of_destination' => $request->airport_of_destination,
             'ammount_of_insurance' => $request->ammount_of_insurance,
             'flight_no' => $request->flight_no,
@@ -126,17 +179,82 @@ class AirBLController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AirBL $airBL)
+    public function edit(AirBL $id)
     {
         //
+        return view('modify-AirBL', ['data' => $id]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AirBL $airBL)
+    public function update(Request $request, $id)
     {
         //
+        $info = AirBL::findOrFail($id);
+
+        $request->validate([
+            'shipper_name_and_address' => 'nullable',
+            'shipper_account_number' => 'nullable',
+            'consignee_name_and_address' => 'nullable',
+            'consignee_account_number' => 'nullable',
+            'issuing_carrier_agent_name_and_city' => 'nullable',
+            'accounting_information' => 'nullable',
+            'agent_iata_code' => 'nullable',
+            'account_number' => 'nullable',
+            'airport_of_departure' => 'nullable',
+            'reference_number' => 'nullable',
+            'to_a' => 'nullable',
+            'by_first_carrier' => 'nullable',
+            'to_b' => 'nullable',
+            'by_a' => 'nullable',
+            'to_c' => 'nullable',
+            'by_b' => 'nullable',
+            'currency' => 'nullable',
+            'chgs_code' => 'nullable',
+            'declared_value_for_carriage' => 'nullable',
+            'declared_value_for_customs' => 'nullable',
+            'by_first_carrier' => 'nullable',
+            'ppd_v' => 'nullable',
+            'coll_v' => 'nullable',
+            'ppd_o' => 'nullable',
+            'coll_o' => 'nullable',
+            'handling_information' => 'nullable',
+            'airport_of_destination' => 'nullable',
+            'ammount_of_insurance' => 'nullable',
+            'flight_no' => 'nullable',
+            'flight_date' => 'nullable',
+            'no_of_pieces_rcp' => 'nullable',
+            'gross_weight' => 'nullable',
+            'kg_lb' => 'nullable',
+            'rate_class' => 'nullable',
+            'commodity_item_no' => 'nullable',
+            'chargeable_weight' => 'nullable',
+            'rate_charge' => 'nullable',
+            'total' => 'nullable',
+            'nature_and_quantity_of_goods' => 'nullable',
+            'prepaid' => 'nullable',
+            'collect' => 'nullable',
+            'valuation_charge_a' => 'nullable',
+            'valuation_charge_b' => 'nullable',
+            'tax_a' => 'nullable',
+            'tax_b' => 'nullable',
+            'total_other_charges_due_agent_a' => 'nullable',
+            'total_other_charges_due_agent_b' => 'nullable',
+            'total_other_charges_due_carrier_a' => 'nullable',
+            'total_other_charges_due_carrier_b' => 'nullable',
+            'total_prepaid' => 'nullable',
+            'total_collect' => 'nullable',
+            'currency_conversion_rates' => 'nullable',
+            'cc_charges_in_dest_currency' => 'nullable',
+            'charges_at_destination' => 'nullable',
+            'total_collect_charges' => 'nullable',
+         ]);
+
+         $input = $request->all();
+         $info->fill($input)->save();
+
+         return redirect('airbl-list')->with('status','AirWaybill Updated Successfully!');
     }
 
     /**

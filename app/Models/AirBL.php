@@ -34,6 +34,7 @@ class AirBL extends Model
         'coll_v',
         'ppd_o',
         'coll_o',
+        'handling_information',
         'airport_of_destination',
         'ammount_of_insurance',
         'flight_no',

@@ -40,6 +40,9 @@ Route::get('/AirBL', [AirBLController::class, 'show'])->name('AirBL.show')->midd
 Route::get('/new-AirBL', [AirBLController::class, 'create'])->name('new-AirBL.create')->middleware('auth');
 Route::post('/airbl-list', [AirBLController::class, 'store'])->name('airbl-list.store')->middleware('auth');
 Route::delete('/airbl-list/{id}', [AirBLController::class, 'destroy'])->name('airbl-list.destroy')->middleware('auth');
+
+Route::get('/modify-AirBL/{id}', [AirBLController::class, 'edit'])->name('modify-AirBL.edit')->middleware('auth');
+Route::put('/airbl-list/{id}', [AirBLController::class, 'update'])->name('airbl-list.update')->middleware('auth');
 Route::get('/show-AirBL/{id}', [AirBLController::class, 'show'])->name('show-AirBL.show')->middleware('auth');
 Route::get('/print-AirBL/{id}', [AirBLController::class, 'print'])->name('print-AirBL.show')->middleware('auth');
 

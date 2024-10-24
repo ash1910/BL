@@ -37,6 +37,7 @@ return new class extends Migration
             $table->text('coll_v')->nullable();
             $table->text('ppd_o')->nullable();
             $table->text('coll_o')->nullable();
+            $table->text('handling_information')->nullable();
             $table->text('airport_of_destination')->nullable();
             $table->text('ammount_of_insurance')->nullable();
             $table->text('flight_no')->nullable();
