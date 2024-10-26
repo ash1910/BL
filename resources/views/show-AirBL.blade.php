@@ -272,10 +272,10 @@
 
 		</tr>
 		<tr>
-			<td colspan="11" style="width: 94px;">
+			<td colspan="11" style="width: 94px; height: 19px;">
 			<div>{{ old('flight_no',$data->flight_no) }}</div>
 			</td>
-			<td colspan="7" style="width: 95px;">
+			<td colspan="7" style="width: 95px; height: 19px;">
 			<div>{{ old('flight_date',$data->flight_date) }}</div>
 			</td>
 		</tr>
@@ -387,17 +387,16 @@
 			<td colspan="8" style="width: 88px; text-align: center;">
 			<p><strong>Collect</strong></p>
 			</td>
-			<td colspan="23" rowspan="6" style="width: 435px; font-weight: bold;">
-			<p>Other Charges</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<td colspan="23" rowspan="6" style="width: 435px;">
+			<div style="font-weight: bold;">Other Charges</div>
+			<div>{!! old('other_charges',$data->other_charges) !!}</div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('prepaid',$data->prepaid) }}</div>	
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('collect',$data->collect) }}</div>	
 			</td>
 		</tr>
@@ -413,10 +412,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('valuation_charge_a',$data->valuation_charge_a) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('valuation_charge_b',$data->valuation_charge_b) }}</div>
 			</td>
 		</tr>
@@ -432,10 +431,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('tax_a',$data->tax_a) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('tax_b',$data->tax_b) }}</div>
 			</td>
 		</tr>
@@ -457,10 +456,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_other_charges_due_agent_a',$data->total_other_charges_due_agent_a) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_other_charges_due_agent_b',$data->total_other_charges_due_agent_b) }}</div>
 			</td>
 		</tr>
@@ -476,10 +475,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_other_charges_due_carrier_a',$data->total_other_charges_due_carrier_a) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_other_charges_due_carrier_b',$data->total_other_charges_due_carrier_b) }}</div>
 			</td>
 		</tr>
@@ -506,10 +505,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_prepaid',$data->total_prepaid) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_collect',$data->total_collect) }}</div>
 			</td>
 		</tr>
@@ -522,10 +521,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('currency_conversion_rates',$data->currency_conversion_rates) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('cc_charges_in_dest_currency',$data->cc_charges_in_dest_currency) }}</div>
 			</td>
 		</tr>
@@ -544,10 +543,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('charges_at_destination',$data->charges_at_destination) }}</div>
 			</td>
-			<td colspan="10" style="width: 132px;">
+			<td colspan="10" style="width: 132px; height: 19px;">
 			<div style="text-align: center;">{{ old('total_collect_charges',$data->total_collect_charges) }}</div>
 			</td>
 		</tr>

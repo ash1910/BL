@@ -1,5 +1,3 @@
-ALTER TABLE users
-ADD COLUMN role VARCHAR(255);
+ALTER TABLE airbls ADD handling_information TEXT NULL AFTER coll_o;
 
-
-ALTER TABLE `bls` ADD `stamp` VARCHAR(255) NOT NULL AFTER `collect`;
+ALTER TABLE airbls ADD other_charges TEXT NULL AFTER collect;

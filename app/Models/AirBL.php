@@ -50,6 +50,7 @@ class AirBL extends Model
         'nature_and_quantity_of_goods',
         'prepaid',
         'collect',
+        'other_charges',
         'valuation_charge_a',
         'valuation_charge_b',
         'tax_a',

@@ -53,6 +53,7 @@ return new class extends Migration
             $table->text('nature_and_quantity_of_goods')->nullable();
             $table->text('prepaid')->nullable();
             $table->text('collect')->nullable();
+            $table->text('other_charges')->nullable();
             $table->text('valuation_charge_a')->nullable();
             $table->text('valuation_charge_b')->nullable();
             $table->text('tax_a')->nullable();
