@@ -183,7 +183,6 @@ class BLController extends Controller
         
 
         $request->validate([
-            'bl_number' => 'required',
             'shipper' => 'nullable',
             'consignee' => 'nullable',
             'notify_party' => 'nullable',

@@ -94,14 +94,17 @@
 <table>
 <tbody>
 		<tr>
-		<td colspan="2" style="width: 38px; border-left: hidden; border-top: hidden;">
-		<p>&nbsp;</p>
+		<td colspan="2" style="width: 38px; border-left: hidden; border-top: hidden; text-align: center;">
+		{{ old('mawb_no_a',$data->mawb_no_a) }}
 		</td>
-		<td colspan="2" style="width: 38px; border-top: hidden;">
-		<p>&nbsp;</p>
+		<td colspan="2" style="width: 38px; border-top: hidden; text-align: center;">
+		{{ old('mawb_no_b',$data->mawb_no_b) }}
 		</td>
-		<td colspan="39" style="width: 624px; border-top: hidden; border-right: hidden;">
-		<p>&nbsp;</p>
+		<td colspan="38" style="width: 624px; border-top: hidden; border-right: hidden; padding-left: 20px;">
+		{{ old('mawb_no_c',$data->mawb_no_c) }}
+		</td>
+		<td style="border-top: hidden; border-right: hidden; padding-top: 12px;">
+		<div>{{ old('airbl_number',$data->airbl_number) }}</div>
 		</td>
 		</tr>
 		<tr>
@@ -484,6 +487,9 @@
 			<td colspan="23" rowspan="5" style="width: 435px">
 			<p style="text-align: justify;">Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the consignment contains dangerous goods, such part is properly described by name and is in proper condition for carriage by according to the applicable Dangerous Goods Regulations.</p>
 			<p>&nbsp;</p>
+			<div style="display: flex; justify-content: center; align-items: center;">
+			{{ old('signature_of_shipper_or_his_agent',$data->signature_of_shipper_or_his_agent) }}
+			</div>
 			<hr style="border-top: dotted 1px;"/>
 			<p style="text-align: center; font-weight: bold;">Signature of Shipper or his Agent</p>
 			</td>
@@ -530,11 +536,32 @@
 			<td colspan="10" style="width: 132px; text-align: center; font-weight: bold;">
 			<p>Total Collect</p>
 			</td>
-			<td colspan="23" rowspan="4" style="width: 435px; text-align: center; font-weight: bold;">
+			<td colspan="23" rowspan="4" style="width: 435px; text-align: center;">
 			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+				<div>
+					{{ old('executed_on_date', $data->executed_on_date) }}
+				</div>
+				<div style="margin: 0 98px;">
+					{{ old('at_place', $data->at_place) }}
+				</div>
+				<div style="margin: 0 -14px;">
+					{{ old('signature_of_issuing_carrier_or_its_agent', $data->signature_of_issuing_carrier_or_its_agent) }}
+				</div>
+			</div>
 			<hr style="border-top: dotted 1px;"/>
-			<p>Executed on (date)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at (place)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature of issuing Carier or its Agent</p>
+			<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; font-weight: bold;">
+			<div>
+					Executed on (date)
+				</div>
+				<div style="margin: 0 80px;">
+					at (place)
+				</div>
+				<div>
+					Signature of issuing Carier or its Agent
+				</div>
+			</div>
+			</div>
 			</td>
 		</tr>
 		<tr>

@@ -44,6 +44,7 @@ Route::delete('/airbl-list/{id}', [AirBLController::class, 'destroy'])->name('ai
 Route::get('/modify-AirBL/{id}', [AirBLController::class, 'edit'])->name('modify-AirBL.edit')->middleware('auth');
 Route::put('/airbl-list/{id}', [AirBLController::class, 'update'])->name('airbl-list.update')->middleware('auth');
 Route::get('/show-AirBL/{id}', [AirBLController::class, 'show'])->name('show-AirBL.show')->middleware('auth');
+Route::get('/clone-AirBL/{id}', [AirBLController::class, 'clone'])->name('clone-AirBL.clone')->middleware('auth');
 Route::get('/print-AirBL/{id}', [AirBLController::class, 'print'])->name('print-AirBL.show')->middleware('auth');
 
 // User Authentication

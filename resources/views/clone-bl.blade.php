@@ -366,7 +366,8 @@
 						<input id="date_of_issue" type="date" name="date_of_issue" value="{{ old('date_of_issue',$data->date_of_issue) }}" style="width:87%; height: 60%;" required/>
 					</td>
 						<td class="no-border-right" style="width: 55%;">B/L NUMBER<br>
-						<textarea readonly id="bl_number" type="text" name="bl_number" style="width:100%;" required>{{ $bl_number }}</textarea>
+						<input class="hidden" type="text" value="{{ $bl_number }}" name="bl_number">
+						<div>{{ $bl_number }}</div>
 					</td>
 						</tr>
 					

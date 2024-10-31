@@ -10,6 +10,10 @@ class AirBL extends Model
     use HasFactory;
     protected $table = 'airbls';
     protected $fillable = [
+        'airbl_number',
+        'mawb_no_a',
+        'mawb_no_b',
+        'mawb_no_c',
         'shipper_name_and_address',
         'shipper_account_number',
         'consignee_name_and_address',
@@ -65,6 +69,10 @@ class AirBL extends Model
         'cc_charges_in_dest_currency',
         'charges_at_destination',
         'total_collect_charges',
+        'signature_of_shipper_or_his_agent',
+        'executed_on_date',
+        'at_place',
+        'signature_of_issuing_carrier_or_its_agent',
 
     ];
 }

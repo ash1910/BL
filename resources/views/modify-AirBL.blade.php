@@ -249,6 +249,17 @@
 <body>
 <a href="/airbl-list" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
 <div class="element">
+		            <!-- Display All Error Messages -->
+					@if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There is empty field!<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
     <form action="{{ route('airbl-list.update', ['id' => $data->id]) }}" method="POST">
         @csrf
         @method('PUT')
@@ -256,13 +267,16 @@
 <tbody>
 		<tr>
 		<td colspan="2" style="width: 38px; border-left: hidden; border-top: hidden;">
-		<p>&nbsp;</p>
+		<textarea style="width:100%; height: 100%;" type="text" name="mawb_no_a">{{ old('mawb_no_a',$data->mawb_no_a) }}</textarea>
 		</td>
 		<td colspan="2" style="width: 38px; border-top: hidden;">
-		<p>&nbsp;</p>
+		<textarea style="width:100%; height: 100%;" type="text" name="mawb_no_b">{{ old('mawb_no_b',$data->mawb_no_b) }}</textarea>
 		</td>
-		<td colspan="39" style="width: 624px; border-top: hidden; border-right: hidden;">
-		<p>&nbsp;</p>
+		<td colspan="38" style="width: 624px; border-top: hidden; border-right: hidden;">
+		<textarea style="width:8%; height: 100%;" type="text" name="mawb_no_c">{{ old('mawb_no_c',$data->mawb_no_c) }}</textarea>
+		</td>
+		<td style="border-top: hidden; border-right: hidden; padding-top: 12px;">
+		<div>{{ old('airbl_number',$data->airbl_number) }}</div>
 		</td>
 		</tr>
 		<tr>
@@ -749,6 +763,9 @@
 			<td colspan="23" rowspan="5" style="width: 435px">
 			<p style="text-align: justify;">Shipper certifies that the particulars on the face hereof are correct and that insofar as any part of the consignment contains dangerous goods, such part is properly described by name and is in proper condition for carriage by according to the applicable Dangerous Goods Regulations.</p>
 			<p>&nbsp;</p>
+			<div style="display: flex; justify-content: center; align-items: center;">
+    			<input type="text" name="signature_of_shipper_or_his_agent" value="{{ old('signature_of_shipper_or_his_agent',$data->signature_of_shipper_or_his_agent) }}" style="width: 50%; height: 60%;">
+			</div>
 			<hr style="border-top: dotted 1px;"/>
 			<p style="text-align: center; font-weight: bold;">Signature of Shipper or his Agent</p>
 			</td>
@@ -797,7 +814,11 @@
 			</td>
 			<td colspan="23" rowspan="4" style="width: 435px; text-align: center; font-weight: bold;">
 			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+				<input type="date" name="executed_on_date" value="{{ old('executed_on_date',$data->executed_on_date) }}" style="width: 18%; height: 60%;" required />
+				<input type="text" name="at_place" value="{{ old('at_place',$data->at_place) }}" style="width: 18%; height: 60%; margin: 0 65px;">
+				<input type="text" name="signature_of_issuing_carrier_or_its_agent" value="{{ old('signature_of_issuing_carrier_or_its_agent',$data->signature_of_issuing_carrier_or_its_agent) }}" style="width: 35%; height: 60%;">
+			</div>
 			<hr style="border-top: dotted 1px;"/>
 			<p>Executed on (date)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at (place)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature of issuing Carier or its Agent</p>
 			</td>

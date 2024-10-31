@@ -26,7 +26,27 @@ class AirBLController extends Controller
     public function create()
     {
         //
-        return view("new-AirBL");
+                // The fixed prefix
+        $prefix = "HNSDAC";
+
+        // Get the current year and month
+        $now = new \DateTime();
+        $year = $now->format('y'); // Last two digits of the current year
+        $month = $now->format('m'); // Current month (01-12)
+
+        // Get the last code from the database using Eloquent
+        $lastCode = AirBl::where('airbl_number', 'like', $prefix . $year . $month . '%')
+            ->orderBy('airbl_number', 'desc')
+            ->value('airbl_number');
+
+        // Extract the last 4-digit number and increment it
+        $lastNumber = $lastCode ? intval(substr($lastCode, -4)) : 0;
+        $newNumber = str_pad($lastNumber + 1, 4, '1000', STR_PAD_LEFT);
+
+        // Create the new code
+        $airbl_number = $prefix . $year . $month . $newNumber;
+
+        return view("new-AirBL", ['airbl_number' => $airbl_number]);
     }
 
     /**
@@ -36,6 +56,10 @@ class AirBLController extends Controller
     {
         //
         $request->validate([
+            'airbl_number' => 'required',
+            'mawb_no_a' => 'nullable',
+            'mawb_no_b' => 'nullable',
+            'mawb_no_c' => 'nullable',
             'shipper_name_and_address' => 'nullable',
             'shipper_account_number' => 'nullable',
             'consignee_name_and_address' => 'nullable',
@@ -92,11 +116,19 @@ class AirBLController extends Controller
             'cc_charges_in_dest_currency' => 'nullable',
             'charges_at_destination' => 'nullable',
             'total_collect_charges' => 'nullable',
+            'signature_of_shipper_or_his_agent' => 'nullable',
+            'executed_on_date' => 'required',
+            'at_place' => 'nullable',
+            'signature_of_issuing_carrier_or_its_agent' => 'nullable',
 
 
          ]);
 
         AirBL::create([
+            'airbl_number' => $request->airbl_number,
+            'mawb_no_a' => $request->mawb_no_a,
+            'mawb_no_b' => $request->mawb_no_b,
+            'mawb_no_c' => $request->mawb_no_c,
             'shipper_name_and_address' => $request->shipper_name_and_address,
             'shipper_account_number' => $request->shipper_account_number,
             'consignee_name_and_address' => $request->consignee_name_and_address,
@@ -153,6 +185,10 @@ class AirBLController extends Controller
             'cc_charges_in_dest_currency' => $request->cc_charges_in_dest_currency,
             'charges_at_destination' => $request->charges_at_destination,
             'total_collect_charges' => $request->total_collect_charges,
+            'signature_of_shipper_or_his_agent' => $request->signature_of_shipper_or_his_agent,
+            'executed_on_date' => $request->executed_on_date,
+            'at_place' => $request->at_place,
+            'signature_of_issuing_carrier_or_its_agent' => $request->signature_of_issuing_carrier_or_its_agent,
 
     
        ]);
@@ -196,6 +232,9 @@ class AirBLController extends Controller
         $info = AirBL::findOrFail($id);
 
         $request->validate([
+            'mawb_no_a' => 'nullable',
+            'mawb_no_b' => 'nullable',
+            'mawb_no_c' => 'nullable',
             'shipper_name_and_address' => 'nullable',
             'shipper_account_number' => 'nullable',
             'consignee_name_and_address' => 'nullable',
@@ -252,12 +291,46 @@ class AirBLController extends Controller
             'cc_charges_in_dest_currency' => 'nullable',
             'charges_at_destination' => 'nullable',
             'total_collect_charges' => 'nullable',
+            'signature_of_shipper_or_his_agent' => 'nullable',
+            'executed_on_date' => 'required',
+            'at_place' => 'nullable',
+            'signature_of_issuing_carrier_or_its_agent' => 'nullable',
          ]);
 
          $input = $request->all();
          $info->fill($input)->save();
 
          return redirect('airbl-list')->with('status','AirWaybill Updated Successfully!');
+    }
+
+    /**
+     * Clone the specified resource in storage.
+     */
+    public function clone(AirBL $id)
+    {
+         // The fixed prefix
+         $prefix = "HNSDAC";
+
+         // Get the current year and month
+         $now = new \DateTime();
+         $year = $now->format('y'); // Last two digits of the current year
+         $month = $now->format('m'); // Current month (01-12)
+ 
+         // Get the last code from the database using Eloquent
+         $lastCode = AirBL::where('airbl_number', 'like', $prefix . $year . $month . '%')
+             ->orderBy('airbl_number', 'desc')
+             ->value('airbl_number');
+ 
+         // Extract the last 4-digit number and increment it
+         $lastNumber = $lastCode ? intval(substr($lastCode, -4)) : 0;
+         $newNumber = str_pad($lastNumber + 1, 4, '1000', STR_PAD_LEFT);
+ 
+         // Create the new code
+         $airbl_number = $prefix . $year . $month . $newNumber;
+ 
+         //return view('add', ['bl_number' => $bl_number]);
+
+        return view('clone-AirBL', ['data' => $id, 'airbl_number' => $airbl_number]);
     }
 
     /**

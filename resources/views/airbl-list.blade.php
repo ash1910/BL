@@ -367,6 +367,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                <th>Airbill Number</th>
                   <th>Shipper's Name and Address</th>
                   <th>Shipper's Account Number</th>
                   <th>Consignee's Account Number</th>
@@ -381,6 +382,7 @@
                 <tbody>
                 @foreach ($datas as $data)
                 <tr>
+                <td>{{ $data->airbl_number }}</td>
                 <td>{!! $data->shipper_name_and_address !!}</td>
                 <td>{{ $data->shipper_account_number }}</td>
                 <td>{{ $data->consignee_account_number }}</td>
@@ -392,7 +394,7 @@
                 <td>
                 <a href="{{ route('modify-AirBL.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('show-AirBL.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
-                <a href="{{ route('clone-bl.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
+                <a href="{{ route('clone-AirBL.clone', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Clone</a>
                 @if(Auth::user()->role == "SuperAdmin" || Auth::user()->role == "Administrator")
                 <form action="{{ route('airbl-list.destroy', $data->id) }}" method="POST" class="button-container">
                     @csrf

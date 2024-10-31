@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('airbls', function (Blueprint $table) {
             $table->id();
+            $table->string('airbl_number', 255);
+            $table->integer('mawb_no_a')->nullable();
+            $table->integer('mawb_no_a')->nullable();
+            $table->integer('mawb_no_a')->nullable();
             $table->text('shipper_name_and_address')->nullable();
             $table->text('shipper_account_number')->nullable();
             $table->text('consignee_name_and_address')->nullable();
@@ -68,6 +72,10 @@ return new class extends Migration
             $table->text('cc_charges_in_dest_currency')->nullable();
             $table->text('charges_at_destination')->nullable();
             $table->text('total_collect_charges')->nullable();
+            $table->text('signature_of_shipper_or_his_agent')->nullable();
+            $table->text('executed_on_date')->nullable();
+            $table->text('at_place')->nullable();
+            $table->text('signature_of_issuing_carrier_or_its_agent')->nullable();
             $table->timestamps();
         });
     }
