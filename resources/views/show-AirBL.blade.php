@@ -46,6 +46,9 @@
 			padding: 10px;
 			padding-left: 20px;
 			}
+		.myDiv {
+    		white-space: pre-wrap; /* Preserves whitespace and line breaks */
+		}
 
 		/* Clearfix (clear floats) */
 		.row::after {
@@ -62,13 +65,13 @@
 <tbody>
 		<tr>
 		<td colspan="2" style="width: 38px; border-left: hidden; border-top: hidden; text-align: center;">
-		{{ old('mawb_no_a',$data->mawb_no_a) }}
+		<div style="font-size: 15px;">{{ old('mawb_no_a',$data->mawb_no_a) }}</div>
 		</td>
 		<td colspan="2" style="width: 38px; border-top: hidden; text-align: center;">
-		{{ old('mawb_no_b',$data->mawb_no_b) }}
+		<div style="font-size: 15px;">{{ old('mawb_no_b',$data->mawb_no_b) }}</div>
 		</td>
 		<td colspan="38" style="width: 624px; border-top: hidden; border-right: hidden; padding-left: 20px;">
-		{{ old('mawb_no_c',$data->mawb_no_c) }}
+		<div style="font-size: 15px;">{{ old('mawb_no_c',$data->mawb_no_c) }}</div>
 		</td>
 		<td style="border-top: hidden; border-right: hidden; padding-top: 12px;">
 		<div>{{ old('airbl_number',$data->airbl_number) }}</div>
@@ -135,11 +138,11 @@
 		<tr>
 			<td colspan="26" style="width: 395px; height: 65px;">
 			<b>Issuing Carrier's Agent Name and City</b>
-			<div style="margin-top: -12px;">{!! old('issuing_carrier_agent_name_and_city',$data->issuing_carrier_agent_name_and_city) !!}</div>
+			<div style="margin-top: -10px;">{!! old('issuing_carrier_agent_name_and_city',$data->issuing_carrier_agent_name_and_city) !!}</div>
 			</td>
 			<td colspan="17" rowspan="2" style="width: 395px;">
 			<b>Accounting Information</b>
-			<div style="margin-top: -12px;">{!! old('accounting_information',$data->accounting_information) !!}</div>
+			<div style="margin-top: -10px;">{!! old('accounting_information',$data->accounting_information) !!}</div>
 			</td>
 		</tr>
 		<tr>
@@ -285,7 +288,7 @@
 		<tr>
 			<td colspan="43" style="width: 699px; border-bottom: none;">
 			<div style="font-weight: bold">Handling Information</div>
-			<div>{{ old('handling_information',$data->handling_information) }}</div>
+			<div class="myDiv" style="text-align: center;">{{ old('handling_information',$data->handling_information) }}</div>
 			</td>
 		</tr>
 		<tr>
@@ -349,25 +352,25 @@
 		</tr>
 		<tr>
 			<td style="width: 32px; height: 250px;">
-			<div>{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</div>
+			<div class="myDiv">{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</div>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 82px;">
-			<div>{{ old('gross_weight',$data->gross_weight) }}</div>
+			<div class="myDiv">{{ old('gross_weight',$data->gross_weight) }}</div>
 			</td>
 			<td rowspan="2" style="width: 9px;">
-			<div>{{ old('kg_lb',$data->kg_lb) }}</div>
+			<div class="myDiv">{{ old('kg_lb',$data->kg_lb) }}</div>
 			</td>
 			<td rowspan="2" style="width: 11px;">
-			<div>{{ old('rate_class',$data->rate_class) }}</div>
+			<div class="myDiv">{{ old('rate_class',$data->rate_class) }}</div>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">
-			<div>{{ old('commodity_item_no',$data->commodity_item_no) }}</div>
+			<div class="myDiv">{{ old('commodity_item_no',$data->commodity_item_no) }}</div>
 			</td>
 			<td colspan="7" rowspan="2" style="width: 66px;">
-			<div>{{ old('chargeable_weight',$data->chargeable_weight) }}</div>
+			<div class="myDiv">{{ old('chargeable_weight',$data->chargeable_weight) }}</div>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 85px;">
-			<div>{{ old('rate_charge',$data->rate_charge) }}</div>		
+			<div class="myDiv">{{ old('rate_charge',$data->rate_charge) }}</div>		
 			</td>
 			<td colspan="5" rowspan="2" style="width: 104px;">
 			<div>{!! old('total',$data->total) !!}</div>		
@@ -505,29 +508,32 @@
 			</td>
 			<td colspan="23" rowspan="4" style="width: 435px; text-align: center;">
 			<p>&nbsp;</p>
-			<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
-				<div>
-					{{ old('executed_on_date', $data->executed_on_date) }}
+			<div style="display: flex; flex-direction: column; align-items: center;">
+				<!-- Data Section -->
+				<div style="display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap; width: 100%;">
+					<div style="flex: 1; text-align: center;">
+						{{ old('executed_on_date', $data->executed_on_date) }}
+					</div>
+					<div style="flex: 1; text-align: center;">
+						{{ old('at_place', $data->at_place) }}
+					</div>
+					<div style="flex: 1.3; text-align: center;">
+						{{ old('signature_of_issuing_carrier_or_its_agent', $data->signature_of_issuing_carrier_or_its_agent) }}
+					</div>
 				</div>
-				<div style="margin: 0 98px;">
-					{{ old('at_place', $data->at_place) }}
+				<hr style="border-top: dotted 1px; width: 100%;"/>
+				<!-- Header Section -->
+				<div style="display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap; font-weight: bold; width: 100%;">
+					<div style="flex: 1; text-align: center;">
+						Executed on (date)
+					</div>
+					<div style="flex: 1; text-align: center;">
+						at (place)
+					</div>
+					<div style="flex: 1.3; text-align: center;">
+						Signature of issuing Carrier or its Agent
+					</div>
 				</div>
-				<div style="margin: 0 -14px;">
-					{{ old('signature_of_issuing_carrier_or_its_agent', $data->signature_of_issuing_carrier_or_its_agent) }}
-				</div>
-			</div>
-			<hr style="border-top: dotted 1px;"/>
-			<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; font-weight: bold;">
-			<div>
-					Executed on (date)
-				</div>
-				<div style="margin: 0 80px;">
-					at (place)
-				</div>
-				<div>
-					Signature of issuing Carier or its Agent
-				</div>
-			</div>
 			</div>
 			</td>
 		</tr>
