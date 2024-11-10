@@ -616,25 +616,25 @@
 		</tr>
 		<tr>
 			<td style="width: 32px; height: 250px;">
-			<textarea style="width:99%; height: 100%;" name="no_of_pieces_rcp">{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</textarea>
+			<textarea style="width:99%; height: 100%;" type="text" name="no_of_pieces_rcp">{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</textarea>
 			</td>
 			<td colspan="8" rowspan="2" style="width: 82px;">
-			<textarea style="width:99%; height: 244px;" name="gross_weight">{{ old('gross_weight',$data->gross_weight) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="gross_weight">{{ old('gross_weight',$data->gross_weight) }}</textarea>
 			</td>
 			<td rowspan="2" style="width: 9px;">
-			<textarea style="width:99%; height: 244px;" name="kg_lb">{{ old('kg_lb',$data->kg_lb) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="kg_lb">{{ old('kg_lb',$data->kg_lb) }}</textarea>
 			</td>
 			<td rowspan="2" style="width: 11px;">
-			<textarea style="width:99%; height: 244px;" name="rate_class">{{ old('rate_class',$data->rate_class) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="rate_class">{{ old('rate_class',$data->rate_class) }}</textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 57px;">
-			<textarea style="width:99%; height: 244px;" name="commodity_item_no">{{ old('commodity_item_no',$data->commodity_item_no) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="commodity_item_no">{{ old('commodity_item_no',$data->commodity_item_no) }}</textarea>
 			</td>
 			<td colspan="7" rowspan="2" style="width: 66px;">
-			<textarea style="width:99%; height: 244px;" name="chargeable_weight">{{ old('chargeable_weight',$data->chargeable_weight) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="chargeable_weight">{{ old('chargeable_weight',$data->chargeable_weight) }}</textarea>
 			</td>
 			<td colspan="4" rowspan="2" style="width: 85px;">
-			<textarea style="width:99%; height: 244px;" name="rate_charge">{{ old('rate_charge',$data->rate_charge) }}</textarea>
+			<textarea style="width:99%; height: 244px;" type="text" name="rate_charge">{{ old('rate_charge',$data->rate_charge) }}</textarea>
 			</td>
 			<td colspan="5" rowspan="2" style="width: 104px;">
 						<!-- Button to open the popup -->
