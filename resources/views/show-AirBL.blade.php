@@ -351,26 +351,26 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 32px; height: 250px;">
-			<div class="myDiv">{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</div>
+			<td class="myDiv" style="width: 32px; height: 250px;">
+			<div>{{ old('no_of_pieces_rcp',$data->no_of_pieces_rcp) }}</div>
 			</td>
-			<td colspan="8" rowspan="2" style="width: 82px;">
-			<div class="myDiv">{{ old('gross_weight',$data->gross_weight) }}</div>
+			<td class="myDiv" colspan="8" rowspan="2" style="width: 82px;">
+			<div>{{ old('gross_weight',$data->gross_weight) }}</div>
 			</td>
-			<td rowspan="2" style="width: 9px;">
-			<div class="myDiv">{{ old('kg_lb',$data->kg_lb) }}</div>
+			<td class="myDiv" rowspan="2" style="width: 9px;">
+			<div>{{ old('kg_lb',$data->kg_lb) }}</div>
 			</td>
-			<td rowspan="2" style="width: 11px;">
-			<div class="myDiv">{{ old('rate_class',$data->rate_class) }}</div>
+			<td class="myDiv" rowspan="2" style="width: 11px;">
+			<div>{{ old('rate_class',$data->rate_class) }}</div>
 			</td>
-			<td colspan="5" rowspan="2" style="width: 57px;">
-			<div class="myDiv">{{ old('commodity_item_no',$data->commodity_item_no) }}</div>
+			<td class="myDiv" colspan="5" rowspan="2" style="width: 57px;">
+			<div>{{ old('commodity_item_no',$data->commodity_item_no) }}</div>
 			</td>
-			<td colspan="7" rowspan="2" style="width: 66px;">
-			<div class="myDiv">{{ old('chargeable_weight',$data->chargeable_weight) }}</div>
+			<td class="myDiv" colspan="7" rowspan="2" style="width: 66px;">
+			<div>{{ old('chargeable_weight',$data->chargeable_weight) }}</div>
 			</td>
-			<td colspan="4" rowspan="2" style="width: 85px;">
-			<div class="myDiv">{{ old('rate_charge',$data->rate_charge) }}</div>		
+			<td class="myDiv" colspan="4" rowspan="2" style="width: 85px;">
+			<div>{{ old('rate_charge',$data->rate_charge) }}</div>		
 			</td>
 			<td colspan="5" rowspan="2" style="width: 104px;">
 			<div>{!! old('total',$data->total) !!}</div>		
