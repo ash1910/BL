@@ -294,7 +294,7 @@
 						<b>Corporate Office:</b> 246, Tejgaon I/A,<br>
 						Dhaka - 1208, Bangladesh.<br>
 						Tel: +880 2 55045148-9.<br>
-						Email: info@hns-international.com<br>Web: www.hns-international.com
+						Email: globiz@hns-international.com<br>Web: www.hns-international.com
 
 						</p>
 					</p>

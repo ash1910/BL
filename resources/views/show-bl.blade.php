@@ -263,7 +263,7 @@
 						<b>Corporate Office:</b> 246, Tejgaon I/A,<br>
 						Dhaka - 1208, Bangladesh.<br>
 						Tel: +880 2 55045148-9.<br>
-						Email: info@hns-international.com<br>Web: www.hns-international.com
+						Email: globiz@hns-international.com<br>Web: www.hns-international.com
 						</p>
 					</p>
 					<div class="no-border-all" style="text-align: center; font-size: 14px; margin-top: 160px;"><b>COMBINED TRANSPORT BILL OF LADING</b></div>
