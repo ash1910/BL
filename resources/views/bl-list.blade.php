@@ -30,6 +30,10 @@
           .button-container {
             display: inline-block;
         }
+
+          .myDiv {
+    		    white-space: pre-wrap; /* Preserves whitespace and line breaks */
+		    }
 </style>
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -382,7 +386,7 @@
                 @foreach ($datas as $data)
                 <tr>
                 <td>{{ $data->bl_number }}</td>
-                <td>{{ $data->shipper }}</td>
+                <td class="myDiv">{{ $data->shipper }}</td>
                 <td>{{ $data->date_of_issue }}</td>
                 <!--<td>{{ $data->on_board_date }}</td>-->
                 <!--<td>{{ $data->port_of_discharge }}</td>-->
