@@ -369,13 +369,7 @@
                 <tr>
                 <th>Airbill Number</th>
                   <th>Shipper's Name and Address</th>
-                  <th>Shipper's Account Number</th>
-                  <th>Consignee's Account Number</th>
-                  <!--<th>On Board Date</th>-->
-                  <!--<th>Port Of Discharge</th>-->
-                  <!--<th>Final Destination</th>-->
-                  <!--<th>Freight Payable At</th>-->
-                  <!--<th>Number Of Original BL</th>-->
+                  <th>Executed on (Date)</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -384,13 +378,7 @@
                 <tr>
                 <td>{{ $data->airbl_number }}</td>
                 <td>{!! $data->shipper_name_and_address !!}</td>
-                <td>{{ $data->shipper_account_number }}</td>
-                <td>{{ $data->consignee_account_number }}</td>
-                <!--<td>{{ $data->on_board_date }}</td>-->
-                <!--<td>{{ $data->port_of_discharge }}</td>-->
-                <!--<td>{{ $data->final_destination }}</td>-->
-                <!--<td>{{ $data->freight_payable_at }}</td>-->
-                <!--<td>{{ $data->number_of_original_bl }}</td>-->
+                <td>{{ $data->executed_on_date }}</td>
                 <td>
                 <a href="{{ route('modify-AirBL.edit', ['id' => $data->id]) }}"  target=”_blank” class="btn btn-success btn-sm">Edit</a>
                 <a href="{{ route('show-AirBL.show', ['id' => $data->id]) }}" target=”_blank” class="btn btn-info btn-sm">Show</a>
