@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('airbl_number', 255);
             $table->integer('mawb_no_a')->nullable();
-            $table->integer('mawb_no_a')->nullable();
-            $table->integer('mawb_no_a')->nullable();
             $table->text('shipper_name_and_address')->nullable();
             $table->text('shipper_account_number')->nullable();
             $table->text('consignee_name_and_address')->nullable();
