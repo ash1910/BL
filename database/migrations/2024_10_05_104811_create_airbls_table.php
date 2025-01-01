@@ -74,6 +74,8 @@ return new class extends Migration
             $table->text('executed_on_date')->nullable();
             $table->text('at_place')->nullable();
             $table->text('signature_of_issuing_carrier_or_its_agent')->nullable();
+            $table->text('mawb_no_b')->nullable();
+            $table->text('mawb_no_c')->nullable();
             $table->timestamps();
         });
     }

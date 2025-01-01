@@ -62,13 +62,13 @@
             <img src="/images/HNS-International-Logo.png" alt="HNS International Logo">
         </div>
         <div class="text">
-            <b style="font-size: 16px;">HNS INTERNATIONAL</b><br>
+            <b style="font-size: 16px;">ALV INTERNATIONAL</b><br>
             <b>Corporate Office:</b> Police Plaza Concord<br>
             Level #07, Plot #02, Road #144, Gulshan C/A,<br>
             Dhaka - 1212.<br>
-            Tel: +880 2 55045148-9.<br>
-            Email: info@hns-international.com.<br>
-            Web: www.hns-international.com
+            Tel: +1 (323) 8889-999.<br>
+            Email: info@alv-international.com.<br>
+            Web: www.alv-international.com
         </div>
     </div>
     <h5 style="margin-left: 180px;">SHIPPING ORDER. CARTERS NOTE AND SHIPPERS INSTRUCTION</h5>

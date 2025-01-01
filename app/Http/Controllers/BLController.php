@@ -30,7 +30,7 @@ class BLController extends Controller
     public function create()
     {
         // The fixed prefix
-        $prefix = "HNS-SE";
+        $prefix = "ALV-SE";
 
         // Get the current year and month
         $now = new \DateTime();
@@ -254,7 +254,7 @@ class BLController extends Controller
     public function clone(Bl $id)
     {
          // The fixed prefix
-         $prefix = "HNS-SE";
+         $prefix = "ALV-SE";
 
          // Get the current year and month
          $now = new \DateTime();

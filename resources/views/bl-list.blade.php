@@ -423,7 +423,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="https://technomole.com" target="_blank">TechnoMole Creations Ltd</a>.</strong> All rights
+    <strong>Copyright &copy; 2024 <a href="https://wmd.com" target="_blank">WMD Ltd</a>.</strong> All rights
     reserved.
   </footer>
 

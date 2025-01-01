@@ -27,7 +27,7 @@ class AirBLController extends Controller
     {
         //
                 // The fixed prefix
-        $prefix = "HNSDAC";
+        $prefix = "ALVDAC";
 
         // Get the current year and month
         $now = new \DateTime();
@@ -309,7 +309,7 @@ class AirBLController extends Controller
     public function clone(AirBL $id)
     {
          // The fixed prefix
-         $prefix = "HNSDAC";
+         $prefix = "ALVDAC";
 
          // Get the current year and month
          $now = new \DateTime();

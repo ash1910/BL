@@ -138,6 +138,9 @@ h2 {
                         </div>
                         <input type="submit" class="btn" value="Login">
                     </form>
+                    <br><br>
+                    <p><strong>Email:</strong> admin@example.com</p>
+                    <p><strong>Password:</strong> 123456</p>
                 </div>
             </div>
         </div>

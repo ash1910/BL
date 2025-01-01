@@ -129,11 +129,11 @@
 									<img src="/images/HNS-International-Logo.png" style="height: 50px; width: 140px; margin-top: -30px"></img>
 								</div>
 								<p class="column1" style="margin-top: -30px; margin-bottom: -5px;">
-								<b style="font-size: 16px;">HNS INTERNATIONAL</b><br>
-								<b>Corporate Office:</b> 246, Tejgaon I/A,<br>
-								Dhaka - 1208, Bangladesh.<br>
-								Tel: +880 2 55045148-9.<br>
-								Email: globiz@hns-international.com<br>Web: www.hns-international.com
+								<b style="font-size: 16px;">ALV INTERNATIONAL</b><br>
+								<b>Corporate Office:</b> 111, Los Angles,<br>
+								California(CA), 90043<br>
+								Tel: +1 (323) 8889-999.<br>
+								Email: info@example.com<br>Web: www.alv-international.com
 
 								</p>
 							</p>
