@@ -141,6 +141,7 @@ h2 {
                     <br><br>
                     <p><strong>Email:</strong> admin@example.com</p>
                     <p><strong>Password:</strong> 123456</p>
+                    <p><a href="/doc.docx">Documentation</a></p>
                 </div>
             </div>
         </div>
