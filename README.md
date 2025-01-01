@@ -1,66 +1,109 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Bill of Lading Management System (BOLMS) Documentation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
+The Bill of Lading Management System (BOLMS) is a web-based application designed to streamline the creation, management, and printing of Bills of Lading (B/L) for sea and air shipments. It also includes a user management module to handle access control and system administration.
 
-## About Laravel
+## Key Features
+1. **Sea B/L Management**
+   - Add, edit, delete, clone, show, and print Sea Bills of Lading.
+2. **Air B/L Management**
+   - Add, edit, delete, clone, show, and print Air Bills of Lading.
+3. **User Management**
+   - Add, edit, and delete user accounts.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Modules
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Sea B/L Management
+This module is responsible for managing Bills of Lading for sea shipments.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Functionalities:
+- **Add Sea B/L:** Input the shipment details including shipper, consignee, vessel name, cargo description, and other relevant fields.
+- **Edit Sea B/L:** Update existing Sea B/L information.
+- **Delete Sea B/L:** Permanently remove a Sea B/L record.
+- **Clone Sea B/L:** Duplicate an existing Sea B/L for similar shipments.
+- **Show Sea B/L:** Display the details of a specific Sea B/L in a user-friendly format.
+- **Print Sea B/L:** Generate a printable version of the Sea B/L.
 
-## Learning Laravel
+### 2. Air B/L Management
+This module focuses on managing Bills of Lading for air shipments.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Functionalities:
+- **Add Air B/L:** Input the shipment details including shipper, consignee, airline, cargo description, and other relevant fields.
+- **Edit Air B/L:** Update existing Air B/L information.
+- **Delete Air B/L:** Permanently remove an Air B/L record.
+- **Clone Air B/L:** Duplicate an existing Air B/L for similar shipments.
+- **Show Air B/L:** Display the details of a specific Air B/L in a user-friendly format.
+- **Print Air B/L:** Generate a printable version of the Air B/L.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 3. User Management
+This module handles user administration and access control.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Functionalities:
+- **Add User:** Create new user accounts with roles and permissions.
+- **Edit User:** Modify existing user details and update roles or permissions.
+- **Delete User:** Remove user accounts from the system.
 
-## Laravel Sponsors
+## System Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Client-Side:
+- **Browser Support:** Chrome, Firefox, Edge, Safari.
+- **Minimum Screen Resolution:** 1024x768.
 
-### Premium Partners
+### Server-Side:
+- **Programming Language:** PHP 8
+- **Database:** MySQL 5.7 or later
+- **Web Server:** Apache 2.4 or Nginx
+- **Operating System:** Linux-based server
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## User Roles and Permissions
 
-## Contributing
+### Admin
+- Full access to all modules and functionalities.
+- Can manage users.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Operator
+- Access to Sea B/L and Air B/L Management modules.
+- Cannot manage users.
 
-## Code of Conduct
+## Database Schema
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Tables:
+1. **sea_bls**: Stores data related to sea Bills of Lading.   - Fields: id, shipper, consignee, vessel, cargo, created_at, updated_at.
+2. **air_bls**: Stores data related to air Bills of Lading.   - Fields: id, shipper, consignee, airline, cargo, created_at, updated_at.
+3. **users**: Stores user account information.   - Fields: id, username, password_hash, role, created_at, updated_at.
 
-## Security Vulnerabilities
+## API Endpoints
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Sea B/L Management:
+- **POST /sea-bls:** Add a new Sea B/L.
+- **PUT /sea-bls/{id}:** Edit an existing Sea B/L.
+- **DELETE /sea-bls/{id}:** Delete a Sea B/L.
+- **GET /sea-bls/{id}:** Get details of a specific Sea B/L.
+- **GET /sea-bls:** List all Sea B/Ls.
 
-## License
+### Air B/L Management:
+- **POST /air-bls:** Add a new Air B/L.
+- **PUT /air-bls/{id}:** Edit an existing Air B/L.
+- **DELETE /air-bls/{id}:** Delete an Air B/L.
+- **GET /air-bls/{id}:** Get details of a specific Air B/L.
+- **GET /air-bls:** List all Air B/Ls.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### User Management:
+- **POST /users:** Add a new user.
+- **PUT /users/{id}:** Edit an existing user.
+- **DELETE /users/{id}:** Delete a user.
+- **GET /users:** List all users.
+
+## Workflow
+
+1. **Admin Login:** Admin logs into the system.
+2. **User Creation:** Admin adds users with appropriate roles.
+3. **B/L Creation:** Operator creates Sea or Air Bills of Lading.
+4. **Modification:** Existing B/Ls are edited or cloned as needed.
+5. **Printing:** B/Ls are printed for shipment.
+
+## Future Enhancements
+- Integration with third-party shipping APIs for real-time updates.
+- Enhanced reporting and analytics.
+- Multi-language support.
+- Role-based access control with finer granularity.
